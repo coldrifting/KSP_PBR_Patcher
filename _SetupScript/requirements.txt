@@ -1,0 +1,6 @@
+pyyaml
+pillow
+scipy
+numpy
+cairosvg
+texconv-py
