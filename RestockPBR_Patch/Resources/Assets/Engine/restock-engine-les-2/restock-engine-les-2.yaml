@@ -1,0 +1,121 @@
+# Launch Escape System Jr. - Remove unneeded transform in order to remove ModulePartVariants
+model:
+  source: "ReStockPlus/Assets/Engine/restock-engine-les-2"
+  operations:
+    - transform_remove:
+        transform_name: "LES_White"
+
+texture:
+  size: [512, 512]
+
+  color_primary:
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points: [ [0, 40], [180, 255] ]
+      mask: color_primary
+
+  - curves:
+      points: [ [24, 30], [110, 255] ]
+      mask: metal
+
+  - fill:
+      color: black
+      masks: 
+      - color_primary
+      - color_secondary
+      invert_masks: True
+
+  color_secondary:
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points: [ [0, 40], [180, 255] ]
+      mask: color_primary
+
+  - curves:
+      points: [ [24, 30], [110, 255] ]
+      mask: metal
+
+  - fill:
+      color: black
+      mask: color_secondary
+      invert_masks: True
+
+  diffuse:
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - brightness:
+      percent: 67
+      mask: color_primary
+
+  - curves:
+      points: [ [64, 75] ]
+      mask: metal
+
+  - fill:
+      color: black
+      mask: remove
+
+  gloss:
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points: [ [16, 64] ]
+      mask: color_primary
+
+  - curves:
+      points: [ [64, 75] ]
+      mask: metal
+
+  - fill:
+      color: black
+      mask: remove
+
+  gloss_alt:
+  - copy:
+       group: gloss
+
+  - brightness:
+      percent: 50
+      masks: 
+      - color_primary
+      - color_secondary
+
+  metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      mask: remove
+
+  metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks: 
+      - color_primary
+      - color_secondary

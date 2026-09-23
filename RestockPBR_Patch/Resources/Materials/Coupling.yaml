@@ -1,0 +1,79 @@
+materials:
+- name: restock-pbr-patch-airlock-inflatable-1
+  main_tex:       ReStockPBR_Patch/Assets/Coupling/restock-airlock-inflatable-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Coupling/restock-airlock-inflatable-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Coupling/restock-airlock-inflatable-1-tc
+  bump_map:                ReStock/Assets/Coupling/restock-airlock-inflatable-1-n
+  tc1: sovietGreen
+  tc2: metalBluish
+
+- name: restock-pbr-patch-claw-125-1
+  main_tex:       ReStockPBR_Patch/Assets/Coupling/restock-claw-125-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Coupling/restock-claw-125-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Coupling/restock-claw-125-1-tc
+  bump_map:                ReStock/Assets/Coupling/restock-claw-125-1-n
+  tc1: electricalYellow
+  tc2: metalBasic
+
+- name: restock-pbr-patch-claw-125-2
+  main_tex:       ReStockPBR_Patch/Assets/Coupling/restock-claw-125-2-a
+  metal_map:      ReStockPBR_Patch/Assets/Coupling/restock-claw-125-2-m
+  team_color_map: ReStockPBR_Patch/Assets/Coupling/restock-claw-125-2-tc
+  bump_map:                ReStock/Assets/Coupling/restock-claw-125-2-n
+  tc1: electricalYellow
+  tc2: metalBasic
+
+- name: restock-pbr-patch-claw-625
+  main_tex:       ReStockPBR_Patch/Assets/Coupling/restock-claw-625-a
+  metal_map:      ReStockPBR_Patch/Assets/Coupling/restock-claw-625-m
+  team_color_map: ReStockPBR_Patch/Assets/Coupling/restock-claw-625-tc
+  bump_map:                ReStock/Assets/Coupling/restock-claw-625-n
+  tc1: electricalYellow
+  tc2: metalBasic
+
+- name: restock-pbr-patch-crewed-endcap-2
+  main_tex:  ReStockPBR/Assets/Command/restock-mk1-pod-1-a
+  metal_map: ReStockPBR/Assets/Command/restock-mk1-pod-1-m
+  bump_map:  ReStockPBR/Assets/Command/restock-mk1-pod-1-n
+  emissive:  ReStockPBR/Assets/Command/restock-mk1-pod-1-e
+
+- name: GrapplingDevice
+  after: ReStock
+  remove_part_variants: True
+  models:
+  - find: ReStock/Assets/Coupling/restock-claw-125-1
+    replace: ReStockPBR_Patch/Assets/Coupling/restock-claw-125-1
+  materials:
+  - zone: main
+    name: restock-pbr-patch-claw-125-1
+    target_material: restock-claw-125-1
+
+  - zone: main
+    name: restock-pbr-patch-claw-125-2
+    target_material: restock-claw-125-2-white
+
+- name: smallClaw
+  after: ReStock
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-claw-625
+    target_material: restock-claw-625
+
+  - zone: main
+    name: restock-pbr-patch-claw-625
+    target_material: restock-claw-625-2
+
+- name: InflatableAirlock
+  after: ReStock
+  restock_plus_name: restock-airlock-1
+  materials:
+  - zone: main
+    name: restock-pbr-patch-airlock-inflatable-1
+    target_material: restock-airlock-inflatable-1
+
+  - zone: none
+    name: restock-pbr-patch-crewed-endcap-2
+    target_material: restock-crewed-endcap-2
+    target_transforms:
+    - restock-crewed-endcap-2

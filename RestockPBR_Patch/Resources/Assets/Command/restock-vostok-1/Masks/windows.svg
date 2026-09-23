@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1024"
+   height="1024"
+   viewBox="0 0 1024 1024"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <rect
+     style="display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.6;stroke-linecap:round;stroke-linejoin:bevel"
+     id="rect1"
+     width="1024"
+     height="1024"
+     x="0"
+     y="0" />
+  <circle
+     style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.6;stroke-linecap:round;stroke-linejoin:bevel"
+     id="path1"
+     cx="326.27289"
+     cy="104.27457"
+     r="35.992073" />
+  <circle
+     style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.6;stroke-linecap:round;stroke-linejoin:bevel"
+     id="path1-5"
+     cx="437.01947"
+     cy="101.59291"
+     r="41.735561" />
+  <ellipse
+     style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4.6;stroke-linecap:round;stroke-linejoin:bevel"
+     id="circle1"
+     cx="538.39966"
+     cy="108.22316"
+     rx="36.904751"
+     ry="37.367954" />
+</svg>

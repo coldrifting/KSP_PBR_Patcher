@@ -1,0 +1,87 @@
+materials:
+- name: restock-pbr-patch-prop-heli
+  main_tex:       ReStockPBR_Patch/Assets/Propellers/heli-a
+  metal_map:      ReStockPBR_Patch/Assets/Propellers/heli-m
+  team_color_map: ReStockPBR_Patch/Assets/Propellers/heli-tc
+  tc1: metalDarkGrey
+  tc2: metalShiny
+
+- name: restock-pbr-patch-prop-plane
+  main_tex:       ReStockPBR_Patch/Assets/Propellers/plane-a
+  metal_map:      ReStockPBR_Patch/Assets/Propellers/plane-m
+  team_color_map: ReStockPBR_Patch/Assets/Propellers/plane-tc
+  tc1: metalDarkGrey
+  tc2: metalShiny
+
+- name: restock-pbr-patch-prop-fan
+  main_tex:       ReStockPBR_Patch/Assets/Propellers/fan-a
+  metal_map:      ReStockPBR_Patch/Assets/Propellers/fan-m
+  team_color_map: ReStockPBR_Patch/Assets/Propellers/fan-tc
+  tc1: metalDarkGrey
+  tc2: metalShiny
+
+parts:
+- name: smallHeliBlade
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-heli
+    target_material: copterBlades_diffuse
+
+- name: mediumHeliBlade
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-heli
+    target_material: copterBlades_diffuse
+
+- name: largeHeliBlade
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-heli
+    target_material: copterBlades_diffuse
+
+
+- name: smallPropeller
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-plane
+    target_material: PlanePropeller
+
+- name: mediumPropeller
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-plane
+    target_material: PlanePropeller
+
+- name: largePropeller
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-plane
+    target_material: PlanePropeller
+
+
+- name: smallFanBlade
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-fan
+    target_material: Fan
+
+- name: mediumFanBlade
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-fan
+    target_material: Fan
+
+- name: largeFanBlade
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-prop-fan
+    target_material: Fan

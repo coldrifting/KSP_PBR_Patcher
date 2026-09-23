@@ -1,0 +1,106 @@
+materials:
+- name: restock-pbr-patch-vostok-1-a
+  main_tex:       ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-tc
+  bump_map:                ReStock/Assets/Command/restock-pbr-vostok-1-n
+  emissive:                ReStock/Assets/Command/restock-pbr-vostok-1-e
+  tc1: metalBasic
+  tc2: sovietGreen
+
+- name: restock-pbr-patch-vostok-1-b
+  main_tex:       ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-tc
+  bump_map: ReStock/Assets/Command/restock-pbr-vostok-1-n
+  emissive: ReStock/Assets/Command/restock-pbr-vostok-1-e
+  tc1: metalBasic
+  tc2: darkYellow
+
+- name: restock-pbr-patch-vostok-1-c
+  main_tex:       ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Command/restock-pbr-vostok-1-tc
+  bump_map:                ReStock/Assets/Command/restock-pbr-vostok-1-n
+  emissive:                ReStock/Assets/Command/restock-pbr-vostok-1-e
+  tc1: metalBasic
+  tc2: darkRed
+
+- name: restock-pbr-patch-mk2-pod-1
+  main_tex:       ReStockPBR_Patch/Assets/Command/restock-mk2-pod-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Command/restock-mk2-pod-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Command/restock-mk2-pod-1-tc
+  bump_map:                ReStock/Assets/Command/restock-mk2-pod-1-n
+  emissive:                ReStock/Assets/Command/restock-mk2-pod-1-e
+  tc1: porkjetBlack
+  tc2: darkRed
+
+- name: restock-pbr-hatch-common-round-1
+  main_tex:       ReStockPBR/Assets/Command/restock-pbr-crewed-hatch-1-a
+  metal_map:      ReStockPBR/Assets/Command/restock-pbr-crewed-hatch-1-m
+  team_color_map: ReStockPBR/Assets/Command/restock-pbr-crewed-hatch-1-tc
+  bump_map:       ReStockPBR/Assets/Command/restock-pbr-crewed-hatch-1-n
+  emissive:       ReStockPBR/Assets/Command/restock-pbr-crewed-hatch-1-e
+  tc1: porkjetWhite
+  tc2: porkjetWhite
+
+- name: restock-pbr-crewed-endcap-2
+  main_tex:  ReStockPBR/Assets/Command/restock-mk1-pod-1-a
+  emissive:  ReStockPBR/Assets/Command/restock-mk1-pod-1-e
+  metal_map: ReStockPBR/Assets/Command/restock-mk1-pod-1-m
+  bump_map:  ReStockPBR/Assets/Command/restock-mk1-pod-1-n
+
+parts:
+- name: kv1Pod
+  after: ReStock
+  remove_part_variants: True
+  restock_plus_name: restock-pod-sphere-1
+  materials:
+  - zone: main
+    name: restock-pbr-patch-vostok-1-a
+    target_material: Restock-vostok-1
+
+- name: kv2Pod
+  after: ReStock
+  remove_part_variants: True
+  restock_plus_name: restock-pod-sphere-2
+  materials:
+  - zone: main
+    name: restock-pbr-patch-vostok-1-b
+    target_material: Restock-vostok-1
+
+- name: kv3Pod
+  after: ReStock
+  remove_part_variants: True
+  restock_plus_name: restock-pod-sphere-3
+  materials:
+  - zone: main
+    name: restock-pbr-patch-vostok-1-c
+    target_material: Restock-vostok-1
+
+- name: Mk2Pod
+  after: ReStock
+  remove_part_variants: True
+  restock_plus_name: restock-mk2-pod
+  models:
+  - find: ReStock/Assets/Command/restock-mk2-pod
+    replace: ReStockPBR_Patch/Assets/Command/restock-mk2-pod
+
+  materials:
+  - zone: main
+    name: restock-pbr-patch-mk2-pod-1
+    target_material: restock-mk2-pod
+    target_transforms:
+    - Mk2PodDark
+
+  - zone: hatches
+    name: restock-pbr-hatch-common-round-1
+    target_material: restock-pbr-crewed-hatch-1
+    target_transforms:
+    - restock-pbr-hatch-common-round-1
+
+  - zone: none
+    name: restock-pbr-crewed-endcap-2
+    target_material: restock-crewed-endcap-2
+    target_transforms:
+    - restock-crewed-endcap-2

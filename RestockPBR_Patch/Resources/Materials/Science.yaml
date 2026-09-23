@@ -1,0 +1,105 @@
+materials:
+- name: restock-pbr-patch-magnetometer-1
+  main_tex:       ReStockPBR_Patch/Assets/Science/restock-magnetometer-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Science/restock-magnetometer-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Science/restock-magnetometer-1-tc
+  bump_map:                ReStock/Assets/Science/restock-magnetometer-1-n
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+- name: restock-pbr-patch-sentinel-1
+  main_tex:       ReStockPBR_Patch/Assets/Science/restock-sentinel-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Science/restock-sentinel-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Science/restock-sentinel-1-tc
+  bump_map:                ReStock/Assets/Science/restock-sentinel-1-n
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+- name: restock-pbr-patch-sentinel-1-inside
+  main_tex:  ReStockPBR_Patch/Assets/Science/restock-sentinel-1-a
+  metal_map: ReStockPBR_Patch/Assets/Science/restock-sentinel-1-m
+
+- name: restock-pbr-patch-scanning-arm-0
+  main_tex:       ReStockPBR_Patch/Assets/Science/scanning-arm-0-a
+  metal_map:      ReStockPBR_Patch/Assets/Science/scanning-arm-0-m
+  team_color_map: ReStockPBR_Patch/Assets/Science/scanning-arm-0-tc
+  bump_map: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/GenericParts_normal
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+- name: restock-pbr-patch-scanning-arm-1
+  main_tex:       ReStockPBR_Patch/Assets/Science/scanning-arm-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Science/scanning-arm-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Science/scanning-arm-1-tc
+  bump_map: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/SmallArm_normal
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+- name: restock-pbr-patch-scanning-arm-2
+  main_tex:       ReStockPBR_Patch/Assets/Science/scanning-arm-2-a
+  metal_map:      ReStockPBR_Patch/Assets/Science/scanning-arm-2-m
+  team_color_map: ReStockPBR_Patch/Assets/Science/scanning-arm-2-tc
+  bump_map: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/ROCArm_2_normal
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+- name: restock-pbr-patch-scanning-arm-3
+  main_tex:       ReStockPBR_Patch/Assets/Science/scanning-arm-3-a
+  metal_map:      ReStockPBR_Patch/Assets/Science/scanning-arm-3-m
+  team_color_map: ReStockPBR_Patch/Assets/Science/scanning-arm-3-tc
+  bump_map: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/ROCArm3_normal
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+parts:
+- name: Magnetometer
+  after: ReStock
+  materials:
+  - zone: main
+    name: restock-pbr-patch-magnetometer-1
+    target_material: restock-magnetometer-1
+
+- name: InfraredTelescope
+  after: ReStock
+  materials:
+  - zone: main
+    name: restock-pbr-patch-sentinel-1
+    target_material: restock-sentinel-1
+
+  - zone: none
+    name: restock-pbr-patch-sentinel-1-inside
+    target_material: restock-sentinel-1-inside
+
+- name: RobotArmScanner_S1
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-scanning-arm-0
+    target_material: GenericParts
+
+  - zone: none
+    name: restock-pbr-patch-scanning-arm-1
+    target_material: SmallArm
+
+- name: RobotArmScanner_S2
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-scanning-arm-0
+    target_material: GenericParts
+
+  - zone: none
+    name: restock-pbr-patch-scanning-arm-2
+    target_material: MediumArm
+
+
+- name: RobotArmScanner_S3
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-scanning-arm-0
+    target_material: GenericParts
+
+  - zone: none
+    name: restock-pbr-patch-scanning-arm-3
+    target_material: LargeArm

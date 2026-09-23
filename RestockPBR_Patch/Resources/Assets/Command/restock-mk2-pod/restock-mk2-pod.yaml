@@ -1,0 +1,139 @@
+# Mk2 pod - Remove unneeded transform in order to remove ModulePartVariants
+model:
+  source: "ReStock/Assets/Command/restock-mk2-pod"
+  operations:
+    - transform_remove:
+        transform_name: "Mk2PodWhite"
+
+texture:
+  size: [1024, 1024]
+
+  color_primary:
+  - fill:
+      color: white
+      masks: 
+      - panel_bg
+      - panel_gaps_major!
+      - greble!
+      - stripe!
+      - ejection_seat_text!
+
+  - fill:
+      color: "#AAAAAA"
+      masks: 
+      - panel_gaps_minor
+      - panel_rivets
+
+  color_secondary:
+  - fill:
+      color: white
+      masks: 
+      - stripe
+      - connector
+      - connector_stripes!
+
+  diffuse:
+  - fill:
+      image: ReStock/Assets/Command/restock-mk2-pod-1.dds
+      channels: rgb
+
+  - brightness:
+      percent: 115
+
+  - saturation:
+      percent: 120
+      masks:
+      - window
+      - triangle
+
+  - saturation:
+      percent: 0
+      masks:
+      - window
+      - triangle
+      invert_masks: True
+
+  - curves:
+      points: [ [64,110] ]
+      masks:
+      - panel_bg
+      - panel_gaps_major!
+      - greble!
+      - triangle!
+      - stripe!
+
+  - curves:
+      points: [ [64,85] ]
+      mask: stripe
+
+  - curves:
+      points: [ [64,100] ]
+      mask: connector
+
+  - fill:
+      color: white
+      mask: connector_stripes
+
+  - fill:
+      image: ejection_seat_bg.png
+
+  - fill:
+      color: black
+      mask: ejection_seat_text
+
+  - fill:
+      color: black
+      mask: remove
+
+  gloss:
+  - fill:
+      image: ReStock/Assets/Command/restock-mk2-pod-1.dds
+      channels: a
+
+  - curves:
+      points: [ [64, 128], [128, 235] ]
+      masks:
+      - gloss_ignore
+      invert_masks: True
+
+  - fill:
+      color: "#B9B9B9"
+      mask: stripe
+
+  - fill:
+      color: black
+      mask: remove
+
+  gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+      - panel_bg
+      - panel_gaps_major!
+      - panel_gaps_minor!
+      - connector
+
+  metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+      - window
+      - ejection_seat_text
+
+  metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+      - panel_bg
+      - panel_gaps_major!
+      - panel_gaps_minor!
+      - connector

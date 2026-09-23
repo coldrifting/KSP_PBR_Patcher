@@ -1,0 +1,130 @@
+texture:
+  size: [1024, 1024]
+
+  color_primary:
+  - fill:
+      color: white
+      mask: color_primary
+
+  color_secondary:
+  - fill:
+      color: white
+      mask: color_secondary_1
+
+  - fill:
+      color: white
+      mask: color_secondary_2
+
+  - fill:
+      color: white
+      mask: color_secondary_3
+
+  diffuse:
+  - fill:
+      image: ReStock/Assets/Command/restock-pod-sphere-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      mask: saturate
+      invert_masks: True
+
+  - saturation:
+      percent: 120
+      mask: saturate
+
+  - curves:
+      points: [ [64, 40] ]
+      mask: main
+
+  - brightness: 
+      percent: 115
+      invert_masks: True
+
+  - curves:
+      points: [ [64, 40] ]
+      mask: color_secondary_1
+
+  - curves:
+      points: [ [18, 64], [128, 235] ]
+      mask: color_secondary_2
+
+  - curves:
+      points: [ [95,  160] ]
+      mask: color_secondary_3
+
+  gloss:
+  - fill:
+      image: ReStock/Assets/Command/restock-pod-sphere-1.dds
+      channels: a
+
+  - curves:
+      points: [ [44, 128] ]
+      mask: main_darken
+
+  - curves:
+      points: [ [10, 128], [35, 255] ]
+      mask: metal_spec_brightness_up
+
+  - curves:
+      points: [ [24, 128] ]
+      mask: color_secondary_1
+
+  - curves:
+      points: [ [10, 128] ]
+      mask: color_secondary_2
+
+  - curves:
+      points: [ [16, 128] ]
+      mask: color_secondary_3
+
+  - curves:
+      points: [ [54, 128] ]
+      mask: circles_bg
+
+  - invert:
+      mask: circles_paint
+
+  gloss_alt:
+  - copy:
+       group: gloss
+
+  - brightness:
+      percent: 50
+      masks: 
+      - color_primary
+      - color_secondary_1
+      - color_secondary_2
+      - color_secondary_3
+
+  metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      mask: windows
+
+  - fill:
+      color: black
+      mask: circles_paint
+
+  metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      mask: color_primary
+
+  - fill:
+      color: black
+      mask: color_secondary_1
+
+  - fill:
+      color: black
+      mask: color_secondary_2
+
+  - fill:
+      color: black
+      mask: color_secondary_3

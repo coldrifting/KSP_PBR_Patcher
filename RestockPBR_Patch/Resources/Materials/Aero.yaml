@@ -1,0 +1,42 @@
+materials:
+- name: restock-pbr-patch-airbrake
+  main_tex:       RestockPBR_Patch/Assets/Aero/airbrake-a
+  metal_map:      RestockPBR_Patch/Assets/Aero/airbrake-m
+  team_color_map: RestockPBR_Patch/Assets/Aero/airbrake-tc
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+- name: restock-pbr-patch-fan-shroud
+  main_tex:       RestockPBR_Patch/Assets/Aero/fan-shroud-a
+  metal_map:      RestockPBR_Patch/Assets/Aero/fan-shroud-m
+  team_color_map: RestockPBR_Patch/Assets/Aero/fan-shroud-tc
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+parts:
+- name: airbrake1
+  materials:
+  - zone: main
+    name: restock-pbr-patch-airbrake
+    target_material: Airbrake
+
+- name: FanShroud_01
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-fan-shroud
+    target_material: shroudsDiffuse_color
+    
+- name: FanShroud_02
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-fan-shroud
+    target_material: shroudsDiffuse_color
+
+- name: FanShroud_03
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-fan-shroud
+    target_material: shroudsDiffuse

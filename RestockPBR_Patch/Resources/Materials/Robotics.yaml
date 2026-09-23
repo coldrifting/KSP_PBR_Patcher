@@ -1,0 +1,312 @@
+materials:
+- name: restock-pbr-patch-hinge-1
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/hinge-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/hinge-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/hinge-1-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/Hinge_normal
+  tc1: metalBasic
+  tc2: argonBlue
+
+- name: restock-pbr-patch-hinge-2
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/hinge-2-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/hinge-2-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/hinge-2-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/Hinge_normal
+  tc1: metalBasic
+  tc2: electricalYellow
+
+- name: restock-pbr-patch-hinge-3-a
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/hinge-3-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/hinge-3-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/hinge-3-tc
+  tc1: metalBasic
+  tc2: argonBlue
+
+- name: restock-pbr-patch-hinge-3-b
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/hinge-3-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/hinge-3-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/hinge-3-tc
+  tc1: metalBasic
+  tc2: electricalYellow
+
+- name: restock-pbr-patch-hinge-3-c
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/hinge-3-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/hinge-3-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/hinge-3-tc
+  tc1: metalBasic
+  tc2: darkRed
+
+- name: restock-pbr-patch-rotors-1-a
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-1-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/Rotor_01_normal
+  tc1: metalBasic
+  tc2: argonBlue
+
+- name: restock-pbr-patch-rotors-1-b
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-1-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/Rotor_01_normal
+  tc1: metalBasic
+  tc2: electricalYellow
+
+- name: restock-pbr-patch-rotors-2
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-2-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-2-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-2-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/Rotor_03_normal
+  tc1: metalBasic
+  tc2: lithiumRed
+
+- name: restock-pbr-patch-rotors-3
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-3-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-3-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-3-tc
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+- name: restock-pbr-patch-rotors-4
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-4-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-4-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-4-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/RotorEngine_03_normal
+  tc1: porkjetWhite
+  tc2: porkjetBlack
+
+- name: restock-pbr-patch-servo-1-a
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/servo-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/servo-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/servo-1-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/rotoServos_nrm
+  tc1: porkjetWhite
+  tc2: argonBlue
+
+- name: restock-pbr-patch-servo-1-b
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/servo-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/servo-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/servo-1-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/rotoServos_nrm
+  tc1: porkjetWhite
+  tc2: electricalYellow
+
+- name: restock-pbr-patch-servo-1-c
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/servo-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/servo-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/servo-1-tc
+  bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/rotoServos_nrm
+  tc1: porkjetWhite
+  tc2: lithiumRed
+
+- name: restock-pbr-patch-controller-kal-1
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/controller-kal-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/controller-kal-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/controller-kal-1-tc
+  emissive: SquadExpansion/Serenity/Parts/Robotics/Assets/Controllers/roboController_emissive
+  tc1: electricalYellow
+  tc2: blank
+
+parts:
+- name: hinge_01_s
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-hinge-1
+    target_material: Hinge_G-00
+
+- name: hinge_01
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-hinge-2
+    target_material: Hinge_G-11
+
+- name: hinge_03_s
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-hinge-3-a
+    target_material: hinges_diffuse
+
+  - zone: main
+    name: restock-pbr-patch-hinge-3-a
+    target_material: hinges_diffuse 2
+
+- name: hinge_03
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-hinge-3-b
+    target_material: hinges_diffuse
+
+- name: hinge_04
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-hinge-3-c
+    target_material: hinges_diffuse
+
+- name: rotor_01s
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-1-a
+    target_material: Rotor_01_Diff
+
+  - zone: main
+    name: restock-pbr-patch-rotors-1-a
+    target_material: Rotor_01_Diff 1
+
+- name: rotor_01
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-1-a
+    target_material: Rotor_01_diffuse_color
+
+  - zone: main
+    name: restock-pbr-patch-rotors-1-a
+    target_material: Rotor_01_Spec
+
+- name: piston_02
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-1-a
+    target_material: Rotor_01_diffuse_D
+
+- name: piston_04
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-1-a
+    target_material: Rotor_01_Diff
+
+- name: rotor_02s
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-1-b
+    target_material: Rotor_01_Diff 1
+
+  - zone: main
+    name: restock-pbr-patch-rotors-1-b
+    target_material: Rotor_02_Diff
+
+- name: rotor_02
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-1-b
+    target_material: Rotor_02_diffuse_color
+
+  - zone: main
+    name: restock-pbr-patch-rotors-1-b
+    target_material: Rotor_02_Spec
+
+- name: piston_01
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-1-b
+    target_material: Rotor_01_diffuse_D
+
+- name: piston_03
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-1-b
+    target_material: Rotor_01_Diff
+
+- name: rotor_03s
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-2
+    target_material: Rotor_03
+
+- name: rotor_03
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-2
+    target_material: Hinge_03
+
+- name: size0_RotorEngine_02
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-3
+    target_material: helicopterRotor_diffuse
+
+- name: RotorEngine_02
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-3
+    target_material: helicopterRotor_diffuse
+
+- name: RotorEngine_03
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-rotors-4
+    target_material: RotorEngine_01
+
+- name: rotoServo_00
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-servo-1-a
+    target_material: rotoServos_diffuse
+
+- name: rotoServo_02
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-servo-1-b
+    target_material: rotoServos_diffuse
+
+- name: rotoServo_03
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-servo-1-b
+    target_material: rotoServos_diffuse
+
+- name: rotoServo_04
+  after: SquadExpansion/Serenity
+  remove_part_variants: True
+  materials:
+  - zone: main
+    name: restock-pbr-patch-servo-1-c
+    target_material: rotoServos_diffuse
+
+- name: controller1000
+  after: SquadExpansion/Serenity
+  materials:
+  - zone: main
+    name: restock-pbr-patch-controller-kal-1
+    target_material: roboController_diffuse
