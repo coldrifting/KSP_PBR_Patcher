@@ -1,0 +1,43 @@
+materials:
+- name: scansat-pbr-btdt-1
+  main_tex:       SCANsatPBR/Assets/scansat-btdt/scansat-btdt-1-a
+  metal_map:      SCANsatPBR/Assets/scansat-btdt/scansat-btdt-1-m
+  team_color_map: SCANsatPBR/Assets/scansat-btdt/scansat-btdt-1-tc
+  bump_map:          SCANsat/Assets/scansat-btdt/scansat-btdt-1-n
+  tc1: porkjetWhite
+  tc2: metalBasic
+
+- name: scansat-pbr-btdt-1-mli
+  main_tex:       SCANsatPBR/Assets/scansat-btdt/scansat-btdt-1-a
+  metal_map:      SCANsatPBR/Assets/scansat-btdt/scansat-btdt-1-m
+  team_color_map: SCANsatPBR/Assets/scansat-btdt/scansat-btdt-1-tc
+  bump_map:          SCANsat/Assets/scansat-btdt/scansat-btdt-1-n
+  tc1: mliGold
+  tc2: blank
+
+parts:
+- name: scansat-exomars-1
+  after: SCANsat
+  materials:
+  - zone: main
+    name: scansat-pbr-btdt-1
+    target_transforms:
+    - EMBase
+    - EMBaseBare
+    - EMDoor
+    - EMCamera
+    - EMCameraBare
+    - EMAntenna
+    - EMBasePitch
+    - EMBasePitchBare
+    - EMCylLower
+    - EMTopPivot
+    ignore_transforms:
+    - EMCameraMLIBare
+    - EMCameraMLI
+
+  - zone: mli
+    name: scansat-pbr-btdt-1-mli
+    target_transforms:
+    - EMCameraMLIBare
+    - EMCameraMLI
