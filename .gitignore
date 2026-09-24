@@ -220,4 +220,4 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Output Files
-**/GameData/
+Output/
