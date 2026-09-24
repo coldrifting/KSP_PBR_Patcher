@@ -1,3 +1,5 @@
+import errno
+import os
 from pathlib import Path
 from typing import Any
 
@@ -25,7 +27,7 @@ class ConfigModel:
         if not source_file.exists():
             source_file = Path(game_data_dir / (self.source + ".mu"))
             if not source_file.exists():
-                raise FileNotFoundError(f"File {source_file} does not exist. Skipping...")
+                raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), source_file)
 
         mu_data = MuFile.read_file(source_file)
         for operation in self.operations:
