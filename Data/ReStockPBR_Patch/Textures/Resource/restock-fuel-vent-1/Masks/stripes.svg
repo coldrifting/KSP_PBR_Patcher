@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="256"
+   height="128"
+   viewBox="0 0 256 128"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <rect
+     style="fill:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
+     id="rect13"
+     width="256"
+     height="128"
+     x="0"
+     y="0" />
+  <g
+     id="g9">
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 140,96 8,8 h -5 l -3,-3 z"
+       id="path1" />
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 140,90 8,8 v -5 l -8,-8 z"
+       id="path2" />
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 148,87 v -5 l -8,-8 v 5 z"
+       id="path3" />
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 148,76 -8,-8 v -6 l 8,8 z"
+       id="path4" />
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 148,65 -8,-8 v -5 l 8,8 z"
+       id="path5" />
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 148,53 v -5 l -8,-8 v 6 h 1 v 1 h 3 v 2 z"
+       id="path6" />
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 148,42 -8,-8 v -5 l 8,8 z"
+       id="path7" />
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 140,23 8,8 v -5 l -8,-8 z"
+       id="path8" />
+    <path
+       style="fill:#ffffff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+       d="m 144,15 h 3 l 1,1 v 4 l -4,-4 z"
+       id="path9" />
+  </g>
+</svg>

@@ -1,0 +1,91 @@
+size: [256, 128]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: white
+    mask: color_secondary
+
+diffuse:
+- fill:
+    image: ReStock/Assets/Resource/restock-fuel-vent-1.dds
+    channels: rgb
+
+- saturation:
+    percent: 120
+    masks:
+    - label
+    - stripes
+
+- saturation:
+    percent: 0
+    masks:
+    - label
+    - stripes
+    invert_masks: True
+
+- curves:
+    points: [ [64, 85] ]
+    mask: metal_misc
+    invert_masks: True
+
+- curves:
+    points: [ [64, 150] ]
+    mask: color_secondary
+
+- curves:
+    points: [ [128, 64] ]
+    masks:
+    - stripes_bg
+    - stripes!
+
+gloss:
+- fill:
+    image: ReStock/Assets/Resource/restock-fuel-vent-1.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [60, 128] ]
+    mask: metal_misc
+    invert_masks: True
+
+- curves:
+    points: [ [64, 110] ]
+    mask: color_secondary
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks:
+    - color_primary
+    - color_secondary
+
+metal:
+- fill:
+    color: white
+
+- fill:
+    color: black
+    masks:
+    - label
+    - stripes_bg
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    masks:
+    - color_primary
+    - color_secondary
