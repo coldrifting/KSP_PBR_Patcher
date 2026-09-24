@@ -1,0 +1,107 @@
+size: [256, 256]
+
+color_primary:
+- fill:
+    image: ReStock/Assets/Payload/restock-Size1to0ServiceModule.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [15, 128], [64, 240] ]
+    mask: color_primary
+
+- fill:
+    color: black
+    mask: color_primary
+    invert_masks: True
+
+color_secondary:
+- fill:
+    color: black
+
+diffuse:
+- fill:
+    image: ReStock/Assets/Payload/restock-Size1to0ServiceModule.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+    mask: triangle
+    invert_masks: True
+
+- saturation:
+    percent: 120
+    mask: triangle
+
+- curves:
+    points: [ [255, 220] ]
+    mask: paint
+
+- curves:
+    points: [ [64, 85] ]
+    mask: paint
+    invert_masks: True
+
+gloss:
+- fill:
+    image: ReStock/Assets/Payload/restock-Size1to0ServiceModule.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [10, 128], [30, 200] ]
+    mask: paint
+    invert_masks: True
+
+- curves:
+    points: [ [18, 128], [64, 230] ]
+    mask: paint
+
+- fill:
+    color: "#EEEEEE"
+    mask: triangle
+
+- blur:
+    radius: 20
+    mask: blur
+
+- noise:
+    intensity: 16
+    coverage: 50
+    mask: blur
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    mask: color_primary
+
+- fill:
+    color: "#EEEEEE"
+    mask: triangle
+
+metal:
+- fill:
+    color: white
+
+- fill:
+    color: black
+    mask: triangle
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    mask: color_primary
+
+- fill:
+    color: black
+    mask: triangle_edges
