@@ -1,11 +1,13 @@
 from typing import Any
 
 from data.texture.layer.base import Layer
+from data.texture.layer.blur import Blur
 from data.texture.layer.brightness import Brightness
 from data.texture.layer.copy import Copy
 from data.texture.layer.curves import Curves
 from data.texture.layer.fill import Fill
 from data.texture.layer.invert import Invert
+from data.texture.layer.noise import Noise
 from data.texture.layer.saturation import Saturation
 from utils.exceptions import AttributeInvalidError
 
@@ -37,6 +39,8 @@ class LayerFactory:
             masks.append(mask)
 
         match layer_type:
+            case "blur":
+                return Blur.from_yaml(yaml_layer, masks, group_type)
             case "brightness":
                 return Brightness.from_yaml(yaml_layer, masks, group_type)
             case "copy":
@@ -47,6 +51,8 @@ class LayerFactory:
                 return Fill.from_yaml(yaml_layer, masks, group_type)
             case "invert":
                 return Invert.from_yaml(yaml_layer, masks, group_type)
+            case "noise":
+                return Noise.from_yaml(yaml_layer, masks, group_type)
             case "saturation":
                 return Saturation.from_yaml(yaml_layer, masks, group_type)
             case _:

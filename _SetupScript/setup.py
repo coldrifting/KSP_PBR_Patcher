@@ -122,7 +122,7 @@ except (BaseException, KeyboardInterrupt, YAMLError) as e:
         warn("Process interrupted by user. Output may be incomplete. Exiting...")
         exit(1)
 
-    if not False: #is_debugger_attached():
+    if not is_debugger_attached():
         match e:
             case FileNotFoundError():
                 error(f"The file was not found: \r\n{e.filename}")

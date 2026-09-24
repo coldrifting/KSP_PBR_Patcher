@@ -88,7 +88,7 @@ class ConfigPartMaterialDef:
 
         main_tex: str | None = yaml.get("main_tex", None)
         if main_tex is None:
-            raise ArgumentException("Missing main_tex value for material")
+            raise ArgumentException(f"Missing main_tex value for material {name}")
 
         bump_map: str | None = yaml.get("bump_map", None)
         emissive: str | None = yaml.get("emissive", None)
@@ -100,7 +100,7 @@ class ConfigPartMaterialDef:
         if tc1_name is not None:
             tc1_color = TeamColorDb.get(tc1_name, None)
             if tc1_color is None:
-                raise AttributeInvalidError(f"Team Color 1 preset {tc1_name} not found for material")
+                raise AttributeInvalidError(f"Team Color 1 preset {tc1_name} not found for material {name}")
 
             tc1 = (tc1_name, tc1_color)
 
