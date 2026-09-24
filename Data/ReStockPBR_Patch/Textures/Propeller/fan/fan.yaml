@@ -1,0 +1,105 @@
+size: [512, 512]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: white
+    mask: color_secondary
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Propellers/Assets/fan_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [64, 160], [128, 225] ]
+    mask: color_primary
+
+- curves:
+    points: [ [64, 120] ]
+    mask: color_secondary
+
+- curves:
+    points: [ [64, 85] ]
+    mask: stripe_1
+
+- blur:
+    radius: 10
+    mask: metal
+
+- noise:
+    intensity: 14
+    coverage: 45
+    mask: metal
+
+- curves:
+    points: [ [128, 75] ]
+    mask: metal
+
+- curves:
+    points: [ [64, 75] ]
+    mask: chevron
+
+gloss:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Propellers/Assets/fan_diffuse.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [12, 128], [36, 204] ]
+    mask: color_primary
+
+- curves:
+    points: [ [64, 128] ]
+    mask: color_secondary
+
+- blur:
+    radius: 10
+    mask: metal
+
+- noise:
+    intensity: 14
+    coverage: 45
+    mask: metal
+
+- curves:
+    points: [ [26, 128], [100, 235] ]
+    mask: metal
+
+- curves:
+    points: [ [64, 110] ]
+    mask: chevron
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks: 
+    - color_primary
+    - color_secondary
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    masks: 
+    - color_primary
+    - color_secondary

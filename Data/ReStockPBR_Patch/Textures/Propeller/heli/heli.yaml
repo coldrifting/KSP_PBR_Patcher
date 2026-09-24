@@ -1,0 +1,84 @@
+size: [512, 1024]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: white
+    masks: 
+    - color_secondary_1
+    - color_secondary_2
+    - color_secondary_3
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Propellers/Assets/copterBlades_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [64, 150] ]
+    mask: color_primary
+
+- curves:
+    points: [ [64, 85] ]
+    masks: 
+    - color_secondary_1
+    - color_secondary_3
+
+- curves:
+    points: [ [64, 70] ]
+    mask: color_secondary_2
+
+- curves:
+    points: [ [64, 75] ]
+
+gloss:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Propellers/Assets/copterBlades_diffuse.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [12, 128], [40, 210] ]
+    mask: misc
+    invert_masks: True
+
+- curves:
+    points: [ [64, 128] ]
+    mask: color_primary
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks: 
+    - color_primary
+    - color_secondary_1
+    - color_secondary_2
+    - color_secondary_3
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    masks: 
+    - color_primary
+    - color_secondary_1
+    - color_secondary_2
+    - color_secondary_3
