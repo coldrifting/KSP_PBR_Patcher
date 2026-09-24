@@ -1,3 +1,5 @@
+import errno
+import os
 from io import BytesIO
 from pathlib import Path
 from typing import Tuple
@@ -28,8 +30,7 @@ class Layer:
         for mask in self.masks:
             mask_image_path = Path(config_path / "Masks" / Path(mask[0] + ".svg"))
             if not mask_image_path.exists():
-                raise FileNotFoundError(f"The following mask file was not found:\r\n"
-                                        f"{mask_image_path}")
+                raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), mask_image_path)
 
             mask_image_as_png = Image.open(BytesIO(cairosvg.svg2png(url=mask_image_path)))
             if mask[1]:
