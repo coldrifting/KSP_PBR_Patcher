@@ -1,0 +1,5 @@
+# Launch Escape System Jr. - Remove unneeded transform in order to remove ModulePartVariants
+source: "ReStockPlus/Assets/Engine/restock-engine-les-2"
+operations:
+  - transform_remove:
+      transform_name: "LES_White"

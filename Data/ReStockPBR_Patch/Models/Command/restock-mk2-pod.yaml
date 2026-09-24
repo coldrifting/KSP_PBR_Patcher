@@ -1,0 +1,5 @@
+# Mk2 pod - Remove unneeded transform in order to remove ModulePartVariants
+source: "ReStock/Assets/Command/restock-mk2-pod"
+operations:
+  - transform_remove:
+      transform_name: "Mk2PodWhite"

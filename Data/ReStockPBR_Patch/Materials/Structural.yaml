@@ -1,0 +1,59 @@
+materials:
+- name: restock-pbr-patch-launchclamp-1
+  main_tex:       ReStockPBR_Patch/Assets/Structural/restock-launchclamp-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Structural/restock-launchclamp-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Structural/restock-launchclamp-1-tc
+  bump_map:                ReStock/Assets/Structural/restock-launchclamp-1-n
+  tc1: darkRed
+  tc2: metalBasic
+
+- name: restock-pbr-patch-grip-pads-1
+  main_tex:       ReStockPBR_Patch/Assets/Structural/grip-pads-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Structural/grip-pads-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Structural/grip-pads-1-tc
+  bump_map: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/gripPads_nrm
+  tc1: metalBasic
+  tc2: blank
+
+parts:
+- name: launchClamp1
+  after: ReStock
+  materials:
+  - zone: main
+    name: restock-pbr-patch-launchclamp-1
+    target_material: restock-launchclamp-1
+
+- name: sGripStrip
+  after: ReStock
+  materials:
+  - zone: main
+    name: restock-pbr-patch-grip-pads-1
+    target_material: lambert1
+
+- name: lGripStrip
+  after: ReStock
+  materials:
+  - zone: main
+    name: restock-pbr-patch-grip-pads-1
+    target_material: lambert1
+
+- name: sGripPad
+  after: ReStock
+  materials:
+  - zone: main
+    name: restock-pbr-patch-grip-pads-1
+    target_material: lambert1
+
+- name: mGripPad
+  after: ReStock
+  materials:
+  - zone: main
+    name: restock-pbr-patch-grip-pads-1
+    target_material: lambert1
+
+- name: lGripPad
+  after: ReStock
+  materials:
+  - zone: main
+    name: restock-pbr-patch-grip-pads-1
+    target_material: lambert1

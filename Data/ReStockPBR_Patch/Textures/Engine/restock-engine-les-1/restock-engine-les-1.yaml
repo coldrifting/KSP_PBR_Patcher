@@ -1,0 +1,113 @@
+size: [512, 512]
+
+color_primary:
+- fill:
+    image: ReStock/Assets/Engine/restock-engine-les-1.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- fill:
+    image: stripe_removal.png
+
+- curves:
+    points: [ [0, 16], [164, 255] ]
+    mask: color_primary
+
+- fill:
+    color: black
+    mask: color_primary
+    invert_masks: True
+
+color_secondary:
+- fill:
+    image: ReStock/Assets/Engine/restock-engine-les-1.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- fill:
+    image: stripe_removal.png
+
+- curves:
+    points: [ [0, 16], [164, 255] ]
+    mask: color_secondary
+
+- fill:
+    color: black
+    mask: color_secondary
+    invert_masks: True
+
+diffuse:
+- fill:
+    image: ReStock/Assets/Engine/restock-engine-les-1.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- fill:
+    image: stripe_removal.png
+
+- curves:
+    points: [ [255, 180] ]
+    mask: color_primary
+
+- curves:
+    points: [ [32, 64] ]
+    mask: metal_1
+
+- curves:
+    points: [ [48, 64] ]
+    masks: 
+    - metal_2
+    - metal_3
+
+gloss:
+- fill:
+    image: ReStock/Assets/Engine/restock-engine-les-1.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- fill:
+    image: stripe_removal_gloss.png
+
+- curves:
+    points: [ [14, 64], [128, 240] ]
+    masks: 
+    - color_primary
+    - metal_1
+    - metal_2
+    - metal_4!
+
+- curves:
+    points: [ [64, 110] ]
+    mask: metal_4
+
+- curves:
+    points: [ [64, 85] ]
+    mask: metal_3
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    mask: color_primary
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    mask: color_primary

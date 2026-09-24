@@ -1,0 +1,109 @@
+size: [512, 512]
+
+color_primary:
+- fill:
+    image: ReStock/Assets/Coupling/restock-airlock-inflatable-1.dds
+    channels: rgb
+    mask: color_primary
+
+- curves:
+    points: [ [44, 160], [114, 236] ]
+    mask: color_primary
+
+color_secondary:
+- fill:
+    image: ReStock/Assets/Coupling/restock-airlock-inflatable-1.dds
+    channels: rgb
+    mask: color_secondary
+
+- curves:
+    points: [ [20, 128], [64, 230] ]
+    mask: color_secondary
+
+diffuse:
+- fill:
+    image: ReStock/Assets/Coupling/restock-airlock-inflatable-1.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+    mask: window
+    invert_masks: True
+
+- saturation:
+    percent: 120
+    mask: window
+
+- curves:
+    points: [ [64, 160] ]
+    mask: metal_1
+
+- curves:
+    points: [ [64, 96] ]
+    mask: metal_2
+
+- curves:
+    points: [ [64, 128] ]
+    mask: metal_3
+
+- curves:
+    points: [ [64, 85] ]
+    masks: 
+    - color_primary
+    - color_secondary
+
+gloss:
+- fill:
+    image: ReStock/Assets/Coupling/restock-airlock-inflatable-1.dds
+    channels: a
+
+- curves:
+    points: [ [64, 128] ]
+    mask: metal_4
+
+- curves:
+    points: [ [40, 128], [90, 192], [255, 225] ]
+    mask: metal_5
+
+- curves:
+    points: [ [40, 128], [128, 232] ]
+    mask: metal_2
+
+- curves:
+    points: [ [30, 128], [100, 230] ]
+    masks:
+    - metal_1
+    - metal_4
+    - color_secondary
+
+- curves:
+    points: [ [10, 128], [27, 207], [64, 235] ]
+    mask: color_primary
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks: 
+    - color_primary
+    - color_secondary
+
+metal:
+- fill:
+    color: white
+
+- fill:
+    color: black
+    mask: window
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    masks: 
+    - color_primary
+    - color_secondary

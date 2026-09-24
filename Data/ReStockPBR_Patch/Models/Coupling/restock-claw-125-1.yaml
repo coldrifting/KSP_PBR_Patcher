@@ -1,0 +1,8 @@
+# 1.25m Claw - Remove unneeded transforms in order to remove ModulePartVariants
+source: "ReStock/Assets/Coupling/restock-claw-125-1"
+operations:
+- transform_remove:
+    transform_name: "Accents_black"
+
+- transform_remove:
+    transform_name: "Accents_yellow"
