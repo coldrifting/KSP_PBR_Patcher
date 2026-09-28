@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1024"
+   height="1024"
+   viewBox="0 0 1024 1024"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1" /><rect
+     style="display:inline;fill:#000000;fill-opacity:1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+     id="rect16"
+     width="1024"
+     height="1024"
+     x="0"
+     y="0" /><path
+     style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+     d="M 527,421 H 629 V 0 H 254 v 71 h 62 v 65 h 211 z"
+     id="path17" /><path
+     style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+     d="M -1.2607,816.00001 V 695 l 17,-17 195,-27 206,-24 38,-3 68,-4 h 123 v 196 z"
+     id="path18" /><path
+     style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"
+     d="m 712,565 v 41 H 824 V 815 H 712 v 41 H 832 V 750 c 0,-86 70,-141 70,-141 V 567 H 771 V 285 H 740 L 738,0 h 286 V 1024 H 689 V 856 H 656 V 565 Z"
+     id="path1" /><rect
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+     id="rect14"
+     width="106"
+     height="77"
+     x="1565"
+     y="555"
+     transform="translate(-1244,-8)" /><path
+     id="rect36"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+     d="m 17.369141,59 -4.328125,8.41992 c -3.5906538,6.98416 -4.2274471,9.04718 -3.7324222,12.09766 0.36345,2.23968 17.1095702,32.6707 42.8281252,77.83008 23.226662,40.78385 42.935165,75.15433 43.796875,76.3789 0.86171,1.22458 3.366406,3.1375 5.566406,4.25 3.67331,1.85751 5.89889,2.02272 27.25,2.02344 H 152 V 237.5 235 H 182.5 213 V 147 59 h -97.81445 z" /></svg>

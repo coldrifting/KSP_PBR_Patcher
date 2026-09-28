@@ -1,0 +1,150 @@
+size: [1024, 1024]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: white
+    mask: color_secondary
+
+diffuse:
+- fill:
+    image: ReStock/Assets/Resource/restock-scanners-2.dds
+    channels: rgb
+
+- saturation:
+    percent: 120
+    mask: saturate
+
+- saturation:
+    percent: 0
+    mask: saturate
+    invert_masks: True
+
+- curves:
+    points: [ [128, 192] ]
+    mask: metal_1
+
+- blur:
+    radius: 15
+    mask: blur
+
+- noise:
+    intensity: 10
+    coverage: 50
+    mask: blur
+
+- brightness:
+    percent: 105
+    mask: inner
+
+- brightness:
+    percent: 70
+    mask: metal_2
+
+- curves:
+    points: [ [56, 128] ]
+    mask: metal_3
+
+- fill:
+    color: "#898989"
+    mask: lines_outer
+
+- fill:
+    color: "#535353"
+    mask: lines_inner
+
+- fill:
+    color: "#878787"
+    mask: text_bg
+
+- fill:
+    color: "#DDDDDD"
+    mask: text
+
+gloss:
+- fill:
+    image: ReStock/Assets/Resource/restock-scanners-2.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [24, 64], [128, 216] ]
+
+- curves:
+    points: [ [64, 100] ]
+    mask: inner
+
+- curves:
+    points: [ [14, 64], [100, 220] ]
+    mask: metal_2
+
+- fill:
+    color: "#DDDDDD"
+    mask: lines_outer
+
+- fill:
+    color: "#0E0E0E"
+    mask: lines_inner
+
+- curves:
+    points: [ [64, 108] ]
+    mask: metal_5
+
+- curves:
+    points: [ [64, 100] ]
+    mask: wires
+
+- curves:
+    points: [ [64, 128] ]
+    masks:
+    - metal_3
+    - metal_4
+
+- curves:
+    points: [ [64, 105] ]
+    mask: metal_6
+
+- fill:
+    color: "#CCCCCC"
+    mask: text_bg
+
+- fill:
+    color: "#EEEEEE"
+    mask: text
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks:
+    - color_primary
+    - color_secondary
+
+metal:
+- fill:
+    color: white
+
+- fill:
+    color: black
+    masks: 
+    - wires
+    - label
+    - lines_outer
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    masks:
+    - color_primary
+    - color_secondary
