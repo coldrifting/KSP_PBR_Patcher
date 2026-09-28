@@ -1,0 +1,64 @@
+size: [256, 256]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: black
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Controllers/roboController_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 120
+    mask: saturate
+
+- saturation:
+    percent: 0
+    mask: saturate
+    invert_masks: True
+
+- curves:
+    points: [ [128, 115] ]
+
+gloss:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Controllers/roboController_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [64, 107] ]
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    mask: color_primary
+
+metal:
+- fill:
+    color: white
+
+- fill:
+    color: black
+    masks: 
+    - saturate
+    - screen
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    mask: color_primary

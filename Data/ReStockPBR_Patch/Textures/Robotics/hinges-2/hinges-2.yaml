@@ -1,0 +1,60 @@
+size: [512, 512]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: white
+    mask: color_secondary
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Assets/hinges_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [40, 128], [90, 190] ]
+    mask: color_primary
+    invert_masks: True
+
+gloss:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Assets/hinges_diffuse.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [40, 128], [90, 190] ]
+
+- curves:
+    points: [ [18, 128], [31, 169], [90, 215] ]
+    mask: color_primary
+    invert_masks: True
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    mask: color_primary
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    mask: color_primary

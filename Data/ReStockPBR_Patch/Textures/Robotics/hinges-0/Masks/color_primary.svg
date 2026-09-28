@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <rect
+     style="fill:#FFFFFF;fill-opacity:1;stroke-width:3;stroke-linejoin:bevel"
+     id="rect1"
+     width="512"
+     height="512"
+     x="0"
+     y="0" />
+  <path
+     style="fill:#000000;stroke-width:3;stroke-linejoin:bevel;fill-opacity:1"
+     d="m 262.25193,512 6.58098,-28.51757 V 370.17995 l 4.93573,-4.93573 14.29812,-3.83117 8.69314,-2.32932 3.55201,-5.68527 4.93573,-8.33591 2.85176,-20.18166 v -45.84747 l 4.23682,-7.33839 v -37.63162 l 3.3313,-6.69066 3.72922,-6.36161 7.34876,-2.85176 3.94859,-0.32905 28.40788,10.09084 26.21423,21.05912 16.02639,27.75854 5.21412,30.07886 v 5.1188 l -5.1188,27.76561 -15.97686,27.14514 -25.7491,21.40589 -29.62699,10.08248 c 0,0 -21.25077,1.95804 -21.25077,17.60411 l 0,23.65651 -7.27465,27.14937 v 7.90664 l -2.81744,10.51483 v 17.87124 L 293.56806,512 Z"
+     id="path1" />
+  <rect
+     style="fill:#000000;stroke-width:3;stroke-linejoin:bevel;fill-opacity:1"
+     id="rect1"
+     width="77"
+     height="398"
+     x="435"
+     y="0" />
+  <circle
+     style="fill:#000000;fill-opacity:1;stroke-width:3;stroke-linejoin:bevel"
+     id="path1"
+     cx="98"
+     cy="124.5"
+     r="6.5" />
+  <circle
+     style="fill:#000000;fill-opacity:1;stroke-width:3;stroke-linejoin:bevel"
+     id="path2"
+     cx="125.75206"
+     cy="124.5"
+     r="6.5" />
+  <circle
+     style="fill:#000000;stroke-width:3;stroke-linejoin:bevel;fill-opacity:1"
+     id="path3"
+     cx="125.5"
+     cy="96.5"
+     r="6.5" />
+  <rect
+     style="fill:#000000;stroke-width:3;stroke-linejoin:bevel;fill-opacity:1"
+     id="rect3"
+     width="17"
+     height="6"
+     x="165"
+     y="165" />
+  <path
+     id="rect4"
+     style="fill:#000000;stroke-width:3;stroke-linejoin:bevel;fill-opacity:1"
+     d="M 73 228 L 73 234 L 67 234 L 67 239 L 73 239 L 73 245 L 78 245 L 78 239 L 84 239 L 84 234 L 78 234 L 78 228 L 73 228 z " />
+  <path
+     id="rect6"
+     style="stroke-width:3;stroke-linejoin:bevel;fill:#000000;fill-opacity:1"
+     d="m 140,393 c 0,0 0,-2 2,-2 h 1 c 2,0 2,2 2,2 v 44 h -5 z" />
+  <path
+     id="path6"
+     style="stroke-width:3;stroke-linejoin:bevel;fill:#000000;fill-opacity:1"
+     d="m 150,393 c 0,0 0,-2 2,-2 h 1 c 2,0 2,2 2,2 v 44 h -5 z" />
+  <path
+     id="path7"
+     style="stroke-width:3;stroke-linejoin:bevel;fill:#000000;fill-opacity:1"
+     d="m 160,393 c 0,0 0,-2 2,-2 h 1 c 2,0 2,2 2,2 v 44 h -5 z" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+     id="path8"
+     cx="-41"
+     cy="408.5"
+     r="20"
+     transform="scale(-1,1)" />
+</svg>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1" /><rect
+   style="fill:#000000;stroke-width:3;stroke-linejoin:bevel"
+   id="rect6"
+   width="512"
+   height="512"
+   x="0"
+   y="0" />
+   <path
+   style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3;stroke-linejoin:bevel"
+   d="m 329.319,217.763 29.483,10.978 24.889,20.203 16.655,27.502 5.981,31.713 -6.005,31.737 -16.677,27.479 -24.856,20.166 -29.366,10.96 L 330,432 l 44.35965,-23.339 31.326,-25.141 21.341,-34.697 7.989,-40.605 -7.9,-40.649 -21.319,-34.807 -31.414,-25.257 L 329,186 Z"
+   id="path6" />
+  <path
+   style="display:inline;fill:#ffffff;stroke-width:3;stroke-linejoin:bevel;fill-opacity:1"
+   d="m 263,351 29,-29 v -98 h -29 z"
+   id="path1" />
+  <path
+   style="display:inline;fill:#ffffff;stroke-width:3;stroke-linejoin:bevel;fill-opacity:1"
+   d="M 156,126 186,96 V 0 h -30 z"
+   id="path2" />
+     <text
+   xml:space="preserve"
+   style="font-weight:bold;font-size:40.8086px;line-height:55.4997px;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke-width:2.99999;stroke-linejoin:bevel"
+   x="283.81165"
+   y="220.20757"
+   id="text1"
+   transform="matrix(0,0.98191345,1.0184197,0,0,0)"><tspan
+     id="tspan1"
+     x="283.81165"
+     y="220.20757"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:2.99999">G-11</tspan></text>
+   </svg>
