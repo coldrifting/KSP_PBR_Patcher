@@ -1,0 +1,123 @@
+size: [1024, 512]
+
+color_primary:
+- fill:
+    image: ReStock/Assets/Structural/restock-launchclamp-1.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [30, 128], [90, 216] ]
+
+- curves:
+    points: [ [64, 0], [192, 255] ]
+
+- fill:
+    color: black
+    mask: color_primary
+    invert_masks: True
+
+color_secondary:
+- fill:
+    image: ReStock/Assets/Structural/restock-launchclamp-1.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [64, 110] ]
+    mask: color_primary
+    invert_masks: True
+
+- curves:
+    points: [ [64, 164], [128, 220] ]
+    mask: metal_2
+
+- curves:
+    points: [ [64, 95] ]
+    mask: metal_3
+
+- curves:
+    points: [ [64, 0], [192, 255] ]
+
+- fill:
+    color: black
+    mask: color_secondary
+    invert_masks: True
+
+diffuse:
+- fill:
+    image: ReStock/Assets/Structural/restock-launchclamp-1.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+    mask: clamps
+    invert_masks: True
+
+- curves:
+    points: [ [64, 110] ]
+    mask: color_primary
+
+- curves:
+    points: [ [64, 75] ]
+    mask: color_secondary
+
+- curves:
+    points: [ [64, 85] ]
+    mask: metal_1
+
+- curves:
+    points: [ [64, 128] ]
+    mask: metal_2
+
+gloss:
+- fill:
+    image: ReStock/Assets/Structural/restock-launchclamp-1.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [30, 128], [90, 216] ]
+    mask: color_primary
+
+- curves:
+    points: [ [64, 110] ]
+    mask: color_primary
+    invert_masks: True
+
+- curves:
+    points: [ [64, 164], [128, 220] ]
+    mask: metal_2
+
+- curves:
+    points: [ [64, 95] ]
+    mask: metal_3
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks:
+    - color_primary
+    - color_secondary
+
+metal:
+- fill:
+    color: white
+    mask: concrete
+    invert_masks: True
+
+metal_alt:
+- fill:
+    color: black
+    masks:
+    - color_primary
+    - color_secondary
