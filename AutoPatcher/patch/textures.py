@@ -11,7 +11,7 @@ def patch_textures(patch_data_texture_dir: Path, output_mod_asset_dir: Path, gam
     header("Processing textures...")
     for asset in patch_data_texture_dir.glob("**/*.yaml"):
         asset_name = asset.name.rstrip(".yaml")
-        asset_sub_path = str(asset.parent.parent.relative_to(patch_data_texture_dir)).rstrip(".yaml")
+        asset_sub_path = asset.parent.parent.relative_to(patch_data_texture_dir)
         asset_output_subdir = output_mod_asset_dir / asset_sub_path
         asset_relative_path = str(Path(asset_sub_path) / Path(asset_name))
 
