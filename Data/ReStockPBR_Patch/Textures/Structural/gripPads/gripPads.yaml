@@ -1,0 +1,73 @@
+size: [1024, 1024]
+
+color_primary:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/gripPads_diffuse.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- fill:
+    image: stripe_removal_gloss.png
+    channels: rgba
+
+- curves:
+    points: [ [16, 128], [35, 192], [84, 235] ]
+
+- curves:
+    points: [ [64, 0], [192, 255] ]
+
+color_secondary:
+- copy:
+    group: color_primary
+
+- fill:
+    color: black
+    mask: color_secondary
+    invert_masks: True
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/gripPads_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- fill:
+    image: stripe_removal.png
+    channels: rgba
+
+- curves:
+    points: [ [65, 105] ]
+
+gloss:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/gripPads_diffuse.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- fill:
+    image: stripe_removal_gloss.png
+    channels: rgba
+
+- curves:
+    points: [ [16, 128], [35, 192], [84, 235] ]
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- fill:
+    color: black
