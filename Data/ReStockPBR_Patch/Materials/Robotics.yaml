@@ -36,65 +36,65 @@ materials:
   tc1: metalBasic
   tc2: darkRed
 
-- name: restock-pbr-patch-rotors-1-a
-  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-1-a
-  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-1-m
-  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-1-tc
+- name: restock-pbr-patch-rotor-1-a
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotor-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotor-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotor-1-tc
   bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/Rotor_01_normal
   tc1: metalBasic
   tc2: argonBlue
 
-- name: restock-pbr-patch-rotors-1-b
-  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-1-a
-  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-1-m
-  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-1-tc
+- name: restock-pbr-patch-rotor-1-b
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotor-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotor-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotor-1-tc
   bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/Rotor_01_normal
   tc1: metalBasic
   tc2: electricalYellow
 
-- name: restock-pbr-patch-rotors-2
-  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-2-a
-  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-2-m
-  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-2-tc
+- name: restock-pbr-patch-rotor-2
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotor-2-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotor-2-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotor-2-tc
   bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/Rotor_03_normal
   tc1: metalBasic
   tc2: lithiumRed
 
-- name: restock-pbr-patch-rotors-3
-  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-3-a
-  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-3-m
-  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-3-tc
+- name: restock-pbr-patch-rotor-engine-1
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotor-engine-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotor-engine-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotor-engine-1-tc
   tc1: porkjetWhite
   tc2: porkjetBlack
 
-- name: restock-pbr-patch-rotors-4
-  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotors-4-a
-  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotors-4-m
-  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotors-4-tc
+- name: restock-pbr-patch-rotor-engine-2
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotor-engine-2-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotor-engine-2-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotor-engine-2-tc
   bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/RotorEngine_03_normal
   tc1: porkjetWhite
   tc2: porkjetBlack
 
-- name: restock-pbr-patch-servo-1-a
-  main_tex:       ReStockPBR_Patch/Assets/Robotics/servo-1-a
-  metal_map:      ReStockPBR_Patch/Assets/Robotics/servo-1-m
-  team_color_map: ReStockPBR_Patch/Assets/Robotics/servo-1-tc
+- name: restock-pbr-patch-roto-servo-1-a
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-tc
   bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/rotoServos_nrm
   tc1: porkjetWhite
   tc2: argonBlue
 
-- name: restock-pbr-patch-servo-1-b
-  main_tex:       ReStockPBR_Patch/Assets/Robotics/servo-1-a
-  metal_map:      ReStockPBR_Patch/Assets/Robotics/servo-1-m
-  team_color_map: ReStockPBR_Patch/Assets/Robotics/servo-1-tc
+- name: restock-pbr-patch-roto-servo-1-b
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-tc
   bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/rotoServos_nrm
   tc1: porkjetWhite
   tc2: electricalYellow
 
-- name: restock-pbr-patch-servo-1-c
-  main_tex:       ReStockPBR_Patch/Assets/Robotics/servo-1-a
-  metal_map:      ReStockPBR_Patch/Assets/Robotics/servo-1-m
-  team_color_map: ReStockPBR_Patch/Assets/Robotics/servo-1-tc
+- name: restock-pbr-patch-roto-servo-1-c
+  main_tex:       ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-a
+  metal_map:      ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-m
+  team_color_map: ReStockPBR_Patch/Assets/Robotics/rotor-servo-1-tc
   bump_map: SquadExpansion/Serenity/Parts/Robotics/Assets/rotoServos_nrm
   tc1: porkjetWhite
   tc2: lithiumRed
@@ -157,11 +157,11 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-1-a
+    name: restock-pbr-patch-rotor-1-a
     target_material: Rotor_01_Diff
 
   - zone: main
-    name: restock-pbr-patch-rotors-1-a
+    name: restock-pbr-patch-rotor-1-a
     target_material: Rotor_01_Diff 1
 
 - name: rotor_01
@@ -169,11 +169,11 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-1-a
+    name: restock-pbr-patch-rotor-1-a
     target_material: Rotor_01_diffuse_color
 
   - zone: main
-    name: restock-pbr-patch-rotors-1-a
+    name: restock-pbr-patch-rotor-1-a
     target_material: Rotor_01_Spec
 
 - name: piston_02
@@ -181,7 +181,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-1-a
+    name: restock-pbr-patch-rotor-1-a
     target_material: Rotor_01_diffuse_D
 
 - name: piston_04
@@ -189,7 +189,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-1-a
+    name: restock-pbr-patch-rotor-1-a
     target_material: Rotor_01_Diff
 
 - name: rotor_02s
@@ -197,11 +197,11 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-1-b
+    name: restock-pbr-patch-rotor-1-b
     target_material: Rotor_01_Diff 1
 
   - zone: main
-    name: restock-pbr-patch-rotors-1-b
+    name: restock-pbr-patch-rotor-1-b
     target_material: Rotor_02_Diff
 
 - name: rotor_02
@@ -209,11 +209,11 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-1-b
+    name: restock-pbr-patch-rotor-1-b
     target_material: Rotor_02_diffuse_color
 
   - zone: main
-    name: restock-pbr-patch-rotors-1-b
+    name: restock-pbr-patch-rotor-1-b
     target_material: Rotor_02_Spec
 
 - name: piston_01
@@ -221,7 +221,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-1-b
+    name: restock-pbr-patch-rotor-1-b
     target_material: Rotor_01_diffuse_D
 
 - name: piston_03
@@ -229,7 +229,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-1-b
+    name: restock-pbr-patch-rotor-1-b
     target_material: Rotor_01_Diff
 
 - name: rotor_03s
@@ -237,7 +237,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-2
+    name: restock-pbr-patch-rotor-2
     target_material: Rotor_03
 
 - name: rotor_03
@@ -245,7 +245,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-2
+    name: restock-pbr-patch-rotor-2
     target_material: Hinge_03
 
 - name: size0_RotorEngine_02
@@ -253,7 +253,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-3
+    name: restock-pbr-patch-rotor-engine-1
     target_material: helicopterRotor_diffuse
 
 - name: RotorEngine_02
@@ -261,7 +261,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-3
+    name: restock-pbr-patch-rotor-engine-1
     target_material: helicopterRotor_diffuse
 
 - name: RotorEngine_03
@@ -269,7 +269,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-rotors-4
+    name: restock-pbr-patch-rotor-engine-2
     target_material: RotorEngine_01
 
 - name: rotoServo_00
@@ -277,7 +277,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-servo-1-a
+    name: restock-pbr-patch-roto-servo-1-a
     target_material: rotoServos_diffuse
 
 - name: rotoServo_02
@@ -285,7 +285,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-servo-1-b
+    name: restock-pbr-patch-roto-servo-1-b
     target_material: rotoServos_diffuse
 
 - name: rotoServo_03
@@ -293,7 +293,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-servo-1-b
+    name: restock-pbr-patch-roto-servo-1-b
     target_material: rotoServos_diffuse
 
 - name: rotoServo_04
@@ -301,7 +301,7 @@ parts:
   remove_part_variants: True
   materials:
   - zone: main
-    name: restock-pbr-patch-servo-1-c
+    name: restock-pbr-patch-roto-servo-1-c
     target_material: rotoServos_diffuse
 
 - name: controller1000

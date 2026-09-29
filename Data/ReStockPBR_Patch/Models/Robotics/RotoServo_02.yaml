@@ -1,0 +1,10 @@
+source: "SquadExpansion/Serenity/Parts/Robotics/Assets/RotoServo_02"
+operations:
+  - mesh_uvs_edit:
+      transform_name: "Rotor"
+      uvs: {
+        832: { x: 0.148072, y: 0.615317},
+        833: { x: 0.007412, y: 0.61534},
+        834: { x: 0.007391, y: 0.582181},
+        835: { x: 0.148051, y: 0.582134}
+      }

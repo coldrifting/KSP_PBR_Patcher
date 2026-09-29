@@ -1,0 +1,81 @@
+size: [1024, 1024]
+
+color_primary:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Assets/RotorEngine_03_diffuse.dds
+    channels: rgb
+
+- curves:
+    points: [ [0, 64], [155, 255] ]
+
+- fill:
+    color: black
+    mask: color_primary
+    invert_masks: True
+
+color_secondary:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Assets/RotorEngine_03_diffuse.dds
+    channels: rgb
+
+- curves:
+    points: [ [64, 142], [240, 0] ]
+    mask: metal_top
+
+- curves:
+    points: [ [0, 64], [128, 255] ]
+
+- fill:
+    color: black
+    mask: color_secondary
+    invert_masks: True
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Assets/RotorEngine_03_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [255, 200] ]
+
+- curves:
+    points: [ [64, 80] ]
+    mask: color_secondary
+
+- curves:
+    points: [ [64, 135], [192, 192] ]
+    mask: metal_top
+
+gloss:
+- copy:
+     group: diffuse
+
+- curves:
+    points: [ [64, 120] ]
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks: 
+    - color_primary
+    - color_secondary
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    masks: 
+    - color_primary
+    - color_secondary

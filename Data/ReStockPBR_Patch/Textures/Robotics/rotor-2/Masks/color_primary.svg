@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1024"
+   height="1024"
+   viewBox="0 0 1024 1024"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <rect
+     style="fill:#000000;fill-opacity:1;stroke-width:2;stroke-linejoin:bevel"
+     id="rect13"
+     width="1024"
+     height="1024"
+     x="0"
+     y="0" />
+  <path
+     id="path2"
+     style="fill:#ffffff;stroke-width:2;stroke-linejoin:bevel;fill-opacity:1"
+     d="M 178 0 L 178 536 L 448 536 L 448 521 L 496 521 L 496 536 L 607 536 L 607 0 L 496 0 L 496 40 L 447 40 L 447 0 L 178 0 z M 447 59 L 496 59 L 496 82 L 447 82 L 447 59 z M 447 101 L 496 101 L 496 124 L 448 124 L 447 101 z M 448 143 L 496 143 L 496 166 L 448 166 L 448 143 z M 448 185 L 496 185 L 496 208 L 448 208 L 448 185 z M 448 227 L 496 227 L 496 250 L 448 250 L 448 227 z M 448 269 L 496 269 L 496 293 L 448 293 L 448 269 z M 448 312 L 496 312 L 496 335 L 448 335 L 448 312 z M 448 354 L 496 354 L 496 377 L 448 377 L 448 354 z M 448 396 L 496 396 L 496 419 L 448 419 L 448 396 z M 448 438 L 496 438 L 496 461 L 448 461 L 448 438 z M 448 480 L 496 480 L 496 502 L 448 502 L 448 480 z " />
+  <path
+     style="fill:#ffffff;stroke-width:2;stroke-linejoin:bevel"
+     d="M 0,536 H 170 V 0 H 0 Z"
+     id="path1" />
+</svg>

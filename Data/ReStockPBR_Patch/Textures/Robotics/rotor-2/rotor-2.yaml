@@ -1,0 +1,55 @@
+size: [1024, 1024]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: white
+    mask: color_secondary
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Assets/Rotor_03_diffuse_plain.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [64, 128] ]
+    mask: metal_1
+
+gloss:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Assets/Rotor_03_diffuse_plain.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [6, 128], [17, 204], [39, 229], [83, 245] ]
+    mask: metal_2
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    mask: color_primary
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    mask: color_primary

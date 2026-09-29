@@ -1,0 +1,24 @@
+source: "SquadExpansion/Serenity/Parts/Robotics/Assets/RotoServo_04"
+operations:
+  - mesh_vertices_edit:
+      transform_name: "Rotor"
+      vertices: {
+        968: { x: 0,  y: -0.201377, z: -0.625 },
+        969: { x: 0,  y:  0.006696, z: -0.625 }
+      }
+
+  - mesh_uvs_edit:
+      transform_name: "Rotor"
+      uvs: {
+        966: { x: 0.867019, y: 0.207718},
+        967: { x: 0.948444, y: 0.207788},
+        968: { x: 0.94861,  y: 0.01699},
+        969: { x: 0.867185, y: 0.016923}
+      }
+
+  - mesh_triangles_remove:
+      transform_name: "Rotor"
+      triangles: [
+        266,
+        267
+      ]

@@ -1,0 +1,55 @@
+size: [1024, 1024]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: white
+    mask: color_secondary
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Robotics/Assets/rotoServos_diffuse_plain.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [50, 128], [100, 192] ]
+    mask: color_primary
+    invert_masks: True
+
+- curves:
+    points: [ [64, 72] ]
+    mask: color_primary
+
+gloss:
+- copy:
+    group: diffuse
+
+- curves:
+    points: [ [60, 128], [128, 192] ]
+
+gloss_alt:
+- copy:
+    group: gloss
+
+- brightness:
+    percent: 50
+    mask: color_primary
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    mask: color_primary
