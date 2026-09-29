@@ -1,0 +1,53 @@
+size: [1024, 2048]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+color_secondary:
+- fill:
+    color: black
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/ROCArm_2_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [16, 64], [128, 228] ]
+    mask: metal_dark
+
+gloss:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/ROCArm_2_diffuse.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [12, 128], [35, 224], [64, 244] ]
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    mask: color_primary
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    mask: color_primary

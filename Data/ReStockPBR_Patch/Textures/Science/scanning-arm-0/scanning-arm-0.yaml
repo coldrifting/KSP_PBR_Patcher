@@ -1,0 +1,103 @@
+size: [2048, 2048]
+
+color_primary:
+- fill:
+    color: white
+    masks: 
+    - color_primary_1
+    - color_primary_2
+    - color_primary_3
+
+color_secondary:
+- fill:
+    color: white
+    masks: 
+    - color_secondary_1
+    - color_secondary_2
+
+diffuse:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/GenericParts_diffuse.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [50, 128] ]
+    mask: metal_dark_1
+
+- curves:
+    points: [ [64, 128] ]
+    masks: 
+    - color_secondary_1
+    - color_secondary_2
+
+- curves:
+    points: [ [128, 100] ]
+    mask: color_primary_1
+
+- curves:
+    points: [ [32, 128], [82, 200] ]
+    mask: color_primary_2
+
+- curves:
+    points: [ [128, 80] ]
+    mask: color_primary_3
+
+gloss:
+- fill:
+    image: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/GenericParts_diffuse.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [8, 128], [21, 197], [58, 229] ]
+    masks: 
+    - metal_dark_1
+    - metal_dark_2
+    - color_primary_1
+    - color_primary_3
+    - color_secondary_2
+
+- curves:
+    points: [ [32, 128], [64, 192], [140, 235] ]
+    masks: 
+    - metal_dark_1
+    - metal_dark_2
+    - color_primary_1
+    - color_primary_3
+    - color_secondary_2
+    invert_masks: True
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks: 
+    - color_primary_1
+    - color_primary_2
+    - color_primary_3
+    - color_secondary_1
+    - color_secondary_2
+
+metal:
+- fill:
+    color: white
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    masks: 
+    - color_primary_1
+    - color_primary_2
+    - color_primary_3
+    - color_secondary_1
+    - color_secondary_2
