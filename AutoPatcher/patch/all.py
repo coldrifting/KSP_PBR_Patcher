@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+from time import sleep
 
 from yaml import YAMLError
 from yaml.parser import ParserError
@@ -14,8 +15,10 @@ from utils.exceptions import is_debugger_attached, CustomException
 from utils.printing import header, error, warn
 
 
-def patch_all(mod_name: str, patch_data_root_dir: Path, gamedata_dir: Path, texconv_path: Path | None):
+def patch_all(patch_data_root_dir: Path, gamedata_dir: Path, texconv_path: Path | None):
     try:
+        mod_name = patch_data_root_dir.name
+
         patch_data_asset_dir = patch_data_root_dir / "Assets"
         patch_data_patch_dir = patch_data_root_dir / "Patches"
         patch_data_material_dir = patch_data_root_dir / "Materials"
@@ -30,6 +33,7 @@ def patch_all(mod_name: str, patch_data_root_dir: Path, gamedata_dir: Path, texc
         compression_skipped = False
 
         header(f"Generating {mod_name}...")
+        sleep(0.5)
 
         copy_version_file(
             patch_data_root_dir=patch_data_root_dir,

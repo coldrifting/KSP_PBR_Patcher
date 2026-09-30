@@ -13,9 +13,7 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-for /f "delims=" %%f in ('dir "%~dp0Data" /ad /b') do (
-    python "%~dp0AutoPatcher\auto_patcher.py" --mod-name="%%f" --gamedata-folder="%KSP_GameData_Folder%" --texconv-path="%Texconv_Path%"
-)
+python "%~dp0AutoPatcher\auto_patcher.py" --gamedata-folder="%KSP_GameData_Folder%" --texconv-path="%Texconv_Path%"
 
 IF %ERRORLEVEL% NEQ 0 (
     PAUSE
