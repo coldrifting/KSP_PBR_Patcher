@@ -124,3 +124,5 @@ class ConfigTexture:
         albedo.save(albedo_path)
         metal.save(metal_path)
         tc.save(tc_path)
+
+        return albedo_path, metal_path, tc_path

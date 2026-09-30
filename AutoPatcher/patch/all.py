@@ -47,21 +47,15 @@ def patch_all(mod_name: str, patch_data_root_dir: Path, gamedata_dir: Path, texc
             patch_data_material_dir=patch_data_material_dir,
             output_mod_material_dir=output_mod_material_dir)
 
+        if texconv_path is None:
+            warn("Skipping texture compression...")
+            compression_skipped = True
+
         patch_textures(
             patch_data_texture_dir=patch_data_texture_dir,
             output_mod_asset_dir=output_mod_asset_dir,
-            gamedata_dir=gamedata_dir)
-
-        if texconv_path is not None:
-            # Lazy load the import
-            from patch.compression import compress
-
-            compress(
-                output_mod_asset_dir=output_mod_asset_dir,
-                texconv_path=texconv_path)
-        else:
-            warn("Skipping texture compression...")
-            compression_skipped = True
+            gamedata_dir=gamedata_dir,
+            texconv_path=texconv_path)
 
         patch_models(
             patch_data_model_dir=patch_data_model_dir,
@@ -72,7 +66,7 @@ def patch_all(mod_name: str, patch_data_root_dir: Path, gamedata_dir: Path, texc
             warn("Texture compression was skipped, \n"
                  "Parts WILL NOT look right in game unless you manually convert them to DDS! \n"
                  "Installing the texconv-py package and setting the config \n"
-                 "to point towards the texconv executable is HIGHLY recommended")
+                 "to point towards the location of a texconv executable is HIGHLY recommended")
 
         header("Done!")
     except (BaseException, KeyboardInterrupt, YAMLError) as e:
