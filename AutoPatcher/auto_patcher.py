@@ -5,7 +5,8 @@ import os
 import sys
 from pathlib import Path
 
-from utils.printing import error, warn
+from utils.printing import error, warn, header
+from utils.terminal_colors import TerminalColors
 from utils.texconv_locator import locate_texconv
 
 
@@ -48,7 +49,7 @@ parser = argparse.ArgumentParser(description="Creates a KSP mod that adds PBR su
 
 parser.add_argument("--mod-name",
                     type=str,
-                    required=True,
+                    required=False,
                     help="The name of a mod to patch, with it's assets located in the Mods folder")
 
 parser.add_argument("--gamedata-folder",
@@ -82,15 +83,74 @@ if not gamedata_dir.exists():
     error(f"Unable to find gamedata folder at provided path: {gamedata_dir}. Does it exist?")
     raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), gamedata_dir)
 
-patch_data_root_dir = Path(sys.argv[0]).parent.parent / "Data" / args.mod_name
-if not patch_data_root_dir.exists():
-    error(f"Unable to find {args.mod_name} patch files in the Data folder.\n"
-          f"Does {patch_data_root_dir} exist?")
-
 # Loaded last to give us time to check for imports
 from patch.all import patch_all
 
-patch_all(mod_name=args.mod_name,
-          patch_data_root_dir=patch_data_root_dir,
-          gamedata_dir=gamedata_dir,
-          texconv_path=texconv_path)
+if args.mod_name is not None:
+    patch_data_root_dir = Path(sys.argv[0]).parent.parent / "Data" / args.mod_name
+    if not patch_data_root_dir.exists():
+        error(f"Unable to find {args.mod_name} patch files in the Data folder.\n"
+              f"Does {patch_data_root_dir} exist?")
+
+    patch_all(patch_data_root_dir=patch_data_root_dir,
+              gamedata_dir=gamedata_dir,
+              texconv_path=texconv_path)
+
+else:
+    mods: list[str] = []
+    patch_mods_dir = Path(sys.argv[0]).parent.parent / "Data"
+    for mod_dir in patch_mods_dir.iterdir():
+        mods.append(mod_dir.name)
+
+    input_indices: list[int] = []
+
+    while not input_indices:
+        header("The following PBR patch mod generators were found: ")
+        for index, mod in enumerate(mods):
+            print(TerminalColors.CYAN + str(index + 1) + TerminalColors.ENDC + ": " + mod)
+        print("Input a range of numbers to select which patches you would like to generate (e.g. 1, 3-5): \n"
+             "Press enter to generate all patches")
+
+        try:
+            input_indices = []
+
+            input_value = input()
+            if input_value.strip() == '':
+                input_indices = [x for x in range(len(mods))]
+
+            else:
+                segments = [x.strip() for x in input_value.split(",")]
+                for segment in segments:
+                    splits = [y.strip() for y in segment.split("-")]
+                    if len(splits) > 2:
+                        raise ValueError("Invalid format")
+                    if len(splits) == 1:
+                        num = int(splits[0])
+                        if num in input_indices:
+                            raise ValueError("Already selected")
+
+                        if num < 1 or num > len(mods):
+                            raise ValueError(f"Invalid selection. Patcher with index {num} does not exist")
+
+                        input_indices.append(num)
+                    if len(splits) == 2:
+                        start = int(splits[0])
+                        end = int(splits[1])
+
+                        for i in range(start, end + 1):
+                            if i in input_indices:
+                                raise ValueError("Already selected")
+
+                            if i < 1 or i > len(mods):
+                                raise ValueError(f"Invalid selection. Patcher with index {i} does not exist")
+                            input_indices.append(i)
+
+        except ValueError as e:
+            print(TerminalColors.YELLOW + str(e) + TerminalColors.ENDC)
+            input_indices = []
+
+    for mod_index in input_indices:
+        patch_data_root_dir = Path(sys.argv[0]).parent.parent / "Data" / mods[mod_index - 1]
+        patch_all(patch_data_root_dir=patch_data_root_dir,
+                  gamedata_dir=gamedata_dir,
+                  texconv_path=texconv_path)
