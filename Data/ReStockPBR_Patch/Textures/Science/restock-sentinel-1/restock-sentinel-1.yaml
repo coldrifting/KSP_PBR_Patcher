@@ -1,0 +1,149 @@
+size: [1024, 1024]
+
+color_primary:
+- fill:
+    color: white
+    mask: color_primary
+
+- fill:
+    image: panels_shadow.png
+    channels: rgba
+
+color_secondary:
+- fill:
+    color: white
+    mask: color_secondary
+
+- fill:
+    image: cover_lines_shadow.png
+    channels: rgba
+
+diffuse:
+- fill:
+    image: ReStock/Assets/Science/restock-sentinel-1.dds
+    channels: rgb
+
+- saturation:
+    percent: 0
+    masks:
+    - wires
+    - caution
+    - mirrors
+    invert_masks: True
+
+- saturation:
+    percent: 120
+    masks:
+    - wires
+    - caution
+    - mirrors
+
+- brightness:
+    percent: 115
+    mask: wires
+
+- curves:
+    points: [ [16, 64], [100, 210] ]
+    mask: color_primary
+
+- fill:
+    image: panels_blurred.png
+    channels: rgba
+
+- curves:
+    points: [ [64, 100] ]
+    mask: metal_1
+
+- curves:
+    points: [ [64, 10], [150, 64] ]
+    mask: metal_2
+
+- fill:
+    image: cover_main.png
+    channels: rgba
+
+- fill:
+    image: cover_lines.png
+    channels: rgba
+
+- fill:
+    image: cover_lines_shadow.png
+    channels: rgba
+
+gloss:
+- fill:
+    image: ReStock/Assets/Science/restock-sentinel-1.dds
+    channels: a
+
+- saturation:
+    percent: 0
+
+- curves:
+    points: [ [64, 105] ]
+    mask: metal_1
+
+- curves:
+    points: [ [28, 128], [56, 192], [100, 220] ]
+    mask: metal_2
+
+- curves:
+    points: [ [20, 128], [42, 192], [80, 220] ]
+    mask: metal_3
+
+- curves:
+    points: [ [64, 132] ]
+    mask: metal_4
+
+- curves:
+    points: [ [32, 128], [60, 192], [115, 235] ]
+    mask: metal_5
+
+- curves:
+    points: [ [20, 128], [42, 192], [80, 220] ]
+    masks: 
+    - color_primary
+    - bars!
+
+- fill:
+    color: white
+    mask: mirrors
+
+- curves:
+    points: [ [64, 115] ]
+    mask: bars
+
+- fill:
+    color: "#EEEEEE"
+    masks:
+    - caution
+    - caution_text
+
+gloss_alt:
+- copy:
+     group: gloss
+
+- brightness:
+    percent: 50
+    masks: 
+    - color_primary
+    - color_secondary
+
+metal:
+- fill:
+    color: white
+    masks:
+    - wires
+    - caution
+    - caution_text
+    - mirrors
+    invert_masks: True
+
+metal_alt:
+- copy:
+    group: metal
+
+- fill:
+    color: black
+    masks: 
+    - color_primary
+    - color_secondary
