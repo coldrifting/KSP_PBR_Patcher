@@ -2,6 +2,8 @@
 A collection of patchers to make supported KSP mods visually coherent with the Technicolor PBR system.
 Contains a patcher that adds almost all of the stock parts that ReStockPBR v0.0.6 misses (including robotics), and any other mods I find the time to add support for.
 
+<img width="1920" height="1080" alt="ReStockPBR_Patch_preview" src="https://github.com/user-attachments/assets/d37d9178-089f-480b-bea8-3fade96aee0d" />
+
 Current mods supported or planned (In various levels of completeness)
  - ReStockPBR_Patch
    - Adds almost all Stock and DLC parts not covered by ReStockPBR
