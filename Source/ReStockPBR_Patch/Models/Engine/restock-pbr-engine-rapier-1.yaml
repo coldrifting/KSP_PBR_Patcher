@@ -1,0 +1,23 @@
+# RAPIER - Fix heat tile thumbnail
+part: RAPIER
+model: ReStockPBR/Assets/Engine/restock-pbr-engine-rapier-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-engine-rapier-1
+    transforms:
+      - RAPIER
+      - RAPIERTiled
+
+  tiles:
+    tc1: tileBlack
+    copy: restock-pbr-engine-rapier-1
+    transforms:
+      - RAPIERTiledLower

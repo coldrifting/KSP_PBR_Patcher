@@ -1,0 +1,86 @@
+size: [ 256, 512 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: Squad/Parts/Aero/airbrake/airbrake.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 0, 75 ]
+      masks:
+        - bg!
+        - color_primary!
+
+  - curves:
+      points:
+        - [ 255, 180 ]
+      masks:
+        - color_primary
+
+  - fill:
+      image: blur
+
+gloss:
+  - fill:
+      image: Squad/Parts/Aero/airbrake/airbrake.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 64, 115 ]
+      masks:
+        - bg!
+        - color_primary!
+
+  - fill:
+      image: blur_gloss
+
+  - curves:
+      points:
+        - [ 64, 90 ]
+
+  - fill:
+      color: "#DDDDDD"
+      masks:
+        - danger
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

@@ -1,0 +1,22 @@
+part: restock-node-625-1
+model: ReStockPlus/Assets/Structural/restock-node-625-1
+
+after: ReStockPlusPBR
+needs:
+  - ReStockPlusPBR
+
+color_zones:
+  main:
+    tc1: metalBasic
+
+operations:
+  - add_team_colors:
+      material: restock-node-attach-2
+      tc1: metalBasic
+
+  - edit_material_textures:
+      material: restock-node-attach-2
+      main_tex: ReStockPlusPBR/Assets/Structural/restock-pbr-node-attach-2-a
+      bump_map: ReStockPlusPBR/Assets/Structural/restock-pbr-node-attach-2-n
+      metal_map: ReStockPlusPBR/Assets/Structural/restock-pbr-node-attach-2-m
+      team_color_map: ReStockPlusPBR/Assets/Structural/restock-pbr-node-attach-2-tc

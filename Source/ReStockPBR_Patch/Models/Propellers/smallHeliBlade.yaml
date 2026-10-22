@@ -1,0 +1,11 @@
+# Helicopter Propeller - Small
+part: smallHeliBlade
+model: SquadExpansion/Serenity/Parts/Propellers/Assets/smallHeliBlade
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: argonBlue

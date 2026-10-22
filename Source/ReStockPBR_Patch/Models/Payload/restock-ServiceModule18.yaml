@@ -1,0 +1,29 @@
+# 1.875m Service Module - Remove duplicated foil
+part: ServiceModule18
+model: ReStock/Assets/Payload/restock-ServiceModule18
+
+after: ReStock
+needs:
+  - ReStock
+  - SquadExpansion/MakingHistory
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    materials:
+      - restock-ServiceModule20
+
+  mli:
+    tc1: mliGold
+    materials:
+      - restock-ServiceModule18
+
+operations:
+  - split_triangles:
+      transform:   Foil
+      destination: Core_Platform
+      triangles: 24-71
+
+  - remove_triangles:
+      transform: Core_Without_Platform
+      triangles: 72-95,240-287

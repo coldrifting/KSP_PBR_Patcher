@@ -1,0 +1,20 @@
+# Fix heat tile colors in part thumbnails
+part: mk2DroneCore
+model: ReStockPBR/Assets/Command/restock-pbr-drone-core-mk2-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-cockpit-mk1-tiles-1
+
+  tiles:
+    tc1: tileBlack
+    copy: restock-pbr-cockpit-mk1-tiles-1
+    transforms:
+      - DroneCoreTilesLower

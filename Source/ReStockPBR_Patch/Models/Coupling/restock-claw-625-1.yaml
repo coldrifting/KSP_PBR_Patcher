@@ -1,0 +1,15 @@
+# 0.625m Claw
+part: restock-claw-625-1
+model: ReStock/Assets/Coupling/restock-claw-625-1
+remove_part_variants: True
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: electricalYellow
+    tc2: metalBasic
+    materials:
+      - restock-claw-625-2

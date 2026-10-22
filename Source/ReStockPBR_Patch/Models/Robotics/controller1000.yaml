@@ -1,0 +1,11 @@
+# KAL 1000 Robotics Controller
+part: controller1000
+model: SquadExpansion/Serenity/Parts/Robotics/Controllers/controller1000
+override: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: electricalYellow

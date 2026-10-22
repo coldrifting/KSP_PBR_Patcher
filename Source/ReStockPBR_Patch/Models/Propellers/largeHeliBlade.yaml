@@ -1,0 +1,11 @@
+# Helicopter Propeller - Large
+part: largeHeliBlade
+model: SquadExpansion/Serenity/Parts/Propellers/Assets/largeHeliBlade
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: atomicOrange

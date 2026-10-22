@@ -1,0 +1,49 @@
+# 0.625m to 1.25m Service Module
+part: restock-service-module-0625-1
+model: ReStock/Assets/Payload/restock-Size1to0ServiceModule
+
+after: ReStockPlus
+needs:
+  - ReStockPlus
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: payloadGrey
+
+operations:
+  - split_triangles:
+      transform:   Shell1
+      destination: Shell1_Alt
+      triangles: 106-117, 166-177
+
+  - split_triangles:
+      transform:   Shell2
+      destination: Shell2_Alt
+      triangles: 106-117, 166-177
+
+  - set_parent:
+      parent: Shell1
+      transforms:
+        - Shell1_Alt
+
+  - set_parent:
+      parent: Shell2
+      transforms:
+        - Shell2_Alt
+
+  - add_team_colors:
+      material: restock-Size1to0ServiceModule
+      tc1: porkjetWhite
+      tc2: payloadGrey
+
+  - copy_material:
+      material: restock-Size1to0ServiceModule
+      new_name: restock-Size1to0ServiceModule-alt
+      transforms:
+        - Shell1_Alt
+        - Shell2_Alt
+
+  - edit_material_textures:
+      material: restock-Size1to0ServiceModule-alt
+      team_color_map: restock-Size1to0ServiceModule-alt-tc

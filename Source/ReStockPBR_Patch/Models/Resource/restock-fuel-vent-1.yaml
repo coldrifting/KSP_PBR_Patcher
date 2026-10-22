@@ -1,0 +1,11 @@
+part: ReleaseValve
+model: ReStock/Assets/Resource/restock-fuel-vent-1
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: darkRed

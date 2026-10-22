@@ -1,0 +1,20 @@
+# Fix heat tile colors in part thumbnails
+part: mk2FuselageShortLiquid
+model: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-mk2-short-lf-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-fueltank-mk2-1
+
+  tiles:
+    tc1: tileBlack
+    copy: restock-pbr-fueltank-mk2-1
+    transforms:
+      - FuselageShortLiquidTilesLower

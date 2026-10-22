@@ -1,0 +1,84 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Resource/restock-surfacescanner-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 120
+      masks:
+        - saturate
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - saturate!
+
+  - curves:
+      points:
+        - [ 64, 100 ]
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Resource/restock-surfacescanner-1.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 32, 128 ]
+        - [ 92, 220 ]
+      masks:
+        - bg!
+        - gloss_curves_exclude_1!
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - gloss_curves_exclude_2
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - saturate
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

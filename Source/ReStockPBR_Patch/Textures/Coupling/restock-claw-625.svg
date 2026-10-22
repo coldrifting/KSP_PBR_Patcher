@@ -1,0 +1,71 @@
+<svg width="512"
+     height="512"
+     viewBox="0 0 512 512"
+     xmlns="http://www.w3.org/2000/svg">
+    <path id="metal_1"
+          style="fill:#febf00"
+          d="m 269,255 v -38 h 143 v 38 z m 195,32 V 256 H 358 v 31 z M 269,512 V 308 h 14 l 6,7 h 11 l 32,17 h 50 l 20,-12 h 7 l 1,1 17,25 -26,17 -24,43 -2,32 -80,2 v 72 z"
+    />
+    <path id="metal_2"
+          style="fill:#35fe00"
+          d="m 512,512 h -48 v -1 h -6 c 0,0 -79,1 -79,-79 0,-80 81,-81 81,-81 h 4 V 320 H 311 l -14,-6 -10,-2 -5,-5 h -10 l -3,3 v 6 h -21 v -57 h 110 v 28 h 105 v -24 l 1,-1 v -6 h 48 z m 0,-434 h -9 c 0,0 -87,0 -87,87 0,87 87,87 87,87 h 9"
+    />
+    <path id="metal_3"
+          style="fill:#006bfe"
+          d="m 60,255 h 83 V 74 H 122 V 32 H 0 v 65 h 60 z"
+    />
+    <path id="metal_4"
+          style="fill:#bf00fe"
+          d="M 432,90 A 87,87 0 0 1 345,177 87,87 0 0 1 258,90 87,87 0 0 1 345,3 87,87 0 0 1 432,90 Z M 143,255 H 269 V 233 L 237,133 H 167 V 74 h -24 z"
+    />
+    <rect id="wires"
+          style="fill:#4700fe"
+          width="104"
+          height="92"
+          x="164"
+          y="316"
+    />
+    <path id="remove"
+          style="fill:#bffe00"
+          d="M 0,0 H 264 V 32 H 0 Z m 44,256 h 96 V 512 H 44 Z"
+    />
+    <rect id="side_panels"
+          style="fill:#00fee9"
+          width="32"
+          height="256"
+          x="12"
+          y="256"
+    />
+    <rect id="side_edges"
+          style="fill:#00fe2f"
+          width="12"
+          height="256"
+          x="0"
+          y="256"
+    />
+    <rect id="lamp_lens"
+          style="fill:#ffff00"
+          width="38"
+          height="19"
+          x="203"
+          y="459"
+    />
+    <path id="lamp_housing"
+          style="fill:#ef00fe"
+          d="m 219,408 h 50 v 104 h -28 v -55 h -22 z"
+    />
+    <rect id="color_primary"
+          style="fill:#fe0000"
+          width="44"
+          height="256"
+          x="0"
+          y="256"
+    />
+    <rect id="color_secondary"
+          style="fill:#00fe1d"
+          width="143"
+          height="38"
+          x="269"
+          y="217"
+    />
+</svg>

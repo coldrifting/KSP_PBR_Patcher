@@ -1,0 +1,11 @@
+part: SurveyScanner
+model: ReStock/Assets/Resource/restock-surveyscanner-1
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: metalBasic

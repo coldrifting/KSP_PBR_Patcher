@@ -1,0 +1,12 @@
+part: piston_04
+model: SquadExpansion/Serenity/Parts/Robotics/Assets/piston_04
+
+remove_part_variants: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: argonBlue

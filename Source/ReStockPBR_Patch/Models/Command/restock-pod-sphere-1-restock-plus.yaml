@@ -1,0 +1,12 @@
+# Sphere Capsule (1 Kerbal)
+part: restock-pod-sphere-1
+model: ReStock/Assets/Command/restock-pod-sphere-1
+
+after: ReStockPlus
+needs:
+  - ReStockPlus
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: sovietGreen

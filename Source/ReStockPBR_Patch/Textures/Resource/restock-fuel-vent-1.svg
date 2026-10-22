@@ -1,0 +1,32 @@
+<svg width="256"
+     height="128"
+     viewBox="0 0 256 128"
+     xmlns="http://www.w3.org/2000/svg">
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="M 24 0 L 24 128 L 170 128 L 170 0 L 24 0 z M 141 15 L 143 15 L 143 16 L 144 16 L 144 15 L 147 15 L 148 16 L 148 104 L 141 104 L 140 103 L 140 50 L 141 49 L 144 49 L 144 47 L 141 47 L 141 46 L 140 46 L 140 16 L 141 15 z M 35 58 L 53 58 L 54 59 L 54 69 L 52 71 L 36 71 L 34 69 L 34 59 L 35 58 z "
+    />
+    <path id="color_secondary"
+          style="fill:#00ff00"
+          d="m 170,17 h 70 v 10 h 16 v 45 h -16 v 5 h -10 v 1 h -51 v 1 h -9 z"
+    />
+    <path id="label"
+          style="fill:#0e00ff"
+          d="m 34,69 2,2 h 16 l 2,-2 V 59 L 53,58 H 35 l -1,1 z"
+    />
+    <rect id="metal_misc"
+          style="fill:#ff00cb"
+          width="69"
+          height="33"
+          x="179"
+          y="78"
+    />
+    <path id="stripes_bg"
+          style="fill:#ffed00"
+          d="m 140,103 1,1 h 7 V 16 l -1,-1 h -3 v 1 h -1 v -1 h -2 l -1,1 v 30 h 1 v 1 h 3 v 2 h -3 l -1,1 z"
+    />
+    <path id="stripes"
+          style="fill:#009cff"
+          d="m 144,15 h 3 l 1,1 v 4 l -4,-4 z m -4,8 8,8 v -5 l -8,-8 z m 8,19 -8,-8 v -5 l 8,8 z m 0,11 v -5 l -8,-8 v 6 h 1 v 1 h 3 v 2 z m 0,12 -8,-8 v -5 l 8,8 z m 0,11 -8,-8 v -6 l 8,8 z m 0,11 v -5 l -8,-8 v 5 z m -8,3 8,8 v -5 l -8,-8 z m 0,6 8,8 h -5 l -3,-3 z"
+    />
+</svg>

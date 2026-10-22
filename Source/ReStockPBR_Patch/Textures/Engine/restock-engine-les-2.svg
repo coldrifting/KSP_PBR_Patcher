@@ -1,0 +1,25 @@
+<svg width="512"
+     height="512"
+     viewBox="0 0 512 512"
+     xmlns="http://www.w3.org/2000/svg">
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="m 128,256 v 127 h 209 l 46,-23 h 15 l 6,-2 h 15.4707 L 426,360 v 23 33 h 32 v -50 l 32,-23 h 22 V 256 Z M 0,156 v 76 h 26.164524 l -1.548365,-3 H 128 v -73 z"
+    />
+    <path id="color_secondary"
+          style="fill:#00ff13"
+          d="m 0,156 v 76 h 26.164524 l -1.548365,-3 H 128 V 156 Z M 412,256 H 128 v 256 h 384 v -96 h -86 v -33 -23 l -6.5293,-2 H 412 Z"
+    />
+    <path id="metal"
+          style="fill:#0000ff"
+          d="m 404,358 -6,2 h -15 l -46,23 H 128 v 129 h 384 v -96 h -86 v -33 -23 l -6.5293,-2 z"
+    />
+    <path id="nozzles"
+          style="fill:#ff7700"
+          d="m 64 370 v -42 l 49 -20 h 3 c 23 45 0 83 0 83 h -3 L 71 374 Z M 0 512 H 128 V 392 H 76 v 18 H 74 L 54 402 H 52 L 15 384 H 0 Z"
+    />
+    <path id="remove"
+          style="fill:#000000"
+          d="M 0,0 V 156 H 128 V 256 H 512 V 0 Z"
+    />
+</svg>

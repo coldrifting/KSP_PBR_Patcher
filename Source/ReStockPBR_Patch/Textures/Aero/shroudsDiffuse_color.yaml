@@ -1,0 +1,110 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Aero/Assets/shroudsDiffuse_plain.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 128, 255 ]
+      masks:
+        - color_primary
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_primary!
+
+color_secondary:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Aero/Assets/shroudsDiffuse_plain.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 128, 255 ]
+      masks:
+        - color_secondary
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_secondary!
+
+diffuse:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Aero/Assets/shroudsDiffuse_plain.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 64, 110 ]
+      masks:
+        - metal_inside
+
+  - curves:
+      points:
+        - [ 22, 64 ]
+      masks:
+        - metal_trim
+
+gloss:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Aero/Assets/shroudsDiffuse_plain.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 32, 64 ]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 64, 160 ]
+      masks:
+        - metal_inside
+
+  - curves:
+      points:
+        - [ 12, 64 ]
+        - [ 100, 255 ]
+      masks:
+        - metal_trim
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

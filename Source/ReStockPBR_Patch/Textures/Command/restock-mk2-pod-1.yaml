@@ -1,0 +1,368 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - panel_bg_1
+        - panel_bg_2
+        - panel_gaps_major_1!
+        - panel_gaps_major_2!
+        - greble_1!
+        - greble_2!
+        - reticle!
+        - triangle_1!
+        - triangle_2!
+        - ejection_seat_text!
+        - hinges_1!
+        - hinges_2!
+        - window_edge
+        - bottom_tiles
+        - connector
+        - connector_stripes!
+
+  - fill:
+      color: "#AAAAAA"
+      masks:
+        - panel_gaps_minor
+        - panel_rivets
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - stripe_1
+        - stripe_2
+        - connector
+        - connector_stripes!
+        - bottom_tiles
+        - bottom_edge_1
+        - bottom_edge_2
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Command/restock-mk2-pod-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 120
+      masks:
+        - window
+        - reticle
+        - triangle_1
+        - triangle_1_inner!
+        - triangle_2
+        - triangle_2_inner!
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - window!
+        - reticle!
+        - triangle_1!
+        - triangle_1_inner
+        - triangle_2!
+        - triangle_2_inner
+
+  - fill:
+      image: ReStock/Assets/Command/restock-mk2-pod-1.dds
+      channels: a
+      masks:
+        - ejection_seat_bg_1
+        - ejection_seat_bg_2
+
+  - curves:
+      points:
+        - [16, 64]
+        - [115, 222]
+      masks:
+        - ejection_seat_bg_2
+
+  - curves:
+      points:
+        - [16, 64]
+        - [44, 128]
+        - [100, 192]
+      masks:
+        - panel_bg_1
+        - greble_1!
+        - triangle_1!
+        - stripe_1!
+        - steps_1!
+        - hinges_1!
+
+  - curves:
+      points:
+        - [255, 180]
+      masks:
+        - panel_bg_2
+        - greble_2!
+        - holes_2!
+        - reticle!
+        - triangle_2!
+        - stripe_2!
+        - steps_2!
+        - hinges_2!
+
+  - curves:
+      points:
+        - [64, 86]
+      masks:
+        - triangle_1
+
+  - curves:
+      points:
+        - [30, 60]
+      masks:
+        - triangle_1_inner
+
+  - curves:
+      points:
+        - [64, 80]
+      masks:
+        - handle
+
+  - curves:
+      points:
+        - [64, 100]
+      masks:
+        - trim
+
+  - curves:
+      points:
+        - [64, 80]
+      masks:
+        - bottom_trim_2
+
+  - curves:
+      points:
+        - [64, 115]
+      masks:
+        - stripe_1
+        - stripe_2
+
+  - curves:
+      points:
+        - [60, 128]
+      masks:
+        - steps_1
+
+  - curves:
+      points:
+        - [64, 128]
+      masks:
+        - hinges_1
+
+  - curves:
+      points:
+        - [64, 100]
+      masks:
+        - hinges_2
+
+  - curves:
+      points:
+        - [64, 124]
+      masks:
+        - connector
+
+  - curves:
+      points:
+        - [16, 64]
+        - [74, 192]
+      masks:
+        - bottom_tiles
+
+  - curves:
+      points:
+        - [128, 110]
+      masks:
+        - window
+
+  - curves:
+      points:
+        - [25, 128]
+        - [64, 192]
+      masks:
+        - window_edge
+
+  - blur:
+      radius: 6
+      masks:
+        - window_blur
+
+  - fill:
+      color: "#854545"
+      masks:
+        - ejection_seat_text
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Command/restock-mk2-pod-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [12, 64]
+        - [60, 192]
+        - [128, 234]
+      masks:
+        - panel_bg_1
+        - greble_1!
+        - hinges_1!
+        - stripe_1!
+
+  - curves:
+      points:
+        - [12, 64]
+        - [64, 192]
+      masks:
+        - panel_bg_2
+        - greble_2!
+        - hinges_2!
+        - stripe_2!
+
+  - curves:
+      points:
+        - [0, 200]
+        - [255, 128]
+      masks:
+        - stripe_1
+        - stripe_2
+
+  - curves:
+      points:
+        - [18, 128]
+        - [38, 192]
+        - [75, 228]
+      masks:
+        - bottom_tiles
+
+  - curves:
+      points:
+        - [64, 100]
+      masks:
+        - bottom_edge_1
+        - bottom_edge_2
+
+  - curves:
+      points:
+        - [64, 115]
+      masks:
+        - hinges_1
+        - hinges_2
+
+  - curves:
+      points:
+        - [26, 128]
+        - [64, 200]
+      masks:
+        - connector
+
+  - curves:
+      points:
+        - [28, 116]
+        - [64, 174]
+        - [255, 232]
+      masks:
+        - trim
+
+  - curves:
+      points:
+        - [64, 100]
+      masks:
+        - handle
+
+  - curves:
+      points:
+        - [0, 200]
+      masks:
+        - window_edge
+
+  - curves:
+      points:
+        - [22, 128]
+        - [50, 192]
+      masks:
+        - bottom_trim_1
+
+  - curves:
+      points:
+        - [64, 128]
+      masks:
+        - bottom_trim_2
+
+  - curves:
+      points:
+        - [64, 100]
+      masks:
+        - bottom_trim_3
+
+  - curves:
+      points:
+        - [64, 100]
+      masks:
+        - triangle_1
+        - triangle_2
+        - reticle
+        - ejection_seat_text
+        - connector_stripes
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - panel_bg_1
+        - panel_bg_2
+        - panel_gaps_major_1!
+        - panel_gaps_major_2!
+        - greble_1!
+        - greble_2!
+        - reticle!
+        - triangle_1!
+        - triangle_2!
+        - ejection_seat_text!
+        - connector
+        - connector_stripes!
+        - window_edge
+        - bottom_tiles
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - window
+        - reticle
+        - triangle_1
+        - triangle_2
+        - ejection_seat_text
+        - connector_stripes
+        - ejection_seat_text
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - panel_bg_1
+        - panel_bg_2
+        - panel_gaps_major_1!
+        - panel_gaps_major_2!
+        - greble_1!
+        - greble_2!
+        - reticle!
+        - triangle_1!
+        - triangle_2!
+        - ejection_seat_text!
+        - connector
+        - connector_stripes!
+        - window_edge
+        - bottom_tiles

@@ -1,0 +1,11 @@
+# Ducted Fan Propeller - Large
+part: largeFanBlade
+model: SquadExpansion/Serenity/Parts/Propellers/Assets/largeFanBlade
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: atomicOrange

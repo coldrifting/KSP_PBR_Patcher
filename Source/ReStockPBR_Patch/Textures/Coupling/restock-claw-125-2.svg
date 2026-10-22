@@ -1,0 +1,17 @@
+<svg width="256"
+     height="256"
+     viewBox="0 0 256 256"
+     xmlns="http://www.w3.org/2000/svg">
+    <path id="color"
+          style="fill:#ff3b00;stroke-width:5;fill-opacity:1"
+          d="M 0 96 L 0 176 L 256 176 L 256 96 L 0 96 z M 28 117 L 44 117 L 46 119 L 46 129 L 45 130 L 27 130 L 26 129 L 26 119 L 28 117 z "
+    />
+    <path id="remove"
+          style="fill:#002dff"
+          d="m 0,176 h 256 v 80 H 0 Z M 0,0 H 256 V 96 H 0 Z"
+    />
+    <path id="sticker"
+          style="fill:#00ff97;fill-opacity:1;stroke-width:5"
+          d="m 26,129 1,1 h 18 l 1,-1 v -10 l -2,-2 H 28 l -2,2 z"
+    />
+</svg>

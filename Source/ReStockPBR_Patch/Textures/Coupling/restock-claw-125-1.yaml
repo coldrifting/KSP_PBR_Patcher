@@ -1,0 +1,151 @@
+size: [ 1024, 512 ]
+
+color_primary:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-125-1.dds
+      channels: rgb
+      masks:
+        - metal_3
+        - metal_6
+
+  - invert:
+      masks:
+        - metal_3
+        - metal_6
+
+  - curves:
+      points:
+        - [ 0, 64 ]
+        - [ 160, 255 ]
+      masks:
+        - metal_3
+        - metal_6
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-125-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - lens!
+        - wires_1!
+        - warning!
+
+  - saturation:
+      percent: 120
+      masks:
+        - lens
+        - wires_1
+        - warning
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [ 64, 100 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 64, 110 ]
+      masks:
+        - metal_3
+
+  - curves:
+      points:
+        - [ 64, 80 ]
+      masks:
+        - metal_4
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - metal_5
+
+  - curves:
+      points:
+        - [ 64, 100 ]
+      masks:
+        - metal_6
+
+  - curves:
+      points:
+        - [ 64, 90 ]
+      masks:
+        - wires_2
+
+  - curves:
+      points:
+        - [ 40, 128 ]
+        - [ 100, 190 ]
+      masks:
+        - interior_1
+        - interior_2
+        - interior_box
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - bottom_1
+
+  - curves:
+      points:
+        - [ 64, 110 ]
+      masks:
+        - bottom_2
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-125-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [ 32, 128 ]
+        - [ 110, 230 ]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - metal_3
+        - metal_6
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - lens
+        - warning
+        - wires_1
+        - wires_2
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - metal_3
+        - metal_6

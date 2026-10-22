@@ -1,0 +1,10 @@
+part: lGripStrip
+model: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/lGripStrip
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: atomicOrange

@@ -1,0 +1,160 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      image: ReStock/Assets/Engine/restock-engine-les-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - fill:
+      image: stripe_removal
+
+  - curves:
+      points:
+        - [ 0, 16 ]
+        - [ 164, 255 ]
+      masks:
+        - color_primary
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_primary!
+
+color_secondary:
+  - fill:
+      image: ReStock/Assets/Engine/restock-engine-les-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - fill:
+      image: stripe_removal
+
+  - curves:
+      points:
+        - [ 0, 16 ]
+        - [ 164, 255 ]
+      masks:
+        - color_secondary
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_secondary!
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Engine/restock-engine-les-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - fill:
+      image: stripe_removal
+
+  - curves:
+      points:
+        - [ 255, 180 ]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 32, 64 ]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [ 48, 64 ]
+      masks:
+        - metal_2
+        - metal_3
+
+  - curves:
+      points:
+        - [ 64, 100 ]
+      masks:
+        - nozzles_1
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Engine/restock-engine-les-1.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - fill:
+      image: stripe_removal_gloss
+
+  - curves:
+      points:
+        - [ 14, 64 ]
+        - [ 128, 240 ]
+      masks:
+        - color_primary
+        - metal_1
+        - metal_4!
+
+  - curves:
+      points:
+        - [ 16, 64 ]
+        - [ 100, 200 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 64, 85 ]
+      masks:
+        - metal_3
+
+  - curves:
+      points:
+        - [ 64, 110 ]
+      masks:
+        - metal_4
+
+  - fill:
+      image: ReStock/Assets/Engine/restock-engine-les-1.dds
+      channels: rgb
+      masks:
+        - nozzles_1
+
+  - curves:
+      points:
+        - [ 16, 128 ]
+        - [ 30, 170 ]
+        - [ 64, 210 ]
+      masks:
+        - nozzles_1
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

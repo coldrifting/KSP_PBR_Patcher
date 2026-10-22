@@ -1,0 +1,19 @@
+# Fix heat tile colors in part thumbnails
+part: mk2_1m_AdapterLong
+model: ReStockPBR/Assets/FuelTank/restock-pbr-adapter-mk2-long-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-fueltank-mk2-3
+
+  tiles:
+    tc1: tileBlack
+    materials:
+      - restock-pbr-fueltank-mk2-4

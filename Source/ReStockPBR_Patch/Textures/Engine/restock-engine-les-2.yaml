@@ -1,0 +1,149 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 0, 40 ]
+        - [ 180, 255 ]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 24, 30 ]
+        - [ 110, 255 ]
+      masks:
+        - metal
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_primary!
+        - color_secondary!
+
+color_secondary:
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 0, 40 ]
+        - [ 180, 255 ]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 24, 30 ]
+        - [ 110, 255 ]
+      masks:
+        - metal
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_secondary!
+
+diffuse:
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - brightness:
+      percent: 67
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 64, 75 ]
+      masks:
+        - metal
+
+  - fill:
+      color: black
+      masks:
+        - remove
+
+gloss:
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 16, 64 ]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 64, 75 ]
+      masks:
+        - metal
+
+  - fill:
+      color: black
+      masks:
+        - remove
+
+  - fill:
+      image: ReStockPlus/Assets/Engine/restock-engine-les-2.dds
+      channels: rgb
+      masks:
+        - nozzles
+
+  - curves:
+      points:
+        - [ 28, 128 ]
+        - [ 64, 192 ]
+      masks:
+        - nozzles
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - remove
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

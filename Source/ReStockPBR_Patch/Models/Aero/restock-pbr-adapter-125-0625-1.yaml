@@ -1,0 +1,21 @@
+# Fix heat tile colors in part thumbnails
+part: noseConeAdapter
+model: ReStockPBR/Assets/Aero/restock-pbr-adapter-125-0625-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-aero-support-1
+      - restock-pbr-aero-support-2
+
+  tiles:
+    tc1: tileBlack
+    copy: restock-pbr-aero-support-2
+    transforms:
+      - NoseConeTilesLower

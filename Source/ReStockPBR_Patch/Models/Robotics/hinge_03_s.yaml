@@ -1,0 +1,21 @@
+part: hinge_03_s
+model: SquadExpansion/Serenity/Parts/Robotics/Assets/hinge_03_s
+
+remove_part_variants: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: argonBlue
+
+operations:
+  - edit_material_textures:
+      material: hinges_diffuse
+      main_tex: hinges-03_diffuse_color-a
+
+  - edit_material_textures:
+      material: hinges_diffuse 2
+      main_tex: hinges-03_diffuse_color-a

@@ -1,0 +1,20 @@
+# Fix heat tile colors in part thumbnails
+part: restock-pbr-intake-mk2-adapter-1
+model: ReStockPlusPBR/Assets/Aero/restock-pbr-intake-mk2-adapter-1
+
+after: ReStockPlusPBR
+needs:
+  - ReStockPlusPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-intakes-2
+
+  tiles:
+    tc1: tileBlack
+    copy: restock-pbr-intakes-2
+    transforms:
+      - Mk2AdapterIntakeTiledLower

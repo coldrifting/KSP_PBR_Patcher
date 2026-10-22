@@ -1,0 +1,129 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/SmallArm_diffuse.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 32, 64 ]
+      masks:
+        - metal_dark_1
+
+  - curves:
+      points:
+        - [ 32, 64 ]
+      masks:
+        - metal_dark_2
+
+  - curves:
+      points:
+        - [ 64, 90 ]
+      masks:
+        - metal_dark_3
+
+  - curves:
+      points:
+        - [ 255, 192 ]
+
+  - curves:
+      points:
+        - [ 64, 0 ]
+        - [ 105, 255 ]
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_primary!
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/SmallArm_diffuse.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 32, 64 ]
+      masks:
+        - metal_dark_1
+
+  - curves:
+      points:
+        - [ 32, 64 ]
+      masks:
+        - metal_dark_2
+
+  - curves:
+      points:
+        - [ 64, 90 ]
+      masks:
+        - metal_dark_3
+
+  - curves:
+      points:
+        - [ 255, 192 ]
+
+gloss:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/SmallArm_diffuse.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 20, 64 ]
+        - [ 90, 190 ]
+      masks:
+        - metal_dark_3
+        - metal_dark_4
+
+  - curves:
+      points:
+        - [ 12, 128 ]
+        - [ 35, 224 ]
+        - [ 64, 244 ]
+      masks:
+        - bg!
+        - metal_dark_3!
+        - metal_dark_4!
+
+  - fill:
+      color: "#666666"
+      masks:
+        - seams
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

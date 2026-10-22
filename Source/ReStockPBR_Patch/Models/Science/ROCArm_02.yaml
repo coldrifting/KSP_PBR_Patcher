@@ -1,0 +1,10 @@
+part: RobotArmScanner_S2
+model: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/ROCArm_02
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: payloadGrey
+    tc2: metalCopper

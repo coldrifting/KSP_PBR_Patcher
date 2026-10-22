@@ -1,0 +1,12 @@
+# Launch Escape System
+part: LaunchEscapeSystem
+model: ReStock/Assets/Engine/restock-engine-les-1
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack

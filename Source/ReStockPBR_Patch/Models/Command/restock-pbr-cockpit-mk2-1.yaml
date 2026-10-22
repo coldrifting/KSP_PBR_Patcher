@@ -1,0 +1,65 @@
+# Mk2 Cockpit - Fix vertex normals and heat tile mesh_components split
+part: mk2Cockpit_Standard
+model: ReStockPBR/Assets/Command/restock-pbr-cockpit-mk2-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials: 
+      - restock-pbr-cockpit-mk2-1
+
+  tiles:
+    tc1: tileBlack
+    copy: restock-pbr-cockpit-mk2-1
+    transforms:
+      - Mk2CockpitPointyTilesLower
+
+operations:
+  - split_triangles:
+      transform:   Mk2CockpitPointyTiles
+      destination: Mk2CockpitPointyTilesLower
+      triangles: 303-376
+
+  - edit_normals_average:
+      transform: Mk2CockpitPointyTiles
+      vertex_groups:
+        - [456, 428, 190, 194]
+        - [148, 153, 151]
+        - [174, 150, 154]
+        - [173, 327, 224]
+        - [326, 225, 179, 421]
+        - [901, 424, 180]
+        - [898, 181]
+        - [182, 896]
+        - [897, 186, 480, 479]
+        - [187, 189, 458, 478]
+        - [894, 429, 193, 449]
+        - [891, 195]
+        - [886, 198]
+        - [889, 488, 199]
+        - [490, 200, 331]
+        - [205, 328, 330]
+        - [206, 217, 211]
+        - [209, 216, 214]
+        - [474, 425]
+        - [482, 899, 426]
+        - [430, 459]
+        - [433, 462]
+        - [434, 463]
+        - [466, 437]
+        - [487, 445]
+        - [485, 446, 454]
+        - [892, 893, 451, 450]
+        - [888, 452, 890, 453]
+        - [486, 887, 455]
+        - [475, 483]
+        - [895, 481, 900, 484]
+        - [123, 167]
+        - [131, 129]
+        - [130, 133]
+        - [134, 132]

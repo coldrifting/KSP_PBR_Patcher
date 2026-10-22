@@ -1,0 +1,22 @@
+# Servo Medium
+part: rotoServo_03
+model: SquadExpansion/Serenity/Parts/Robotics/Assets/RotoServo_03
+
+remove_part_variants: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: electricalYellow
+
+operations:
+  - edit_uvs:
+      transform: Rotor
+      uvs: 
+        904: { x: 0.400581, y: 0.964019}
+        905: { x: 0.309579, y: 0.963945}
+        906: { x: 0.309607, y: 0.930306}
+        907: { x: 0.400609, y: 0.93038}

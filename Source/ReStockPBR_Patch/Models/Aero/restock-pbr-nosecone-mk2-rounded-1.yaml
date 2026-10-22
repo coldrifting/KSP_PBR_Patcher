@@ -1,0 +1,20 @@
+# Fix heat tile colors in part thumbnails
+part: restock-pbr-nosecone-mk2-rounded-1
+model: ReStockPlusPBR/Assets/Aero/restock-pbr-nosecone-mk2-rounded-1
+
+after: ReStockPlusPBR
+needs:
+  - ReStockPlusPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-nosecones-mk2-1
+
+  tiles:
+    tc1: tileBlack
+    copy: restock-pbr-nosecones-mk2-1
+    transforms:
+      - Mk2NoseBluntTiledLower

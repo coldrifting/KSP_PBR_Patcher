@@ -1,0 +1,10 @@
+part: RotorEngine_03
+model: SquadExpansion/Serenity/Parts/Robotics/Assets/RotorEngine_03
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: metalBasic

@@ -1,0 +1,11 @@
+# Ducted Fan Propeller - Small
+part: smallFanBlade
+model: SquadExpansion/Serenity/Parts/Propellers/Assets/smallFanBlade
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: argonBlue

@@ -1,0 +1,11 @@
+part: MiniISRU
+model: ReStock/Assets/Resource/restock-isru-125-1
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: porkjetBlack

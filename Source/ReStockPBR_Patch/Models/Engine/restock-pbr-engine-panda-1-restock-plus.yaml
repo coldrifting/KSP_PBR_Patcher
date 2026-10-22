@@ -1,0 +1,18 @@
+# Fix incorrectly rotated part thumbnail by rotating part
+part: restock-engine-panda-1
+model: ReStockPBR/Assets/Engine/restock-pbr-engine-panda-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+operations:
+  - reroot:
+      name: root
+
+  - rotate_transform:
+      transform: root
+      amount:
+        x: 0
+        y: 180
+        z: 0

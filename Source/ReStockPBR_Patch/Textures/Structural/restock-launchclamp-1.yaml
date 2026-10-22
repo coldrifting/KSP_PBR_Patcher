@@ -1,0 +1,120 @@
+size: [ 1024, 512 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+        - color_secondary
+        - metal_3!
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Structural/restock-launchclamp-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - clamps!
+
+  - curves:
+      points:
+        - [ 60, 125 ]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 64, 75 ]
+      masks:
+        - color_secondary
+
+  - curves:
+      points:
+        - [ 64, 85 ]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [ 128, 100 ]
+      masks:
+        - metal_3
+
+  - curves:
+      points:
+        - [ 128, 80 ]
+      masks:
+        - wires
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Structural/restock-launchclamp-1.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 30, 128 ]
+        - [ 90, 216 ]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 64, 110 ]
+      masks:
+        - bg!
+        - color_primary!
+
+  - curves:
+      points:
+        - [ 64, 95 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 255, 225 ]
+      masks:
+        - metal_3
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+        - metal_3!
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - wires!
+        - concrete!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary
+        - metal_3!

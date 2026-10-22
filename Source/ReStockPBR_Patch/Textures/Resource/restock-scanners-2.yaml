@@ -1,0 +1,203 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+        - color_primary_seams#888888
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary_1
+        - color_secondary_2
+        - color_secondary_3
+        - color_secondary_seams_1#888888
+        - color_secondary_seams_2#888888
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Resource/restock-scanners-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 120
+      masks:
+        - saturate
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - saturate!
+
+  - curves:
+      points:
+        - [ 128, 192 ]
+      masks:
+        - metal_1
+
+  - blur:
+      radius: 15
+      masks:
+        - blur
+
+  - noise:
+      intensity: 10
+      coverage: 50
+      masks:
+        - blur
+
+  - brightness:
+      percent: 105
+      masks:
+        - inner
+
+  - brightness:
+      percent: 70
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 56, 128 ]
+      masks:
+        - metal_3
+        - color_secondary_3
+        - color_secondary_seams_2#888888
+
+  - fill:
+      color: "#898989"
+      masks:
+        - lines_outer
+
+  - fill:
+      color: "#535353"
+      masks:
+        - lines_inner
+
+  - fill:
+      color: "#878787"
+      masks:
+        - text_bg
+
+  - fill:
+      color: "#DDDDDD"
+      masks:
+        - text
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Resource/restock-scanners-2.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 24, 64 ]
+        - [ 128, 216 ]
+
+  - curves:
+      points:
+        - [ 64, 100 ]
+      masks:
+        - inner
+
+  - curves:
+      points:
+        - [ 14, 64 ]
+        - [ 100, 220 ]
+      masks:
+        - metal_2
+
+  - fill:
+      color: "#DDDDDD"
+      masks:
+        - lines_outer
+
+  - fill:
+      color: "#0E0E0E"
+      masks:
+        - lines_inner
+
+  - curves:
+      points:
+        - [ 64, 108 ]
+      masks:
+        - metal_5
+
+  - curves:
+      points:
+        - [ 64, 100 ]
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - metal_4
+        - metal_3
+        - color_secondary_3
+        - color_secondary_seams_2#888888
+
+  - curves:
+      points:
+        - [ 64, 105 ]
+      masks:
+        - metal_6
+
+  - fill:
+      color: "#CCCCCC"
+      masks:
+        - text_bg
+
+  - fill:
+      color: "#EEEEEE"
+      masks:
+        - text
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary_1
+        - color_secondary_2
+        - color_secondary_3
+        - color_primary_seams#888888
+        - color_secondary_seams_1#888888
+        - color_secondary_seams_2#888888
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - wires
+        - label
+        - lines_outer
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary_1
+        - color_secondary_2
+        - color_secondary_3
+        - color_primary_seams#888888
+        - color_secondary_seams_1#888888
+        - color_secondary_seams_2#888888

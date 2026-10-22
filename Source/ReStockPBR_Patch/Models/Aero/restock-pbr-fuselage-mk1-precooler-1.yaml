@@ -1,0 +1,19 @@
+# Fix heat tile colors in part thumbnails
+part: radialEngineBody
+model: ReStockPBR/Assets/Aero/restock-pbr-fuselage-mk1-precooler-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-aero-support-1
+
+  tiles:
+    tc1: tileBlack
+    materials:
+      - restock-pbr-aero-support-2

@@ -1,0 +1,9 @@
+# Airbrake
+part: airbrake1
+model: Squad/Parts/Aero/airbrake/Airbrake
+override: True
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack

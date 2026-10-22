@@ -1,0 +1,35 @@
+<svg width="2048"
+     height="2048"
+     viewBox="0 0 2048 2048"
+     xmlns="http://www.w3.org/2000/svg">
+    <rect id="rect1"
+          style="fill:#000000"
+          width="2048"
+          height="2048"
+          x="0"
+          y="0"
+    />
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="M 0 0 L 0 105 L 935 105 L 935 143 L 0 143 L 0 743 L 472 743 L 472 780 L 0 780 L 0 1683 L 452 1683 L 452 2048 L 888 2048 L 889 1600 L 1555 1600 L 1661 1494 L 1661 1087 L 2048 1087 L 2048 418 L 1909 418 L 1909 0 L 0 0 z M 481 735 L 935 735 L 935 773 L 481 773 L 481 735 z M 495 1368 L 938 1368 L 938 1401 L 495 1401 L 495 1368 z "
+    />
+    <path id="color_secondary"
+          style="fill:#05ff00"
+          d="M 1661 1087 L 1661 1494 L 1555 1600 L 889 1600 L 888 2048 L 2048 2048 L 2048 1087 L 1661 1087 z M 1450 1799 L 1519 1799 L 1519 1954 L 1450 1954 L 1450 1799 z "
+    />
+    <path id="metal_dark_1"
+          style="fill:#1100ff"
+          d="m 0,1696 h 256 v 96 l -48,80 -64,64 -96,32 H 0 Z M 1920,0 v 416 h 128 V 0 Z M 953,0 v 304 l 39,39 122.9756,-71 H 1280 l 64,64 h 16 l 96,-96 V 0 Z"
+    />
+    <rect id="metal_dark_2"
+          style="fill:#1100ff"
+          width="69"
+          height="155"
+          x="1450"
+          y="1799"
+    />
+    <path id="metal_inset"
+          style="fill:#1100ff"
+          d="m 1152,578 246,1 1,351 -246,1 z"
+    />
+</svg>

@@ -1,0 +1,68 @@
+<svg width="1024"
+     height="512"
+     viewBox="0 0 1024 512"
+     xmlns="http://www.w3.org/2000/svg">
+    <path id="metal_1"
+          style="fill:#fe0059"
+          d="M 26,320 H 159 V 198 H 26 Z"
+    />
+    <path id="metal_2"
+          style="fill:#00fe47"
+          d="m 0,333 h 180 v 42 H 307 V 512 H 0 Z"
+    />
+    <path id="metal_3"
+          style="fill:#fe0083"
+          d="m 476,343 h -95 v 32 h -74 v 137 h 169 z"
+    />
+    <path id="metal_4"
+          style="fill:#0011fe"
+          d="M 476,512 V 343 l 40,-14 h 75 v -86 h 74 l 6,84 21,57 v 128 z"
+    />
+    <path id="metal_5"
+          style="fill:#00fee3"
+          d="M 591,329 H 384 V 161 l 5,-1 h 65 l 28,-28 h 71 l 45,46 v 65 h -7 z"
+    />
+    <path id="metal_6"
+          style="fill:#002ffe"
+          d="M 745,0 V 30 H 590 v 78 l 37,33 -11,21 -63,-35 h -62 l -60,32 -14,-16 v -3 l 37,-28 V 33 h 1 v -7 h 22 V 0 Z"
+    />
+    <path id="wires_1"
+          style="fill:#00fea1"
+          d="m 784,0 v 76 h 208 l 2,-2 h 27 v 2 h 3 V 0 Z"
+    />
+    <path id="wires_2"
+          style="fill:#7d00fe"
+          d="m 820,80 v 46 l 5,5 H 993 V 80 Z"
+    />
+    <path id="interior_1"
+          style="fill:#83fe00"
+          d="m 692,382 h 206 v -35 l 13,-13 7,-16 V 205 l -5,-26 -23,-30 v -14 h 28 v -4 h 103 v -5 h 3 V 512 H 692 Z"
+    />
+    <path id="interior_2"
+          style="fill:#00fed7"
+          d="m 692,382 -21,-55 -4,-85 v -78 h 21 l 7,-7 v -31 h 125 l 5,5 h 93 v 4 h -28 v 14 l 23,30 5,26 v 113 l -7,16 -13,13 v 35 z"
+    />
+    <path id="interior_box"
+          style="fill:#fed700"
+          d="m 138,192 v -41 l 39,-41 h 37 V 35 h 40 V 0 h 144 v 35 h 43 v 85 h -43 v 40 h -9 l -5,1 H 251 v 31 z"
+    />
+    <path id="bottom_1"
+          style="fill:#00feb3"
+          d="M 0,162.92 V 0 H 168.877 V 5.8300781 L 163.45312,46.46875 147.76758,84.339844 122.81445,116.85742 90.294922,141.81055 52.425781,157.49609 11.787109,162.92 Z"
+    />
+    <path id="bottom_2"
+          style="fill:#47fe00"
+          d="M 168.877,5.8300781 163.45312,46.46875 147.76758,84.339844 122.81445,116.85742 90.294922,141.81055 52.425781,157.49609 11.787109,162.92 H 0 v 34.868 l 23.927508,-0.21937 C 132.71126,198.55195 205.10592,96.371143 203.90145,5.8300781 L 203.8239,0 H 168.877 Z"
+    />
+    <ellipse id="lens"
+             style="fill:#a700fe"
+             cx="1001"
+             cy="297"
+             rx="23"
+             ry="23"
+    />
+    <path id="warning"
+          style="fill:#fe4d00"
+          d="M 293,105 V 76 h -9 v 29 z m 13,-18 v -2 l 10,-5 v 12 z"
+    />
+</svg>

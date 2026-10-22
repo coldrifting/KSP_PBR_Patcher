@@ -1,0 +1,12 @@
+# Fix heat tile colors in part thumbnails
+part: MK1IntakeFuselage
+model: ReStockPBR/Assets/Aero/restock-pbr-fuselage-mk1-intake-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack

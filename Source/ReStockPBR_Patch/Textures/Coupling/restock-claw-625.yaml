@@ -1,0 +1,175 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-625.dds
+      channels: rgb
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 15, 64 ]
+        - [ 128, 255 ]
+      masks:
+        - color_primary
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_primary!
+
+color_secondary:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-625.dds
+      channels: rgb
+      masks:
+        - color_secondary
+
+  - curves:
+      points:
+        - [ 45, 192 ]
+        - [ 90, 240 ]
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-625.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - wires!
+
+  - saturation:
+      percent: 120
+      masks:
+        - wires
+        - lamp_lens
+
+  - fill:
+      color: black
+      masks:
+        - remove
+
+  - curves:
+      points:
+        - [ 80, 16 ]
+        - [ 150, 64 ]
+      masks:
+        - side_panels
+
+  - curves:
+      points:
+        - [ 64, 80 ]
+      masks:
+        - side_edges
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - lamp_housing
+
+  - curves:
+      points:
+        - [ 64, 72 ]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [ 64, 110 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 64, 85 ]
+      masks:
+        - metal_4
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-625.dds
+      channels: a
+
+  - fill:
+      color: black
+      masks:
+        - remove
+
+  - curves:
+      points:
+        - [ 32, 128 ]
+        - [ 90, 222 ]
+      masks:
+        - side_panels
+
+  - curves:
+      points:
+        - [ 64, 102 ]
+      masks:
+        - side_edges
+
+  - curves:
+      points:
+        - [ 30, 128 ]
+        - [ 90, 220 ]
+      masks:
+        - lamp_housing
+        - metal_3
+
+  - curves:
+      points:
+        - [ 64, 85 ]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [ 40, 128 ]
+        - [ 110, 220 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 16, 64 ]
+        - [ 100, 200 ]
+      masks:
+        - metal_4
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - wires
+        - lamp_lens
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

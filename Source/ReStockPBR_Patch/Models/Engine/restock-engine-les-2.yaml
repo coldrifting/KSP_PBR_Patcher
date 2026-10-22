@@ -1,0 +1,17 @@
+# Launch Escape System Jr. - Remove unneeded transform_components in order to remove ModulePartVariants
+part: restock-engine-les-2
+model: ReStockPlus/Assets/Engine/restock-engine-les-2
+remove_part_variants: True
+
+after: ReStockPlus
+needs:
+  - ReStockPlus
+
+color_zones:
+  main:
+    tc1: porkjetBlack
+    tc2: darkRed
+
+operations:
+  - remove_transform:
+      transform: LES_Red

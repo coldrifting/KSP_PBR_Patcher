@@ -1,0 +1,12 @@
+part: hinge_04
+model: SquadExpansion/Serenity/Parts/Robotics/Assets/hinge_04
+
+remove_part_variants: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: lithiumRed

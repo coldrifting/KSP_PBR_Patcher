@@ -1,0 +1,11 @@
+# Helicopter Propeller - Medium
+part: mediumHeliBlade
+model: SquadExpansion/Serenity/Parts/Propellers/Assets/mediumHeliBlade
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: electricalYellow

@@ -1,0 +1,12 @@
+# Fix thumbnails
+part: ServiceBay_250_v2
+model: ReStockPBR/Assets/Payload/restock-pbr-service-bay-25-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: payloadGrey

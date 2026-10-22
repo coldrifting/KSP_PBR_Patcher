@@ -1,0 +1,11 @@
+part: Thoroughbred
+model: ReStockPBR/Assets/Engine/restock-pbr-engine-srb-thoroughbred-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack

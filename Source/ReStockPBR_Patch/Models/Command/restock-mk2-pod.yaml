@@ -1,0 +1,16 @@
+# Mk2 pod
+part: Mk2Pod
+model: ReStock/Assets/Command/restock-mk2-pod
+
+after: ReStock
+needs:
+  - ReStock
+  - SquadExpansion/MakingHistory
+
+color_zones:
+  main:
+    tc1: porkjetBlack
+    tc2: electricalRed
+    materials:
+      - restock-mk2-pod
+      - restock-mk2-pod-paint

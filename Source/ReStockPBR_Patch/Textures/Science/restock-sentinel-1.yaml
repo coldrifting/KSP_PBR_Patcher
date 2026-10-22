@@ -1,0 +1,204 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+        - color_primary_seams#888888
+
+  - fill:
+      image: panels_shadow
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+        - color_secondary_edges#888888
+
+  - fill:
+      image: cover_lines_shadow
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Science/restock-sentinel-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - wires!
+        - caution!
+        - mirrors!
+
+  - saturation:
+      percent: 120
+      masks:
+        - wires
+        - caution
+        - mirrors
+
+  - brightness:
+      percent: 115
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [ 16, 64 ]
+        - [ 100, 210 ]
+      masks:
+        - color_primary
+
+  - fill:
+      image: panels_blurred
+
+  - curves:
+      points:
+        - [ 64, 100 ]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - metal_5
+
+  - curves:
+      points:
+        - [ 64, 10 ]
+        - [ 150, 64 ]
+      masks:
+        - color_secondary
+
+  - fill:
+      image: cover_main
+
+  - fill:
+      image: cover_lines
+
+  - fill:
+      image: cover_lines_shadow
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Science/restock-sentinel-1.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 64, 105 ]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [ 28, 128 ]
+        - [ 56, 192 ]
+        - [ 100, 220 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 20, 128 ]
+        - [ 42, 192 ]
+        - [ 80, 220 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 64, 132 ]
+      masks:
+        - metal_3
+
+  - curves:
+      points:
+        - [ 32, 128 ]
+        - [ 60, 192 ]
+        - [ 115, 235 ]
+      masks:
+        - metal_4
+
+  - curves:
+      points:
+        - [ 20, 128 ]
+        - [ 42, 192 ]
+        - [ 80, 220 ]
+      masks:
+        - color_primary
+        - color_primary_seams#888888
+        - bars!
+
+  - curves:
+      points:
+        - [ 32, 128 ]
+        - [ 64, 203 ]
+        - [ 110, 237 ]
+      masks:
+        - color_secondary
+
+  - fill:
+      color: white
+      masks:
+        - mirrors
+
+  - curves:
+      points:
+        - [ 64, 115 ]
+      masks:
+        - bars
+
+  - fill:
+      color: "#EEEEEE"
+      masks:
+        - caution
+        - caution_text
+
+  - curves:
+      points:
+        - [ 44, 128 ]
+        - [ 128, 222 ]
+      masks:
+        - metal_5
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_primary_seams#888888
+        - color_secondary
+        - color_secondary_edges#888888
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - wires!
+        - caution!
+        - caution_text!
+        - mirrors!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_primary_seams#888888
+        - color_secondary
+        - color_secondary_edges#888888

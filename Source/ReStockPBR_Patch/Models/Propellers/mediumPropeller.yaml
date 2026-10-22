@@ -1,0 +1,11 @@
+# Plane Propeller - Medium
+part: mediumPropeller
+model: SquadExpansion/Serenity/Parts/Propellers/Assets/mediumPropeller
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: electricalYellow

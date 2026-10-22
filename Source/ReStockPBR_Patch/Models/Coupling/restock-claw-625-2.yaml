@@ -1,0 +1,22 @@
+# 0.625m Claw - Remove unneeded transforms in order to remove ModulePartVariants
+part: smallClaw
+model: ReStock/Assets/Coupling/restock-claw-625-2
+remove_part_variants: True
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: electricalYellow
+    tc2: metalBasic
+    materials:
+      - restock-claw-625-2
+
+operations:
+  - remove_transform:
+      transform: Body_black
+
+  - remove_transform:
+      transform: Body_yellow

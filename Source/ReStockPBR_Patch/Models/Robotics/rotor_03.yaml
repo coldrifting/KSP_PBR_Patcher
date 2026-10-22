@@ -1,0 +1,12 @@
+part: rotor_03
+model: SquadExpansion/Serenity/Parts/Robotics/Assets/rotor_03
+
+remove_part_variants: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: lithiumRed

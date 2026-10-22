@@ -1,0 +1,23 @@
+# 1.25m Claw - Remove unneeded transforms in order to remove ModulePartVariants
+part: GrapplingDevice
+model: ReStock/Assets/Coupling/restock-claw-125-1
+remove_part_variants: True
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: electricalYellow
+    materials:
+      - restock-claw-125-1
+      - restock-claw-125-2-white
+
+operations:
+  - remove_transform:
+      transform: Accents_black
+
+  - remove_transform:
+      transform: Accents_yellow

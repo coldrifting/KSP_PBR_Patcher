@@ -1,0 +1,18 @@
+# Make part thumbnail more consistent
+part: crewCabin
+model: ReStockPBR/Assets/Command/restock-pbr-hitchhiker-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    materials:
+      - restock-pbr-hitchhiker-1
+
+  hatches:
+    tc1: porkjetWhite
+    materials:
+      - restock-pbr-crewed-hatch-1

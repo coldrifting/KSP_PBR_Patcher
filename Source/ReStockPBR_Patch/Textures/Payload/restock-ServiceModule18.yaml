@@ -1,0 +1,122 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      image: ReStock/Assets/Payload/restock-ServiceModule18.dds
+      channels: rgb
+
+  - fill:
+      image: ReStock/Assets/Payload/restock-ServiceModule18-s.dds
+      channels: rgb
+      masks:
+        - color_primary_foil
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 50, 128 ]
+      masks:
+        - color_primary_foil
+
+  - curves:
+      points:
+        - [ 0, 128 ]
+        - [ 64, 192 ]
+      masks:
+        - color_primary_paint
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - color_primary_foil!
+        - color_primary_paint!
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Payload/restock-ServiceModule18.dds
+      channels: rgb
+
+  - fill:
+      image: ReStock/Assets/Payload/restock-ServiceModule18-s.dds
+      channels: rgb
+      masks:
+        - color_primary_foil
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 192, 128 ]
+      masks:
+        - color_primary_paint
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Payload/restock-ServiceModule18.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 28, 128 ]
+        - [ 64, 192 ]
+      masks:
+        - color_primary_foil
+
+  - curves:
+      points:
+        - [ 45, 128 ]
+        - [ 100, 192 ]
+      masks:
+        - metal_walls_inside
+        - metal_details
+        - partitions
+
+  - blur:
+      radius: 20
+      masks:
+        - partitions
+        - partitions_seams!
+        - partitions_seams_rivets!
+
+  - noise:
+      intensity: 16
+      coverage: 50
+      masks:
+        - partitions
+        - partitions_seams!
+        - partitions_seams_rivets!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary_foil
+        - color_primary_paint
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary_foil
+        - color_primary_paint

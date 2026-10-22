@@ -1,0 +1,11 @@
+# Plane Propeller - Small
+part: smallPropeller
+model: SquadExpansion/Serenity/Parts/Propellers/Assets/smallPropeller
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: argonBlue

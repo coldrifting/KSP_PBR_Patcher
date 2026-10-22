@@ -1,0 +1,10 @@
+part: lGripPad
+model: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/lGripPad
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: atomicOrange

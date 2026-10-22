@@ -1,0 +1,13 @@
+# Inflatable Airlock
+part: InflatableAirlock
+model: ReStock/Assets/Coupling/restock-airlock-inflatable-1
+
+after: ReStock
+needs:
+  - ReStock
+  - SquadExpansion/MakingHistory
+
+color_zones:
+  main:
+    tc1: sovietGreen
+    tc2: metalBasic

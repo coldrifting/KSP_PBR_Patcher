@@ -1,0 +1,10 @@
+part: OrbitalScanner
+model: ReStock/Assets/Resource/restock-orbitalscanner-1
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: metalBasic

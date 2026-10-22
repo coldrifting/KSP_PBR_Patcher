@@ -1,0 +1,12 @@
+part: piston_01
+model: SquadExpansion/Serenity/Parts/Robotics/Assets/piston_01
+
+remove_part_variants: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: electricalYellow

@@ -1,0 +1,13 @@
+part: SurfaceScanner
+model: ReStock/Assets/Resource/restock-surfacescanner-1
+
+after: ReStock
+needs:
+  - ReStock
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: porkjetBlack
+    materials:
+      - restock-surfacescanner-1

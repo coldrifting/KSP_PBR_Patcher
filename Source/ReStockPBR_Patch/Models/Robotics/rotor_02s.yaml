@@ -1,0 +1,21 @@
+part: rotor_02s
+model: SquadExpansion/Serenity/Parts/Robotics/Assets/rotor_02s
+
+remove_part_variants: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: electricalYellow
+
+operations:
+  - edit_material_textures:
+      material: Rotor_02_Diff
+      main_tex: Rotor_01_diffuse_color-a
+
+  - edit_material_textures:
+      material: Rotor_01_Diff 1
+      main_tex: Rotor_01_diffuse_color-a

@@ -1,0 +1,45 @@
+<svg width="1024"
+     height="512"
+     viewBox="0 0 1024 512"
+     xmlns="http://www.w3.org/2000/svg">
+    <rect id="concrete"
+          style="fill:#0013ff"
+          width="120"
+          height="276"
+          x="904"
+          y="116"
+    />
+    <rect id="clamps"
+          style="fill:#ffc600"
+          width="64"
+          height="64"
+          x="932"
+          y="304"
+    />
+    <path id="color_secondary"
+          style="fill:#00ff00"
+          d="m 0,0 h 68 v 26 l 1,1 V 392 H 259 V 209 l 7,-7 h 122 l 4,4 v -2 h 12 v -36 h 96 V 0 h 60 v 320 h -60 v 72 h -88 v 48 h -28 v 72 H 0 Z m 664,0 v 96 h 360 V 0 Z"
+    />
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="M 560 0 L 560 340 L 564 340 L 564 376 L 612 376 L 612 292 L 716 292 L 716 356 L 700 356 L 700 376 L 680 376 L 680 432 L 904 432 L 904 96 L 664 96 L 664 0 L 560 0 z M 721 113 L 724 113 L 724 118 L 721 118 L 721 113 z M 721 131 L 724 131 L 724 137 L 721 137 L 721 131 z M 721 149 L 724 149 L 724 155 L 721 155 L 721 149 z M 732 297 L 734 297 L 734 299 L 732 299 L 732 297 z M 759 297 L 761 297 L 761 299 L 759 299 L 759 297 z "
+    />
+    <path id="metal_1"
+          style="fill:#fc00ff"
+          d="M 66 0 L 66 392 L 412 392 L 452 392 L 452 396 L 424 396 L 424 468 L 452 468 L 452 496 L 393 496 L 393 512 L 592 512 L 592 440 L 612 440 L 612 512 L 632 512 L 632 440 L 644 440 L 644 508 L 720 508 L 720 493 L 760 493 L 760 512 L 1024 512 L 1024 392 L 904 392 L 904 432 L 680 432 L 680 376 L 700 376 L 700 356 L 716 356 L 716 292 L 612 292 L 612 376 L 564 376 L 564 340 L 500 340 L 500 320 L 560 320 L 560 0 L 66 0 z M 664 0 L 664 96 L 904 96 L 904 116 L 1024 116 L 1024 0 L 664 0 z "
+    />
+    <path id="metal_2"
+          style="fill:#bdff00"
+          d="m 664,0 v 96 h 360 V 0 Z"
+    />
+    <circle id="metal_3"
+            style="fill:#0000ff"
+            r="14"
+            cx="910"
+            cy="20"
+    />
+    <path id="wires"
+          style="fill:#9300ff"
+          d="M 324,0 V 128 H 500 V 0 Z"
+    />
+</svg>

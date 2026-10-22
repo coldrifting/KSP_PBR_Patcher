@@ -1,0 +1,43 @@
+<svg width="512"
+     height="512"
+     viewBox="0 0 512 512"
+     xmlns="http://www.w3.org/2000/svg">
+    <rect id="color_primary"
+          style="fill:#fe00ad"
+          width="364"
+          height="168"
+          x="0"
+          y="0"
+    />
+    <path id="color_secondary"
+          style="fill:#00fe35"
+          d="m 185,287 v 88 h 8 v 72 H 341 V 287 Z"
+    />
+    <path id="metal_1"
+          style="fill:#11fe00"
+          d="m 227,229 v -21 l 16,-18 h 104 v 39 z"
+    />
+    <path id="metal_2"
+          style="fill:#95fe00"
+          d="m 0,169 v 219 h 44 v -68 h 53 v -32 h 39 v -38 h 48 V 240 H 125.80664 C 111.62195,200.01272 79.0685,174 52,174 v -3 h -7 v -2 z"
+    />
+    <path id="metal_3"
+          style="fill:#0bfe00"
+          d="m 0,499 v 13 H 160 V 499 Z M 160,489 H 4 v 1 H 0 v -39 h 150 v 14 l 1,1 h 9 z m 32,-90 v 41 h -32 v -4 h -32 v -37 z"
+    />
+    <path id="metal_4"
+          style="fill:#0053fe"
+          d="m 128,399 v 52 H 0 v 61 h 160 v -72 h 32 v -41 z"
+    />
+    <path id="metal_5"
+          style="fill:#00fee9"
+          d="m 402,0 v 473 h 21 v 39 h 89 V 473 0 Z"
+    />
+    <rect id="window"
+          style="fill:#fe004d"
+          width="44"
+          height="28"
+          x="144"
+          y="256"
+    />
+</svg>

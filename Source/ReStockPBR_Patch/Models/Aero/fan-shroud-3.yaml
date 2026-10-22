@@ -1,0 +1,13 @@
+# Fan Shroud 3
+part: FanShroud_03
+model: SquadExpansion/Serenity/Parts/Aero/Assets/FanShroud_03
+
+remove_part_variants: True
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack

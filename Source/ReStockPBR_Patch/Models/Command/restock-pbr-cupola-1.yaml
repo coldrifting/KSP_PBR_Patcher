@@ -1,0 +1,31 @@
+# Make part thumbnail more consistent and tweak default colors
+part: cupola
+model: ReStockPBR/Assets/Command/restock-pbr-cupola-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: metalBasic
+    materials:
+      - restock-pbr-cupola-lab-1
+
+  sofi:
+    tc1: sofiWhite
+    materials:
+      - restock-pbr-cupola-lab-insulated-1
+
+  hatches:
+    tc1: porkjetWhite
+    materials:
+      - restock-pbr-crewed-hatch-1
+
+  ladders:
+    tc1: metalBasic
+    tc2: porkjetBlack
+    copy: restock-pbr-cupola-lab-1
+    transforms:
+      - 25mCupolaLadders

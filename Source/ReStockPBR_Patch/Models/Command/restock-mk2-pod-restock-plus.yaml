@@ -1,0 +1,14 @@
+# Mk2 pod
+part: restock-mk2-pod
+model: ReStock/Assets/Command/restock-mk2-pod
+
+after: ReStockPlus
+needs:
+  - ReStockPlus
+
+color_zones:
+  main:
+    tc1: porkjetBlack
+    tc2: electricalRed
+    materials:
+      - restock-mk2-pod

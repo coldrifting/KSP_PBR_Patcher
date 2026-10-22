@@ -1,0 +1,98 @@
+size: [ 256, 512 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Science/restock-magnetometer-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - saturate!
+
+  - saturation:
+      percent: 120
+      masks:
+        - saturate
+
+  - fill:
+      image: stripe_removal
+
+  - curves:
+      points:
+        - [ 150, 64 ]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 64, 90 ]
+      masks:
+        - bg!
+        - color_primary!
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Science/restock-magnetometer-1.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - fill:
+      image: stripe_removal_gloss
+
+  - curves:
+      points:
+        - [ 48, 128 ]
+        - [ 128, 224 ]
+      masks:
+        - metal_gloss_correction_1
+
+  - curves:
+      points:
+        - [ 64, 106 ]
+
+  - curves:
+      points:
+        - [ 255, 205 ]
+      masks:
+        - metal_gloss_correction_2
+        - metal_gloss_correction_3
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - metal
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

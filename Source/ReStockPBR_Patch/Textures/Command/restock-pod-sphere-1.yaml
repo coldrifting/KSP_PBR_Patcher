@@ -1,0 +1,170 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary_1
+        - color_primary_2!
+        - color_primary_3!
+        - color_primary_4!
+        - circles_paint!
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary_1
+        - color_secondary_2
+        - color_secondary_3
+        - circles_paint
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Command/restock-pod-sphere-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - saturate!
+
+  - saturation:
+      percent: 120
+      masks:
+        - saturate
+
+  - curves:
+      points:
+        - [ 64, 40 ]
+      masks:
+        - main
+
+#  - brightness:
+#      percent: 115
+#      invert_masks: True
+
+  - curves:
+      points:
+        - [ 64, 40 ]
+      masks:
+        - color_secondary_1
+
+  - curves:
+      points:
+        - [ 18, 64 ]
+        - [ 128, 235 ]
+      masks:
+        - color_secondary_2
+
+  - curves:
+      points:
+        - [ 95,  160 ]
+      masks:
+        - color_secondary_3
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Command/restock-pod-sphere-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [ 44, 128 ]
+      masks:
+        - color_primary_1
+        - color_primary_2!
+        - color_primary_4!
+
+  - curves:
+      points:
+        - [ 10, 128 ]
+        - [ 35, 255 ]
+      masks:
+        - metal_spec_brightness_up
+
+  - curves:
+      points:
+        - [ 14, 128 ]
+        - [ 40, 220 ]
+        - [ 80, 245 ]
+      masks:
+        - metal_edges
+
+  - curves:
+      points:
+        - [ 24, 128 ]
+      masks:
+        - color_secondary_1
+
+  - curves:
+      points:
+        - [ 10, 128 ]
+      masks:
+        - color_secondary_2
+
+  - curves:
+      points:
+        - [ 16, 128 ]
+      masks:
+        - color_secondary_3
+
+  - curves:
+      points:
+        - [ 54, 128 ]
+      masks:
+        - circles_bg
+
+  - invert:
+      masks:
+        - circles_paint
+
+  - fill:
+      color: "#BBBBBB"
+      masks:
+        - color_primary_3
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary_1
+        - color_primary_2!
+        - color_primary_3!
+        - color_primary_4!
+        - color_secondary_1
+        - color_secondary_2
+        - color_secondary_3
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - windows
+
+  - fill:
+      color: black
+      masks:
+        - circles_paint
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary_1
+        - color_primary_2!
+        - color_primary_3!
+        - color_primary_4!
+        - color_secondary_1
+        - color_secondary_2
+        - color_secondary_3

@@ -1,0 +1,28 @@
+<svg width="512"
+     height="512"
+     viewBox="0 0 512 512"
+     xmlns="http://www.w3.org/2000/svg">
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="m 305,0 v 63 h -82 v 69 h 82 v 5 H 145 v 105 h 308 v 42 h 59 V 0 Z m -53,154 h 81 v 61 h 1 v 16 h -82 z m 106,2 h 30 v 29 H 358 Z M 222,58 V 5 h 59 V 58 Z M 4,121 V 22 h 101 v 99 z M 151,512 V 246 h 159 v 75 H 512 V 512 Z M 0,344 v 4 32 H 132 V 348 H 96 v -4 z m 15,20 h 6 v 4 h -6 z"
+    />
+    <path id="color_secondary"
+          style="fill:#00ff1a"
+          d="m 221,323 v 62 h 65 v -62 z m 2,2 h 2 v 2 h -2 z m 59,0 h 2 v 2 h -2 z m 0,56 h 2 v 2 h -2 z M 305,0 H 512 V 137 H 305 Z M 12,123 h 96 v 67 H 12 Z M 222,58 V 5 h 59 V 58 Z M 4,121 V 22 h 101 v 99 z M 0,344 v 4 32 H 132 V 348 H 96 v -4 z m 15,20 h 6 v 4 h -6 z"
+    />
+    <rect id="gloss_curves_exclude_1"
+          style="fill:#1a00ff"
+          width="127"
+          height="99"
+          x="0"
+          y="413"
+    />
+    <path id="gloss_curves_exclude_2"
+          style="fill:#f700ff"
+          d="m 221,323 h 65 v 62 H 221 Z M 12,134 v 31 h 25 v 25 h 21 v -25 h 25 v 25 h 25 V 134 Z M 223,63 h 82 v 69 H 223 Z M 222,5 h 59 V 58 H 222 Z M 4,40 h 101 v 81 H 4 Z"
+    />
+    <path id="saturate"
+          style="fill:#ff8700"
+          d="m 276,156 h 4 v 72 h -4 z M 16,365 h 4 v 2 h -4 z m 96,-65 h 12 v 48 h -12 z m -16,6 h 16 v 42 H 96 Z M 68,244 h 40 v 20 H 68 Z m -64,0 h 36 v 32 H 4 Z m 50,151 h 12 v 11 H 54 Z m -16,0 h 12 v 11 H 38 Z m -16,0 h 12 v 11 H 22 Z m -16,0 h 12 v 11 H 6 Z"
+    />
+</svg>

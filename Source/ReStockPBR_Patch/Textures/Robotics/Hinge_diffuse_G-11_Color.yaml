@@ -1,0 +1,71 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+        - color_secondary_text
+
+diffuse:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Robotics/Assets/Hinge_diffuse_G-11_plain.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 65, 70 ]
+
+  - curves:
+      points:
+        - [ 65, 128 ]
+      masks:
+        - metal
+
+gloss:
+  - fill:
+      image: SquadExpansion/Serenity/Parts/Robotics/Assets/Hinge_diffuse_G-11_plain.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [ 10, 128 ]
+        - [ 26, 192 ]
+        - [ 85, 235 ]
+      masks:
+        - bg!
+        - metal!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

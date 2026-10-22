@@ -1,0 +1,99 @@
+size: [ 256, 256 ]
+
+color_primary:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-125-2.dds
+      channels: rgb
+      masks:
+        - color
+
+  - curves:
+      points:
+        - [ 150, 255 ]
+        - [ 255, 175 ]
+      masks:
+        - color
+
+color_secondary:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-125-2.dds
+      channels: rgb
+      masks:
+        - color
+
+  - curves:
+      points:
+        - [ 120, 0 ]
+        - [ 150, 255 ]
+      masks:
+        - color
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-125-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - sticker!
+
+  - saturation:
+      percent: 120
+      masks:
+        - sticker
+
+  - curves:
+      points:
+        - [ 255, 175 ]
+      masks:
+        - color
+
+  - fill:
+      color: black
+      masks:
+        - remove
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-claw-125-2.dds
+      channels: a
+
+  - curves:
+      points:
+        - [ 32, 128 ]
+        - [ 110, 230 ]
+
+  - fill:
+      color: black
+      masks:
+        - remove
+
+  - fill:
+      color: "#EEEEEE"
+      masks:
+        - sticker
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - sticker
+        - remove
+
+metal_alt:
+  - fill:
+      color: black

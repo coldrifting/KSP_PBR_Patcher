@@ -1,0 +1,149 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-airlock-inflatable-1.dds
+      channels: rgb
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [ 44, 160 ]
+        - [ 114, 236 ]
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-airlock-inflatable-1.dds
+      channels: rgb
+      masks:
+        - color_secondary
+
+  - curves:
+      points:
+        - [ 20, 128 ]
+        - [ 64, 230 ]
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-airlock-inflatable-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - window!
+
+  - saturation:
+      percent: 120
+      masks:
+        - window
+
+  - curves:
+      points:
+        - [ 64, 160 ]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [ 64, 96 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - metal_3
+
+  - curves:
+      points:
+        - [ 64, 85 ]
+      masks:
+        - color_primary
+        - color_secondary
+
+gloss:
+  - fill:
+      image: ReStock/Assets/Coupling/restock-airlock-inflatable-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [ 64, 128 ]
+      masks:
+        - metal_4
+
+  - curves:
+      points:
+        - [ 40, 128 ]
+        - [ 90, 192 ]
+        - [ 255, 225 ]
+      masks:
+        - metal_5
+
+  - curves:
+      points:
+        - [ 40, 128 ]
+        - [ 128, 232 ]
+      masks:
+        - metal_2
+
+  - curves:
+      points:
+        - [ 30, 128 ]
+        - [ 100, 230 ]
+      masks:
+        - metal_1
+        - metal_4
+        - color_secondary
+
+  - curves:
+      points:
+        - [ 128, 64 ]
+        - [ 255, 200 ]
+      masks:
+        - metal_3
+
+  - curves:
+      points:
+        - [ 10, 128 ]
+        - [ 27, 207 ]
+        - [ 64, 235 ]
+      masks:
+        - color_primary
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+  - fill:
+      color: black
+      masks:
+        - window
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

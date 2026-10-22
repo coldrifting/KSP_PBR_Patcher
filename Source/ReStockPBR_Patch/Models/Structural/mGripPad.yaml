@@ -1,0 +1,10 @@
+part: mGripPad
+model: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/mGripPad
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: electricalYellow

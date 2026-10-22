@@ -1,0 +1,11 @@
+# Plane Propeller - Large
+part: largePropeller
+model: SquadExpansion/Serenity/Parts/Propellers/Assets/largePropeller
+
+needs:
+  - SquadExpansion/Serenity
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: atomicOrange

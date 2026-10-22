@@ -1,0 +1,14 @@
+part: sepMotor1
+model: ReStockPBR/Assets/Engine/restock-pbr-engine-srb-separatron-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+operations:
+  - rotate_transform:
+      transform: root
+      amount:
+        x: 0
+        y: 180
+        z: 0

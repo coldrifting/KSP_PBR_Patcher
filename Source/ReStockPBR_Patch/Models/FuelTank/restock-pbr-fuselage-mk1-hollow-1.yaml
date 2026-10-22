@@ -1,0 +1,20 @@
+# Fix heat tile colors in part thumbnails
+part: Mk1FuselageStructural
+model: ReStockPBR/Assets/FuelTank/restock-pbr-fuselage-mk1-hollow-1
+
+after: ReStockPBR
+needs:
+  - ReStockPBR
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-pbr-fueltank-mk2-4
+
+  tiles:
+    tc1: tileBlack
+    copy: restock-pbr-fueltank-mk2-4
+    transforms:
+      - Mk1StructuralHollowTilesLower
