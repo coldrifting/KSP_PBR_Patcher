@@ -76,6 +76,11 @@ metal:
   - fill:
       color: white
 
+  - fill:
+      color: black
+      masks:
+        - danger
+
 metal_alt:
   - copy:
       group: metal
