@@ -14,7 +14,7 @@ color_secondary:
 
 diffuse:
   - fill:
-      image: Squad/Parts/Aero/airbrake/airbrake.dds
+      image: Squad/Parts/Aero/airbrake/Airbrake.dds
       channels: rgb
 
   - saturation:
@@ -38,7 +38,7 @@ diffuse:
 
 gloss:
   - fill:
-      image: Squad/Parts/Aero/airbrake/airbrake.dds
+      image: Squad/Parts/Aero/airbrake/Airbrake.dds
       channels: rgb
 
   - saturation:
