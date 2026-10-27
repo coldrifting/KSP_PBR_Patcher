@@ -29,7 +29,6 @@ diffuse:
   - curves:
       points:
         - [ 128, 64 ]
-        - [ 192, 135 ]
       masks:
         - paint
 
