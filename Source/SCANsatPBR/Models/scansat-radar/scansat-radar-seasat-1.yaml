@@ -1,0 +1,17 @@
+part: scansat-radar-seasat-1
+model: SCANsat/Parts/scansat-radar/scansat-radar-seasat-1
+
+after: SCANsat
+needs:
+  - SCANsat
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - scansat-radar-1
+
+operations:
+  - rename_transform:
+      transform: " 1"
+      new_name: MainStruts

@@ -1,0 +1,21 @@
+part: scansat-radar-poseidon-3b-1
+model: SCANsat/Parts/scansat-radar/scansat-radar-poseidon-3b-1
+
+after: SCANsat
+needs:
+  - SCANsat
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - scansat-radar-1
+
+  mli:
+    tc1: mliGold
+    materials:
+      - scansat-radar-foil-1
+
+operations:
+  - remove_texture:
+      texture: scansat-radar-foil-1-s

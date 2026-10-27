@@ -1,0 +1,13 @@
+# Medium Tech SAR
+part: scansat-sar-radarsat-2-1
+model: SCANsat/Parts/scansat-sar/scansat-sar-radarsat-2-1
+
+after: SCANsat
+needs:
+  - SCANsat
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - scansat-sar-1

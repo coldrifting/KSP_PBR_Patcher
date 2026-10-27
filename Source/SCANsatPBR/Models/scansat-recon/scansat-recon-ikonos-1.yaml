@@ -1,0 +1,13 @@
+# Low Tech High Res Imager
+part: scansat-recon-ikonos-1
+model: SCANsat/Parts/scansat-recon/scansat-recon-ikonos-1
+
+after: SCANsat
+needs:
+  - SCANsat
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - scansat-recon-1

@@ -1,0 +1,97 @@
+size: [ 2048, 2048 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: SCANsat/Parts/scansat-recon/scansat-recon-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - saturate!
+        - lights!
+
+  - saturation:
+      percent: 120
+      masks:
+        - saturate
+        - lights
+        - wires!
+
+  - saturation:
+      percent: 160
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [64, 85]
+      masks:
+        - color_secondary
+
+  - curves:
+      points:
+        - [64, 85]
+
+gloss:
+  - fill:
+      image: SCANsat/Parts/scansat-recon/scansat-recon-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [64, 110]
+
+  - curves:
+      points:
+        - [64, 128]
+      masks:
+        - gloss_correction
+
+  - curves:
+      points:
+        - [55, 160]
+        - [128, 225]
+      masks:
+        - wires
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - wires!
+        - lights!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

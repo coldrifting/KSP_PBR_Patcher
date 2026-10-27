@@ -1,0 +1,13 @@
+# Medium Tech Resource Scanner
+part: scansat-resources-mise-1
+model: SCANsat/Parts/scansat-resources/scansat-resources-mise-1
+
+after: SCANsat
+needs:
+  - SCANsat
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - scansat-resources-1

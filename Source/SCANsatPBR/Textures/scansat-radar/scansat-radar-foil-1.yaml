@@ -1,0 +1,49 @@
+size: [ 256, 256 ]
+
+color_primary:
+  - fill:
+      color: white
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: SCANsat/Parts/scansat-radar/scansat-radar-foil-1-s.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 82]
+
+gloss:
+  - fill:
+      image: SCANsat/Parts/scansat-radar/scansat-radar-foil-1-s.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [40, 128]
+        - [110, 210]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+
+metal:
+  - fill:
+      color: "#B2B2B2"
+
+metal_alt:
+  - fill:
+      color: black

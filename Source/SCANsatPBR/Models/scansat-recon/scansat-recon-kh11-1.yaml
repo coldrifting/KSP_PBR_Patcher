@@ -1,0 +1,20 @@
+# High Tech High Res Imager
+part: scansat-recon-kh11-1
+model: SCANsat/Parts/scansat-recon/scansat-recon-kh11-1
+
+after: SCANsat
+needs:
+  - SCANsat
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - scansat-recon-1
+
+  mli:
+    tc1: mliSilver
+    materials:
+      - scansat-recon-reflect-1
+    transforms:
+      - KH-11_Foil

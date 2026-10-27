@@ -1,0 +1,48 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      color: white
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: SCANsat/Parts/scansat-multi/scansat-multi-foil-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 80]
+
+gloss:
+  - fill:
+      image: SCANsat/Parts/scansat-multi/scansat-multi-foil-1-silver-s.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 100]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+
+metal:
+  - fill:
+      color: "#B2B2B2"
+
+metal_alt:
+  - fill:
+      color: black

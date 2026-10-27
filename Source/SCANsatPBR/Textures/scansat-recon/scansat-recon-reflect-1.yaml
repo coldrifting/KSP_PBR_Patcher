@@ -1,0 +1,52 @@
+size: [ 512, 512 ]
+
+color_primary:
+  - fill:
+      color: white
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: SCANsat/Parts/scansat-recon/scansat-recon-reflect-1.dds
+      channels: rgb
+
+  - curves:
+      points:
+        - [24, 64]
+        - [100, 200]
+
+gloss:
+  - fill:
+      image: SCANsat/Parts/scansat-recon/scansat-recon-reflect-1-s.dds
+      channels: rgb
+
+  - curves:
+      points:
+        - [50, 128]
+        - [128, 192]
+        - [255, 225]
+
+  - curves:
+      points:
+        - [255, 225]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+
+metal:
+  - fill:
+      color: "#B2B2B2"
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black

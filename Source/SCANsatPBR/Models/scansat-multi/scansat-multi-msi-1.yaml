@@ -1,0 +1,62 @@
+# High-tech multispectral scanner
+part: scansat-multi-msi-1
+model: SCANsat/Parts/scansat-multi/scansat-multi-msi-1
+
+after: SCANsat
+needs:
+  - SCANsat
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - scansat-multi-1
+      - scansat-multi-2
+
+  mli:
+    tc1: mliGold
+    materials:
+      - scansat-multi-foil-1
+
+operations:
+  - remove_transform:
+      transform: MSI_Foil_Silver
+
+  - remove_material:
+      material: scansat-multi-foil-1-silver
+
+  - rename_material:
+      material: scansat-multi-foil-1-alt
+      new_name: scansat-multi-foil-1
+
+  - edit_material_textures:
+      material: scansat-multi-foil-1
+      bump_map: scansat-multi-foil-1-n
+
+  - rename_material:
+      material: scansat-multi-metal-1
+      new_name: scansat-multi-2
+
+  - add_team_colors:
+      material: scansat-multi-1
+      tc1: metalBasic
+
+  - add_team_colors:
+      material: scansat-multi-2
+      tc1: metalBasic
+
+  - add_team_colors:
+      material: scansat-multi-foil-1
+      tc1: mliGold
+
+  - remove_texture:
+      texture: scansat-multi-foil-1-s
+
+  - remove_texture:
+      texture: scansat-multi-foil-1-silver
+
+  - remove_texture:
+      texture: scansat-multi-foil-1-silver-s
+
+  - remove_texture:
+      texture: scansat-multi-foil-1-alt-n

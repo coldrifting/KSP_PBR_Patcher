@@ -1,0 +1,17 @@
+<svg width="1024"
+     height="1024"
+     viewBox="0 0 1024 1024"
+     xmlns="http://www.w3.org/2000/svg">
+    <path id="wires"
+          style="fill:#0000ff"
+          d="m 0,749 h 276 v 118 h 16 v 26 h -17 v 131 H 0 Z"
+    />
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="M 6,748 V 641 h 208 v 107 z m 542,161 -2,-2 v -25 l 2,-2 h 10 v -9 l 2,-2 h 21 l 2,2 v 46 l -3,3 h -20 l -2,-2 v -9 z M 411,809 v -66 h 12 v 32 h 6 v 25 h -6 v 9 z M 262,413 v -17 h 1 v -2 h 9 v 40 h -9 V 413 Z M 33,314 v 23 H 13 v 42 h 37 v 26 H 5 v 27 l 1,1 h 99 v -22 h 23 v -75 h -15 v -22 z m 8,1 h 55 v 26 H 41 Z m 2,30 h 59 v 11 H 43 Z m 383,679 v -34 h 65 v 34 z m 585,-828 v 1 h -3 V 300 H 795 v 343 h -73 v -47 h -19 v 55 h 43 v 57 h -96 v 55 h 21 v 261 h 353 V 196 Z M 832,322 h 128 l 7,7 v 53 H 825 v -53 z m 21,91 h 88 v 12 h 13 v 202 h -14 v 12 H 853 V 627 H 840 V 425 h 13 z m -82,265 h 146 l 14,14 v 79 l 9,34 v 194 l -14,14 H 762 L 748,999 V 805 l 9,-34 V 692 Z M 938,296 v -50 h 64 v 50 z M 570,290 V 34 h 60 l 3,1 5,3 2,4 v 68 h 16 v 48 h -16 v -27 h -1 v -2 h -1 v 1 h -6 v 1 h -2 v 1 H 596 V 290 Z M 0,0 V 312 H 508 V 98 h 5 l 3,-5 2,-4 5,-1 6,-2 4,-3 2,-2 V 24 h 489 V 0 Z M 72,82 H 188 V 187 H 72 Z"
+    />
+    <path id="color_secondary"
+          style="fill:#00ff00"
+          d="m 559,574 h 2 v -12 h 9 v 12 h 2 v 59 h 74 V 478 h -73 v -65 h 89 V 342 H 788 V 634 H 735 V 407 h -35 v 299 h -57 v 60 h -1 v 4 h -11 v -47 h -63 v -51 h -9 z m -64,450 v -93 h 35 v -21 h 26 v 11 l 8,10 h 20 V 795 l 1,-1 h 46 v 10 h -35 v 97 h 57 v -59 h 8 v 66 h -24 v 116 z M 0,463 h 216 v 141 h 10 v 9 h 7 v 25 h -7 v 1 H 0 Z M 33,314 v 23 H 13 v 42 h 37 v 26 H 5 v 27 l 1,1 h 99 v -22 h 23 v -75 h -15 v -22 z m 905,-18 v -50 h 64 v 50 z M 570,290 V 34 h 60 l 3,1 5,3 2,4 v 80 h -1 v 2 h -1 v 6 h -6 v 1 h -2 v 1 h -34 v 158 z"
+    />
+</svg>

@@ -1,0 +1,62 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: SCANsat/Parts/scansat-multi/scansat-multi-2.dds
+      channels: rgb
+
+  - curves:
+      points:
+        - [64, 80]
+
+  - curves:
+      points:
+        - [64, 80]
+      masks:
+        - color_secondary
+
+gloss:
+  - fill:
+      image: SCANsat/Parts/scansat-multi/scansat-multi-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [60, 128]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

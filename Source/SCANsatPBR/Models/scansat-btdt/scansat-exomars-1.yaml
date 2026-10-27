@@ -1,0 +1,17 @@
+# SCAN Been There Done That®
+part: scansat-exomars-1
+model: SCANsat/Parts/scansat-btdt/scansat-exomars-1
+
+after: SCANsat
+needs:
+  - SCANsat
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: metalBasic
+
+  mli:
+    tc1: mliGold
+    transforms:
+      - EMCameraMLI
