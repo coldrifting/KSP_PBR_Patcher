@@ -10,9 +10,10 @@ from utils.yaml_load import get_yaml_parameter
 
 
 class OperationRotateTransform(Operation):
-    def __init__(self, transform: str, amount: Vec3):
+    def __init__(self, transform: str, amount: Vec3, absolute: bool):
         self.transform = transform
         self.amount = amount
+        self.absolute = absolute
 
     def apply(self, mu_data: MuData):
         transforms: list[Transform] = mu_data.get_transforms(self.transform, None)
@@ -20,7 +21,7 @@ class OperationRotateTransform(Operation):
             raise ArgumentException(f"No transforms found with the name {self.transform}")
 
         for transform in transforms:
-            transform_rotation = to_xyz_euler(transform.rotation)
+            transform_rotation = Vec3(0, 0, 0) if self.absolute else to_xyz_euler(transform.rotation)
             new_rotation = (((transform_rotation + self.amount) + 360) % 720) - 360
             new_rotation_quaternion = to_quaternion(new_rotation)
             transform.rotation = new_rotation_quaternion
@@ -32,8 +33,10 @@ class OperationRotateTransform(Operation):
         if amount_yaml is None:
             raise ArgumentException(f"Missing or invalid parameter amount for operation rotate_transform")
 
-        amount = Vec3.from_yaml(amount_yaml) % 360
+        amount = ((Vec3.from_yaml(amount_yaml) + 360) % 720) - 360
+        absolute: bool = yaml.get("absolute", False)
 
         return OperationRotateTransform(
             transform=transform,
-            amount=amount)
+            amount=amount,
+            absolute=absolute)

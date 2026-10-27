@@ -12,11 +12,14 @@ from data.model.operations.edit_normals_average import OperationEditNormalsAvera
 from data.model.operations.edit_team_colors import OperationEditTeamColors
 from data.model.operations.edit_uvs import OperationEditUvs
 from data.model.operations.edit_vertices import OperationEditVertices
+from data.model.operations.move_transform import OperationMoveTransform
 from data.model.operations.operation import Operation
 from data.model.operations.remove_transform import OperationRemoveTransform
 from data.model.operations.remove_triangles import OperationRemoveTriangles
+from data.model.operations.rename_transform import OperationRenameTransform
 from data.model.operations.reroot import OperationReroot
 from data.model.operations.rotate_transform import OperationRotateTransform
+from data.model.operations.scale_transform import OperationScaleTransform
 from data.model.operations.set_parent import OperationSetParent
 from data.model.operations.split_triangles import OperationSplitTriangles
 from utils.exceptions import ArgumentException
@@ -53,12 +56,18 @@ class OperationFactory:
                 return OperationEditUvs.from_yaml(data)
             case "edit_vertices":
                 return OperationEditVertices.from_yaml(data)
+            case "move_transform":
+                return OperationMoveTransform.from_yaml(data)
             case "remove_transform":
                 return OperationRemoveTransform.from_yaml(data)
+            case "rename_transform":
+                return OperationRenameTransform.from_yaml(data)
             case "remove_triangles":
                 return OperationRemoveTriangles.from_yaml(data)
             case "rotate_transform":
                 return OperationRotateTransform.from_yaml(data)
+            case "scale_transform":
+                return OperationScaleTransform.from_yaml(data)
             case "reroot":
                 return OperationReroot.from_yaml(data)
             case "set_parent":

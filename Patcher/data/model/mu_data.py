@@ -400,6 +400,9 @@ class MuData:
             if not main_tex_file_name.endswith("-a"):
                 self.textures[main_tex_prop.index].name = main_tex_file_name + "-a"
 
+            if "_BumpMap" not in [x.name for x in material.properties]:
+                self.add_texture_map(material.name, "_BumpMap", "n")
+
             self.add_texture_map(material.name, "_MetalMap", "m")
             self.add_texture_map(material.name, "_TeamColorMap", "tc")
 
