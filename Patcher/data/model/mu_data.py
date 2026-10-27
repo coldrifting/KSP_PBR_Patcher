@@ -406,6 +406,8 @@ class MuData:
             self.add_texture_map(material.name, "_MetalMap", "m")
             self.add_texture_map(material.name, "_TeamColorMap", "tc")
 
+            material.remove_property("_SpecMap")
+
         material.add_or_update_property(prop_name="_TC1Color", prop_type=MaterialPropertyTag.Color, prop_value=tc1.color)
         material.add_or_update_property(prop_name="_TC1Metalness", prop_type=MaterialPropertyTag.Float3, prop_value=tc1.metalness)
         material.add_or_update_property(prop_name="_TC1Smoothness", prop_type=MaterialPropertyTag.Float3, prop_value=tc1.smoothness)
@@ -419,7 +421,7 @@ class MuData:
         material.add_or_update_property(prop_name="_TC2SmoothBlend", prop_type=MaterialPropertyTag.Float3, prop_value=tc2.smooth_blend)
 
     def remove_material(self, material_name: str):
-        target_index = self.textures.get_index(material_name)
+        target_index = self.materials.get_index(material_name)
         if target_index == -1:
             raise AttributeNotFoundError(f'Material with name {material_name} not found in model')
 
@@ -436,75 +438,20 @@ class MuData:
 
         del self.materials[target_index]
 
-    def remove_unused_materials(self):
-        transforms = self.get_transforms(transform_name=None, filter_type=MuTag.MeshRenderer)
-        renderers = [transform[MuTag.MeshRenderer] for transform in transforms]
-
-        used_material_indices: list[bool] = [False] * len(self.materials)
-
-        for renderer in renderers:
-            used_material_indices[renderer.material_index] = True
-
-        transforms_with_particles = self.get_transforms(transform_name=None, filter_type=MuTag.Particles)
-        particles = [transform[MuTag.Particles] for transform in transforms_with_particles]
-
-        for particle in particles:
-            used_material_indices[particle.count] = True
-
-        if any(x == False for x in used_material_indices):
-            index = 0
-            mapped_material_indices: dict[int, int] = {}
-            for i, used in enumerate(used_material_indices):
-                if used:
-                    mapped_material_indices[index] = index
-
-                index += 1
-
-            for renderer in renderers:
-                renderer.material_index = mapped_material_indices[renderer.material_index]
-
-            # Remove textures
-            for i in range(len(self.materials)):
-                if not used_material_indices[i]:
-                    del self.materials[i]
-
-        # Cleanup unused textures
-        self.remove_unused_textures()
-
     # Modifications - Textures
     def rename_texture(self, texture_name: str, new_texture_name: str):
         self.textures[texture_name].name = new_texture_name
 
-    def remove_unused_textures(self):
-        used_texture_indices: list[bool] = [False] * len(self.textures)
+    def remove_texture(self, texture_name: str):
+        tex_index = self.textures.get_index(texture_name)
         for material in self.materials:
             for prop in material.properties:
                 if not isinstance(prop, MaterialPropertyTexture):
                     continue
 
-                if prop.index < 0:
+                if prop.index < tex_index:
                     continue
 
-                used_texture_indices[prop.index] = True
+                prop.index -= 1
 
-        if any(x == False for x in used_texture_indices):
-            index = 0
-            mapped_texture_indices: dict[int, int] = {}
-            for i, used in enumerate(used_texture_indices):
-                if used:
-                    mapped_texture_indices[index] = index
-
-                index += 1
-
-            for material in self.materials:
-                for prop in material.properties:
-                    if not isinstance(prop, MaterialPropertyTexture):
-                        continue
-
-                    if prop.index >= 0:
-                        prop.index = mapped_texture_indices[prop.index]
-
-            # Remove textures
-            for i in range(len(self.textures)):
-                if not used_texture_indices[i]:
-                    del self.textures[i]
+        del self.textures[tex_index]

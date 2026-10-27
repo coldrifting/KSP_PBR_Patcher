@@ -56,8 +56,6 @@ class ConfigModel:
         if self.color_zones is not None:
             self.color_zones.apply_model_changes(mu_data)
 
-        #mu_data.remove_unused_materials()
-
         output_file = asset_output_dir / Path(self.model).with_suffix(".mu").name
         output_file.parent.mkdir(parents=True, exist_ok=True)
         mu_data.write_file(output_file)
@@ -173,6 +171,7 @@ class ConfigModel:
             for operation_yaml in operations_yaml:
                 operation = OperationFactory.from_yaml(operation_yaml)
                 operations.append(operation)
+
 
 
         return ConfigModel(

@@ -89,3 +89,9 @@ class Material:
                 case _:
                     raise NotImplementedError
 
+    def remove_property(self, prop_name: str):
+        for index, prop in enumerate(self.properties):
+            if prop.name == prop_name:
+                del self.properties[index]
+                break
+

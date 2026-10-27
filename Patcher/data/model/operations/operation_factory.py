@@ -14,8 +14,11 @@ from data.model.operations.edit_uvs import OperationEditUvs
 from data.model.operations.edit_vertices import OperationEditVertices
 from data.model.operations.move_transform import OperationMoveTransform
 from data.model.operations.operation import Operation
+from data.model.operations.remove_material import OperationRemoveMaterial
+from data.model.operations.remove_texture import OperationRemoveTexture
 from data.model.operations.remove_transform import OperationRemoveTransform
 from data.model.operations.remove_triangles import OperationRemoveTriangles
+from data.model.operations.rename_material import OperationRenameMaterial
 from data.model.operations.rename_transform import OperationRenameTransform
 from data.model.operations.reroot import OperationReroot
 from data.model.operations.rotate_transform import OperationRotateTransform
@@ -58,12 +61,18 @@ class OperationFactory:
                 return OperationEditVertices.from_yaml(data)
             case "move_transform":
                 return OperationMoveTransform.from_yaml(data)
+            case "remove_material":
+                return OperationRemoveMaterial.from_yaml(data)
+            case "remove_texture":
+                return OperationRemoveTexture.from_yaml(data)
             case "remove_transform":
                 return OperationRemoveTransform.from_yaml(data)
-            case "rename_transform":
-                return OperationRenameTransform.from_yaml(data)
             case "remove_triangles":
                 return OperationRemoveTriangles.from_yaml(data)
+            case "rename_material":
+                return OperationRenameMaterial.from_yaml(data)
+            case "rename_transform":
+                return OperationRenameTransform.from_yaml(data)
             case "rotate_transform":
                 return OperationRotateTransform.from_yaml(data)
             case "scale_transform":
