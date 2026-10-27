@@ -128,7 +128,7 @@ else:
 
             input_value = input()
             if input_value.strip() == '':
-                input_indices = [x for x in range(len(mods))]
+                input_indices = [x + 1 for x in range(len(mods))]
 
             else:
                 segments = [x.strip() for x in input_value.split(",")]
