@@ -1,0 +1,152 @@
+# Airbrake
+part: wingShuttleElevon1
+model: Squad/Parts/Aero/shuttleWings/ShuttleElevonA
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - WingsShuttle
+
+  tiles:
+    tc1: tileBlack
+    tc2: tileBlack
+    materials:
+      - WingsShuttle-tiled
+
+operations:
+  - rename_transform:
+      transform: Elevon
+      new_name: ShuttleElevonA
+
+  - reroot:
+      name: Elevon
+
+  - reroot:
+      name: root
+
+  - rename_transform:
+      transform: ElevonCOL
+      new_name: COL_SHUTTLEELEVA
+
+  - set_parent:
+      parent: Elevon
+      transforms:
+        - COL_SHUTTLEELEVA
+
+  - rotate_transform:
+      transform: ShuttleElevonA
+      amount:
+        x: 0
+        y: -180
+        z: 0
+      absolute: True
+
+  - rotate_transform:
+      transform: COL_SHUTTLEELEVA
+      amount:
+        x: 0
+        y: -180
+        z: 0
+      absolute: True
+
+  - scale_transform:
+      transform: COL_SHUTTLEELEVA
+      amount: 0.8
+      absolute: True
+
+  - move_transform:
+      transform: COL_SHUTTLEELEVA
+      amount:
+        x: -0.3
+        y: 0
+        z: 0
+      absolute: True
+
+  - rotate_transform:
+      transform: root
+      amount:
+        x: -90
+        y: 0
+        z: 0
+      absolute: True
+
+  - copy_transform:
+      transform: ShuttleElevonA
+      new_name:  ShuttleElevonATiled
+
+  - copy_transform:
+      transform: ShuttleElevonA
+      new_name:  ShuttleElevonATiledUpper
+
+  - split_triangles:
+      transform: ShuttleElevonATiledUpper
+      destination: ShuttleElevonATiledUpperTiles
+      triangles: 2-13, 32-43, 69-76, 90-93
+
+  - set_parent:
+      parent: ShuttleElevonATiledUpper
+      transforms:
+        - ShuttleElevonATiledUpperTiles
+
+  - move_transform:
+      transform: ShuttleElevonATiledUpperTiles
+      amount:
+        x: 0
+        y: 0
+        z: 0
+      absolute: True
+
+  - copy_transform:
+      transform: ShuttleElevonA
+      new_name:  ShuttleElevonATiledLowerTiles
+
+  - split_triangles:
+      transform: ShuttleElevonATiledLowerTiles
+      destination: ShuttleElevonATiledLower
+      triangles: 2-13, 32-43, 69-76, 90-93
+
+  - set_parent:
+      parent: ShuttleElevonATiledLower
+      transforms:
+        - ShuttleElevonATiledLowerTiles
+
+  - move_transform:
+      transform: ShuttleElevonATiledLowerTiles
+      amount:
+        x: 0
+        y: 0
+        z: 0
+      absolute: True
+
+  - add_team_colors:
+      material: WingsShuttle
+      tc1: porkjetWhite
+      tc2: porkjetBlack
+
+  - copy_material:
+      material: WingsShuttle
+      new_name: WingsShuttle-tiled
+      transforms:
+        - ShuttleElevonATiled
+        - ShuttleElevonATiledUpperTiles
+        - ShuttleElevonATiledLowerTiles
+
+  - edit_team_colors:
+      material: WingsShuttle-tiled
+      tc1: tileBlack
+
+  - edit_material_textures:
+      material: WingsShuttle
+      main_tex: ReStockPBR/Assets/Aero/restock-pbr-wings-4-a
+      bump_map: ReStockPBR/Assets/Aero/restock-pbr-wings-4-b
+      metal_map: ReStockPBR/Assets/Aero/restock-pbr-wings-3-m
+      team_color_map: ReStockPBR/Assets/Aero/restock-pbr-wings-4-tc
+
+  - edit_material_textures:
+      material: WingsShuttle-tiled
+      main_tex: ReStockPBR/Assets/Aero/restock-pbr-wings-tiled-2-a
+      bump_map: ReStockPBR/Assets/Aero/restock-pbr-wings-tiled-2-n
+      metal_map: ReStockPBR/Assets/Aero/restock-pbr-wings-2-m
+      team_color_map: ReStockPBR/Assets/Aero/restock-pbr-wings-tiled-2-tc
