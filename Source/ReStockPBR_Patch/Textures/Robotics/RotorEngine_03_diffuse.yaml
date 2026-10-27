@@ -1,5 +1,7 @@
 size: [ 1024, 1024 ]
 
+dlc: BreakingGround
+
 color_primary:
   - fill:
       image: SquadExpansion/Serenity/Parts/Robotics/Assets/RotorEngine_03_diffuse.dds

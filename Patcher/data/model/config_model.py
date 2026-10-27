@@ -22,6 +22,7 @@ class ConfigModel:
                  needs: list[str],
                  override: bool | None,
                  remove_part_variants: bool,
+                 dlc: str | None,
                  color_zones: ColorZones | None,
                  operations: list[Operation]):
         self.part = part
@@ -30,6 +31,7 @@ class ConfigModel:
         self.needs = needs
         self.override = override
         self.remove_part_variants = remove_part_variants
+        self.dlc = dlc
         self.color_zones = color_zones
         self.operations = operations
 
@@ -180,6 +182,7 @@ class ConfigModel:
             needs=needs,
             override=override,
             remove_part_variants=remove_part_variants,
+            dlc=yaml.get("dlc", None),
             color_zones=color_zones,
             operations=operations
         )

@@ -1,5 +1,7 @@
 size: [ 1024, 1024 ]
 
+dlc: BreakingGround
+
 color_primary:
   - fill:
       image: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/gripPads_diffuse.dds

@@ -3,6 +3,8 @@ model: SquadExpansion/Serenity/Parts/Robotics/Assets/piston_01
 
 remove_part_variants: True
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

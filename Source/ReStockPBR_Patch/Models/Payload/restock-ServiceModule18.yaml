@@ -2,6 +2,8 @@
 part: ServiceModule18
 model: ReStock/Assets/Payload/restock-ServiceModule18
 
+dlc: MakingHistory
+
 after: ReStock
 needs:
   - ReStock

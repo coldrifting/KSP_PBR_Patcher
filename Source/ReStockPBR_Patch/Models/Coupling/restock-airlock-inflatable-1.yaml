@@ -2,6 +2,8 @@
 part: InflatableAirlock
 model: ReStock/Assets/Coupling/restock-airlock-inflatable-1
 
+dlc: MakingHistory
+
 after: ReStock
 needs:
   - ReStock

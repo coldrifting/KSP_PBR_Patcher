@@ -14,6 +14,7 @@ class ConfigTexture:
     def __init__(self,
                  name: str,
                  size: Tuple[int, int],
+                 dlc: str | None,
                  color_primary: list[Layer],
                  color_secondary: list[Layer],
                  diffuse: list[Layer],
@@ -30,6 +31,8 @@ class ConfigTexture:
         self.name = name
 
         self.size = size
+
+        self.dlc = dlc
 
         self.color_primary = color_primary
         self.color_secondary = color_secondary
@@ -82,6 +85,7 @@ class ConfigTexture:
         return ConfigTexture(
             name=name,
             size=(yaml['size'][0], yaml['size'][1]),
+            dlc=yaml.get("dlc", None),
             color_primary=color_primary,
             color_secondary=color_secondary,
             diffuse=diffuse,

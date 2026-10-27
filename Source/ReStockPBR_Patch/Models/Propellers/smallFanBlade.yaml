@@ -2,6 +2,8 @@
 part: smallFanBlade
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/smallFanBlade
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

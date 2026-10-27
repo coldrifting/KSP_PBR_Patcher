@@ -37,6 +37,10 @@ def patch_models(patch_data_model_dir: Path,
                 info_text = info_text + f" ({TerminalColors.CYAN}{config.part}{TerminalColors.ENDC})"
                 info(info_text)
 
+                if (config.dlc == "MakingHistory" and not (gamedata_dir / "SquadExpansion" / "MakingHistory").exists()) or (config.dlc == "BreakingGround" and not (gamedata_dir / "SquadExpansion" / "Serenity").exists()):
+                    info(info_text + f" {TerminalColors.YELLOW}(Skipping...){TerminalColors.ENDC}", status=InfoStatus.WARN)
+                    continue
+
                 config.apply(
                     game_data_dir=gamedata_dir,
                     output_root_dir=output_root_dir,

@@ -3,6 +3,8 @@ part: controller1000
 model: SquadExpansion/Serenity/Parts/Robotics/Controllers/controller1000
 override: True
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

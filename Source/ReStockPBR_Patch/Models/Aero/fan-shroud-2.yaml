@@ -3,6 +3,7 @@ part: FanShroud_02
 model: SquadExpansion/Serenity/Parts/Aero/Assets/FanShroud_02
 
 remove_part_variants: True
+dlc: BreakingGround
 
 needs:
   - SquadExpansion/Serenity

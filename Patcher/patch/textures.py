@@ -6,6 +6,7 @@ from texconv import AlphaOptions
 from data.texture.config_texture import ConfigTexture
 from utils.info_status import InfoStatus
 from utils.printing import header, info
+from utils.terminal_colors import TerminalColors
 
 
 def patch_textures(patch_data_texture_dir: Path,
@@ -35,6 +36,10 @@ def patch_textures(patch_data_texture_dir: Path,
                 config: ConfigTexture = ConfigTexture.from_yaml(yaml=yaml_dict,
                                                                 name=asset_name,
                                                                 masks_file=asset.with_suffix(".svg"))
+                if (config.dlc == "MakingHistory" and not (gamedata_dir / "SquadExpansion" / "MakingHistory").exists()) or (config.dlc == "BreakingGround" and not (gamedata_dir / "SquadExpansion" / "Serenity").exists()):
+                    info(asset_relative_path + f" {TerminalColors.YELLOW}(Skipping...){TerminalColors.ENDC}", status=InfoStatus.WARN)
+                    continue
+
                 output_textures: list[Path | None] = config.apply(
                     config_path=asset.parent,
                     game_data_dir=gamedata_dir,

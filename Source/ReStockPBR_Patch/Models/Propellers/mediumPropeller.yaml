@@ -2,6 +2,8 @@
 part: mediumPropeller
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/mediumPropeller
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

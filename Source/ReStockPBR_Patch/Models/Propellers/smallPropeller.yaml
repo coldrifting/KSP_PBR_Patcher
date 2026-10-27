@@ -2,6 +2,8 @@
 part: smallPropeller
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/smallPropeller
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

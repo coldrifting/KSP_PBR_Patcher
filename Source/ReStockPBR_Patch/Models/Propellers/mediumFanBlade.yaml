@@ -2,6 +2,8 @@
 part: mediumFanBlade
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/mediumFanBlade
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

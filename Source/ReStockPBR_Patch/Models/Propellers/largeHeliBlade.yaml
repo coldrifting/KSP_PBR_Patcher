@@ -2,6 +2,8 @@
 part: largeHeliBlade
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/largeHeliBlade
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

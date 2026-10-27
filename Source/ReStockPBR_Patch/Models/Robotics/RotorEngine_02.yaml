@@ -1,6 +1,8 @@
 part: RotorEngine_02
 model: SquadExpansion/Serenity/Parts/Robotics/Assets/RotorEngine_02
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

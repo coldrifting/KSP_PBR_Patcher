@@ -1,6 +1,8 @@
 part: RobotArmScanner_S1
 model: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/ROCArm_01
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

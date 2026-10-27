@@ -1,5 +1,7 @@
 size: [ 256, 256 ]
 
+dlc: BreakingGround
+
 color_primary:
   - fill:
       color: white

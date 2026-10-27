@@ -2,6 +2,8 @@
 part: Size1to0ServiceModule
 model: ReStock/Assets/Payload/restock-Size1to0ServiceModule
 
+dlc: MakingHistory
+
 after: ReStock
 needs:
   - ReStock

@@ -2,6 +2,8 @@
 part: kv1Pod
 model: ReStock/Assets/Command/restock-pod-sphere-1
 
+dlc: MakingHistory
+
 after: ReStock
 needs:
   - ReStock

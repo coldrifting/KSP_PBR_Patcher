@@ -3,6 +3,8 @@ model: SquadExpansion/Serenity/Parts/Robotics/Assets/rotor_02
 
 remove_part_variants: True
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

@@ -1,6 +1,8 @@
 part: sGripPad
 model: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/sGripPad
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

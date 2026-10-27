@@ -2,6 +2,8 @@
 part: mediumHeliBlade
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/mediumHeliBlade
 
+dlc: BreakingGround
+
 needs:
   - SquadExpansion/Serenity
 

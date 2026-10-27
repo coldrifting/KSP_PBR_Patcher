@@ -2,6 +2,8 @@
 part: kv3Pod
 model: ReStock/Assets/Command/restock-pod-sphere-3
 
+dlc: MakingHistory
+
 after: ReStock
 needs:
   - ReStock

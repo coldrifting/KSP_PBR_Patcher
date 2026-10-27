@@ -1,5 +1,7 @@
 size: [ 512, 512 ]
 
+dlc: BreakingGround
+
 color_primary:
   - fill:
       image: SquadExpansion/Serenity/Parts/Aero/Assets/shroudsDiffuse_plain.dds
