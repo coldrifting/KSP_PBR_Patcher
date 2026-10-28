@@ -4,24 +4,29 @@ Contains a patcher that adds almost all of the stock parts that ReStockPBR v0.0.
 
 <img width="1920" height="1080" alt="ReStockPBR_Patch_preview" src="https://github.com/user-attachments/assets/d37d9178-089f-480b-bea8-3fade96aee0d" />
 
-Current mods supported or planned (In various levels of completeness)
+### Currently supported mod patches:
  - ReStockPBR_Patch
    - Adds almost all Stock and DLC parts not covered by ReStockPBR
    - Fixes heat tiles part icons for space planes in VAB
    - Fixes some engine parts not being rotated correctly in VAB part icons
    - Adds heat tile variants for two of the mk2 air intakes added by ReStockPlusPBR
-   - TODO: Fix dark spots on ISRU texture
-   - TODO: Add better texture and possibly model for large rover wheel
- - SCANsat
-   - WIP: Reference textures done, need to create patch files
- - CryoTanks
-   - WIP: Reference textures done, need to create patch files
+   - Todo list:
+     - Fix dark spots on ISRU texture
+     - Add better texture and possibly model for large rover wheel
+ - SCANsatPBR
+   - Adds technicolor PBR support for all parts from [SCANsat](https://forum.kerbalspaceprogram.com/topic/72679-1125-scansat-v211-real-scanning-real-science-at-warp-speed-september-20-2025/)
+ - CryoTanksPBR
+   - Adds technicolor PBR support for all parts from [CryoTanks](https://forum.kerbalspaceprogram.com/topic/195042-112x-cryotanks-liquid-hydrogen-storage-and-management-july-21/)
+   - Todo list:
+     - Add 1.875m tanks
+
+### Planned supported mods
  - CryoEngines
    - WIP: Reference textures in progress
  - NFLaunchVehicles
    - WIP: Reference textures in progress
 
-Requirements and Tips:
+### Requirements and Tips:
 - In order to run the install script, you'll need python 3.11 or greater, with the following packages installed:
   - `cairosvg`
   - `numpy`
