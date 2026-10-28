@@ -1,0 +1,20 @@
+# 1.25m Cryogenic Tank (Small)
+part: hydrogen-125-2
+model: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-125-2
+
+after: CryoTanks
+needs:
+  - CryoTanks
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: metalBasic
+    materials:
+      - hydrogen-common-truss
+      - hydrogen-125-structure
+      - hydrogen-125-iso
+  mli:
+    tc1: mliGold
+    materials:
+      - hydrogen-125-foil

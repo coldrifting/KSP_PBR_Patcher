@@ -1,0 +1,45 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      color: black
+
+color_secondary:
+  - fill:
+      color: white
+
+diffuse:
+  - fill:
+      image: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-common-truss.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 85]
+
+gloss:
+  - fill:
+      image: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-common-truss.dds
+      channels: a
+
+  - curves:
+      points:
+        - [80, 128]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - fill:
+      color: black

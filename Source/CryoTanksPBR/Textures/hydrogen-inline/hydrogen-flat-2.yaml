@@ -1,0 +1,73 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: white
+
+  - fill:
+      color: "#AAAAAA"
+      masks:
+        - edges_outer
+
+  - fill:
+      color: black
+      masks:
+        - edges_inner
+
+  - fill:
+      image: ao_map
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      color: "#888888"
+
+  - fill:
+      color: "#CCCCCC"
+      masks:
+        - edges_outer
+
+  - fill:
+      color: "#444444"
+      masks:
+        - edges_inner
+
+  - fill:
+      image: ao_map
+
+gloss:
+  - fill:
+      color: "#C8C8C8"
+
+  - fill:
+      color: "#EEEEEE"
+      masks:
+        - edges_outer
+
+  - fill:
+      color: "#444444"
+      masks:
+        - edges_inner
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - bg!
+        - edges_outer!
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - fill:
+      color: white
+      masks:
+        - edges_outer

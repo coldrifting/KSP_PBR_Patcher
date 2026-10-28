@@ -1,0 +1,24 @@
+# 5m Cryogenic Tank (Small)
+part: hydrogen-5-3
+model: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-5-3
+
+after: CryoTanks
+needs:
+  - CryoTanks
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: metalBasic
+    materials:
+      - hydrogen-common-truss
+      - hydrogen-common-truss-2
+      - hydrogen-flat-1-iso
+  mli:
+    tc1: mliGold
+    materials:
+      - hydrogen-flat-1-foil
+
+operations:
+  - remove_texture:
+      texture: hydrogen-flat-1-s

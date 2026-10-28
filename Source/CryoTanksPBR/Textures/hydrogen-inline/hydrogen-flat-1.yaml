@@ -1,0 +1,91 @@
+size: [1024, 1024]
+
+color_primary:
+  - tile:
+      source: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-5-2-s.dds
+      top_left: { x: 1094, y: 120 }
+      size: { x: 254, y: 256 }
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 128]
+
+  - fill:
+      image: shadows
+
+  - fill:
+      color: black
+      masks:
+        - edges
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - tile:
+      source: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-5-2-s.dds
+      top_left: { x: 1094, y: 120 }
+      size: { x: 254, y: 256 }
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 75]
+
+  - fill:
+      image: edges_shadows
+
+  - fill:
+      color: "#888888"
+      masks:
+        - edges
+
+  - fill:
+      image: shadows
+
+gloss:
+  - tile:
+      source: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-5-2-s.dds
+      top_left: { x: 1094, y: 120 }
+      size: { x: 254, y: 256 }
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 128]
+
+  - fill:
+      image: edges_shadows
+
+  - fill:
+      color: "#C8C8C8"
+      masks:
+        - edges
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - bg!
+        - edges!
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - fill:
+      color: white
+      masks:
+        - edges

@@ -1,0 +1,70 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - iso_lines!
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: CryoTanks/Parts/HydrogenTanks/hydrogen-radial/hydrogen-radial-2-alt.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [255, 160]
+
+  - curves:
+      points:
+        - [64, 85]
+      masks:
+        - iso_lines
+
+gloss:
+  - fill:
+      image: CryoTanks/Parts/HydrogenTanks/hydrogen-radial/hydrogen-radial-2-alt.dds
+      channels: a
+
+  - curves:
+      points:
+        - [220, 200]
+        - [255, 220]
+
+  - curves:
+      points:
+        - [64, 85]
+      masks:
+        - iso_lines
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - bg!
+        - iso_lines!
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - bg!
+        - iso_lines!

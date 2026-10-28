@@ -1,0 +1,23 @@
+# 10m Cryogenic Tank
+part: hydrogen-10-1
+model: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-10-1
+
+after: CryoTanks
+needs:
+  - CryoTanks
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: metalBasic
+    materials:
+      - hydrogen-common-truss-2
+      - hydrogen-10-2
+  mli:
+    tc1: mliGold
+    materials:
+      - hydrogen-10-1
+
+operations:
+  - remove_texture:
+      texture: hydrogen-10-1-s

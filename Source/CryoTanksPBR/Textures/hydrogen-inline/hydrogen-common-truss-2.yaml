@@ -1,0 +1,78 @@
+size: [ 1024, 1024 ]
+
+color_primary:
+  - fill:
+      color: black
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-common-truss-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 90]
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - metal_1
+
+  - blur:
+      radius: 20
+      masks:
+        - metal_1_blur
+
+  - noise:
+      coverage: 40
+      intensity: 12
+      masks:
+        - metal_1_blur
+
+gloss:
+  - fill:
+      image: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-common-truss-2.dds
+      channels: a
+
+  - curves:
+      points:
+        - [55, 128]
+      masks:
+        - color_secondary
+
+  - curves:
+      points:
+        - [40, 85]
+      masks:
+        - bg!
+        - color_secondary!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - color_secondary!

@@ -1,0 +1,24 @@
+# 2.5m Cryogenic Tank (Medium)
+part: hydrogen-25-2
+model: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-25-2
+
+after: CryoTanks
+needs:
+  - CryoTanks
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: metalBasic
+    materials:
+      - hydrogen-common-truss
+      - hydrogen-25-structure
+      - hydrogen-25-iso
+  mli:
+    tc1: mliGold
+    materials:
+      - hydrogen-25-foil
+
+operations:
+  - remove_texture:
+      texture: hydrogen-25-2-s

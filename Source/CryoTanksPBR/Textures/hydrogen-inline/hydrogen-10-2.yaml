@@ -1,0 +1,69 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - iso_lines!
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-10-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [255, 150]
+
+  - curves:
+      points:
+        - [64, 74]
+      masks:
+        - iso_lines
+
+gloss:
+  - fill:
+      image: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-10-2.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [220, 192]
+        - [255, 210]
+
+  - curves:
+      points:
+        - [64, 85]
+      masks:
+        - iso_lines
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - bg!
+        - iso_lines!
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - fill:
+      color: white
+      masks:
+        - iso_lines
