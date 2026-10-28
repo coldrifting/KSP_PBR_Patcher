@@ -9,6 +9,7 @@ from data.texture.layer_components.fill import Fill
 from data.texture.layer_components.invert import Invert
 from data.texture.layer_components.noise import Noise
 from data.texture.layer_components.saturation import Saturation
+from data.texture.layer_components.tile import Tile
 from data.texture.mask import Mask
 from utils.exceptions import AttributeInvalidError, ArgumentException
 
@@ -66,5 +67,7 @@ class LayerFactory:
                 return Noise.from_yaml(yaml_layer, masks, group_type)
             case "saturation":
                 return Saturation.from_yaml(yaml_layer, masks, group_type)
+            case "tile":
+                return Tile.from_yaml(yaml_layer, masks, group_type)
             case _:
                 raise NotImplementedError
