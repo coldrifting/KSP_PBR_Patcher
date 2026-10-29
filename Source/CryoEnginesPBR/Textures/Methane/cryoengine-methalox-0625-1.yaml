@@ -1,0 +1,136 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - color_primary_3
+        - color_primary_4
+        - color_primary_5
+        - color_primary_6
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: CryoEngines/Assets/MethaloxEngine/cryoengine-methalox-0625-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - saturate!
+
+  - saturation:
+      percent: 120
+      masks:
+        - saturate
+
+  - fill:
+      image: stripe_removal
+
+  - curves:
+      points:
+        - [21, 128]
+        - [58, 202]
+      masks:
+        - color_primary_1
+
+  - curves:
+      points:
+        - [42, 128]
+        - [98, 202]
+      masks:
+        - color_primary_2
+
+  - curves:
+      points:
+        - [128, 55]
+        - [255, 160]
+      masks:
+        - color_primary_3
+        - color_primary_6
+
+  - curves:
+      points:
+        - [65, 95]
+
+gloss:
+  - fill:
+      image: CryoEngines/Assets/MethaloxEngine/cryoengine-methalox-0625-1.dds
+      channels: a
+
+  - fill:
+      image: stripe_removal_gloss
+
+  - curves:
+      points:
+        - [46, 128]
+        - [142, 230]
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - color_primary_3
+        - color_primary_6
+
+  - curves:
+      points:
+        - [64, 128]
+
+  - curves:
+      points:
+        - [255, 225]
+      masks:
+        - bg!
+        - color_primary_1!
+        - color_primary_2!
+        - color_primary_3!
+        - color_primary_6!
+
+  - curves:
+      points:
+        - [0, 140]
+        - [128, 240]
+      masks:
+        - metal_dark
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - color_primary_3
+        - color_primary_4
+        - color_primary_5
+        - color_primary_6
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - color_primary_3
+        - color_primary_4
+        - color_primary_5
+        - color_primary_6
+        - color_secondary

@@ -1,0 +1,24 @@
+# 1.875m Methalox Cryogenic Booster Engine
+part: cryoengine-iguanodon-1
+model: CryoEngines/Assets/MethaloxEngine/cryoengine-iguanodon-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-125-3
+      - cryoengine-methalox-1875-2
+      - cryoengine-methalox-1875-3
+  shrouds:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-125-3
+    transforms:
+      - Shroud_1875_BE4
+      - Shroud_1875_BE4Compact

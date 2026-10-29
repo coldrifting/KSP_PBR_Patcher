@@ -1,0 +1,23 @@
+# 2.5m Hydrolox Cryogenic Lifter Engine
+part: cryoengine-fuji-1
+model: CryoEngines/Assets/Engine/cryoengine-fuji-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-lower-2
+      - cryoengine-shrouds-1
+  shrouds:
+    tc1: porkjetWhite
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-shrouds-1
+    transforms:
+      - ShroudCompactMesh
+      - Shroud25Mesh

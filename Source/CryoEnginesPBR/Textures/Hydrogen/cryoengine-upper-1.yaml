@@ -1,0 +1,145 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+        - rivets!
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: CryoEngines/Assets/Engine/cryoengine-upper-1.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - metal_red!
+        - wires!
+
+  - saturation:
+      percent: 120
+      masks:
+        - metal_red
+
+  - saturation:
+      percent: 160
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [64, 80]
+
+  - curves:
+      points:
+        - [192, 115]
+        - [255, 200]
+      masks:
+        - paint_correction
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - foil_1
+
+  - curves:
+      points:
+        - [64, 90]
+      masks:
+        - foil_2
+        - foil_4
+
+  - curves:
+      points:
+        - [64, 128]
+      masks:
+        - foil_3
+
+gloss:
+  - fill:
+      image: CryoEngines/Assets/Engine/cryoengine-upper-1.dds
+      channels: a
+
+  - fill:
+      image: stripe_removal_gloss
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 90]
+      masks:
+        - bg!
+        - metal_dark!
+
+  - curves:
+      points:
+        - [26, 128]
+        - [64, 200]
+      masks:
+        - metal_dark
+
+  - curves:
+      points:
+        - [26, 128]
+        - [64, 200]
+      masks:
+        - paint_correction
+
+  - curves:
+      points:
+        - [0, 225]
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [64, 128]
+      masks:
+        - foil_1
+        - foil_2
+        - foil_3
+        - foil_4
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - rivets!
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - wires!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - rivets!
+        - color_secondary

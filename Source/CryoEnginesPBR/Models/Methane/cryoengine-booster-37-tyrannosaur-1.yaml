@@ -1,0 +1,15 @@
+# 3.75m Methalox Cryogenic Booster Engine
+part: cryoengine-tyrannosaur-1
+model: CryoEngines/Assets/MethaloxEngine/cryoengine-tyrannosaur-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-125-1
+      - cryoengine-methalox-375-1

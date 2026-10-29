@@ -1,0 +1,79 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: black
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: CryoEngines/Assets/Engine/cryoengine-lower-2.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 120
+      masks:
+        - saturate
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - saturate!
+
+  - curves:
+      points:
+        - [64, 82]
+
+gloss:
+  - fill:
+      image: CryoEngines/Assets/Engine/cryoengine-lower-2.dds
+      channels: a
+
+  - fill:
+      image: stripe_removal_gloss
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - bg!
+        - metal_dark!
+
+  - curves:
+      points:
+        - [14, 128]
+        - [32, 191]
+        - [70, 225]
+      masks:
+        - metal_dark
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_secondary

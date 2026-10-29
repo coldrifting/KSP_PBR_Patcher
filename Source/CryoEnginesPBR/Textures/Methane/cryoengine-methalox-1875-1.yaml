@@ -1,0 +1,101 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary_1
+        - color_primary_2
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: CryoEngines/Assets/MethaloxEngine/cryoengine-methalox-1875-1.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - metal_paint
+
+  - saturation:
+      percent: 120
+      masks:
+        - metal_paint
+
+  - curves:
+      points:
+        - [128, 54]
+        - [255, 190]
+      masks:
+        - color_primary_1
+
+  - curves:
+      points:
+        - [64, 72]
+      masks:
+        - color_primary_2
+
+  - curves:
+      points:
+        - [64, 80]
+
+gloss:
+  - fill:
+      image: CryoEngines/Assets/MethaloxEngine/cryoengine-methalox-1875-1.dds
+      channels: a
+
+  - fill:
+      image: stripe_removal_gloss
+
+  - curves:
+      points:
+        - [46, 128]
+        - [142, 230]
+      masks:
+        - color_primary_1
+
+  - curves:
+      points:
+        - [128, 105]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [64, 118]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - color_secondary

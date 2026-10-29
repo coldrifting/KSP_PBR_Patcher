@@ -1,0 +1,23 @@
+# 0.625m Methalox Cryogenic Booster Engine
+part: cryoengine-compsognathus-1
+model: CryoEngines/Assets/MethaloxEngine/cryoengine-compsognathus-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-125-3
+      - cryoengine-methalox-upper-1  # cryoengine-methalox-0625-1
+  shrouds:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-125-3
+    transforms:
+      - Shroud_0625_Prometheus
+      - Shroud_0625_PrometheusCompact

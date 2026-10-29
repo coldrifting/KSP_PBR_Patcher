@@ -1,0 +1,19 @@
+# 0.625m Hydrolox Cryogenic Sustainer Engine
+part: cryoengine-stromboli-1
+model: CryoEngines/Assets/Engine/cryoengine-stromboli-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-upper-1
+  shrouds:
+    tc1: porkjetWhite
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-shrouds-1

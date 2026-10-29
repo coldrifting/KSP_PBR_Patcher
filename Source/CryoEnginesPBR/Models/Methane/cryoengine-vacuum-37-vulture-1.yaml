@@ -1,0 +1,24 @@
+# 3.75m Methalox Cryogenic Vacuum Engine
+part: cryoengine-vulture-1
+model: CryoEngines/Assets/MethaloxEngine/cryoengine-vulture-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-1875-1
+      - cryoengine-methalox-1875-2
+      - cryoengine-methalox-1875-3
+  shrouds:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-1875-1
+    transforms:
+      - Shroud375
+      - Shroud375Compact

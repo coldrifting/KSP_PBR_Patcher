@@ -1,0 +1,23 @@
+# 2.5m Methalox Cryogenic Booster Engine
+part: cryoengine-allosaur-1
+model: CryoEngines/Assets/MethaloxEngine/cryoengine-allosaur-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-1875-1
+      - nflv-engine-stbe-1  # cryoengine-methalox-25-1
+  shrouds:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-1875-1
+    transforms:
+      - STBEShroud
+      - STBEShroudCompact

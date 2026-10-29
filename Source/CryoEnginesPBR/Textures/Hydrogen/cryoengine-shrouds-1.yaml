@@ -1,0 +1,111 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - rivets!
+        - tiles_2
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+        - tiles_2
+
+diffuse:
+  - fill:
+      image: CryoEngines/Assets/Engine/cryoengine-shrouds-1.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [64, 80]
+
+  - curves:
+      points:
+        - [128, 64]
+        - [255, 192]
+      masks:
+        - color_primary_1
+
+  - curves:
+      points:
+        - [54, 128]
+        - [100, 170]
+      masks:
+        - tiles_1
+
+  - curves:
+      points:
+        - [32, 90]
+        - [128, 200]
+      masks:
+        - tiles_2
+
+
+gloss:
+  - fill:
+      image: CryoEngines/Assets/Engine/cryoengine-shrouds-1.dds
+      channels: a
+
+  - saturation:
+      percent: 0
+
+  - fill:
+      color: "#929292"
+      masks:
+        - gloss_correction
+
+  - curves:
+      points:
+        - [64, 115]
+        - [255, 220]
+
+  - curves:
+      points:
+        - [40, 128]
+        - [162, 192]
+        - [255, 128]
+      masks:
+        - color_primary_1
+        - metal_dark
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - rivets!
+        - tiles_2
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary_1
+        - color_primary_2
+        - rivets!
+        - tiles_2
+        - color_secondary

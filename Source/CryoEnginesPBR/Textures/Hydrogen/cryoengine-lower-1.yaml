@@ -1,0 +1,105 @@
+size: [2048, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+        - rivets!
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: CryoEngines/Assets/Engine/cryoengine-lower-1.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - curves:
+      points:
+        - [128, 90]
+        - [255, 200]
+      masks:
+        - panel_1
+
+  - curves:
+      points:
+        - [145, 90]
+      masks:
+        - panel_2
+
+  - curves:
+      points:
+        - [128, 115]
+      masks:
+        - panel_3
+
+  - curves:
+      points:
+        - [64, 82]
+      masks:
+        - bg!
+        - panel_1!
+        - panel_2!
+        - panel_3!
+        - metal_dark!
+
+gloss:
+  - fill:
+      image: CryoEngines/Assets/Engine/cryoengine-lower-1.dds
+      channels: a
+
+  - fill:
+      image: stripe_removal_gloss
+
+  - curves:
+      points:
+        - [20, 128]
+        - [64, 216]
+      masks:
+        - panel_1
+        - panel_2
+        - panel_3
+        - metal_dark
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - bg!
+        - panel_1!
+        - panel_2!
+        - panel_3!
+        - metal_dark!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - rivets!
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - rivets!
+        - color_secondary

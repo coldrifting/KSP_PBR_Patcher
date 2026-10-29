@@ -1,0 +1,19 @@
+# 1.875m Hydrolox Cryogenic Lifter Engine
+part: cryoengine-erebus-1
+model: CryoEngines/Assets/Engine/cryoengine-erebus-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-lower-1
+  shrouds:
+    tc1: porkjetWhite
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-shrouds-1

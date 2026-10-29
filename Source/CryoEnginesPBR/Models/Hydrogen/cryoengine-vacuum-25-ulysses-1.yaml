@@ -1,0 +1,19 @@
+# 2.5m Hydrolox Cryogenic Vacuum Engine
+part: cryoengine-ulysses-1
+model: CryoEngines/Assets/Engine/cryoengine-ulysses-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-upper-2
+  shrouds:
+    tc1: porkjetWhite
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-shrouds-1
