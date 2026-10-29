@@ -10,6 +10,7 @@ import cairosvg
 from PIL import Image
 
 from utils.exceptions import ArgumentException
+from utils.printing import warn
 
 
 def recolor_element(element: Element, color: str = "#FFFFFF"):
@@ -110,7 +111,8 @@ def split_svg(svg_path: Path):
                 raise ArgumentException("No data for image")
 
             if not data.startswith("data:image/png;base64,"):
-                raise ArgumentException("Image must be embeded")
+                warn(f"Ignoring linked image with layer id {path_id}")
+                continue
 
             img_data = base64.b64decode(data[22:-1])
             img = Image.open(io.BytesIO(img_data))
