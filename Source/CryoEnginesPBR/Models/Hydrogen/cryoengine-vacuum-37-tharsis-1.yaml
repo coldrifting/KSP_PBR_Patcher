@@ -1,0 +1,27 @@
+# 3.75m Hydrolox Cryogenic Vacuum Engine
+part: cryoengine-tharsis-1
+model: CryoEngines/Assets/Engine/cryoengine-tharsis-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-upper-1
+  mli:
+    tc1: mliGold
+    materials:
+      - cryoengine-foil
+  shrouds:
+    tc1: porkjetWhite
+    tc2: hydrogenBlue
+    materials:
+      - cryoengine-shrouds-1
+
+operations:
+  - remove_texture:
+      texture: cryoengine-upper-1-s

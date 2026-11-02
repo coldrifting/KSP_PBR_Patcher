@@ -1,0 +1,136 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: CryoEngines/Assets/MethaloxEngine/cryoengine-methalox-1875-3.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - wires!
+        - tank_bulkhead!
+
+  - saturation:
+      percent: 120
+      masks:
+        - tank_bulkhead
+
+  - saturation:
+      percent: 160
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [110, 64]
+        - [255, 210]
+      masks:
+        - color_primary
+
+  - curves:
+      points:
+        - [64, 90]
+      masks:
+        - engine_dark
+
+  - curves:
+      points:
+        - [52, 128]
+        - [128, 180]
+        - [255, 192]
+      masks:
+        - metal_top
+
+  - curves:
+      points:
+        - [52, 128]
+        - [92, 162]
+        - [255, 192]
+      masks:
+        - paint_1
+
+  - curves:
+      points:
+        - [64, 100]
+        - [255, 192]
+      masks:
+        - paint_2
+
+  - curves:
+      points:
+        - [64, 107]
+        - [255, 212]
+      masks:
+        - paint_3
+
+gloss:
+  - fill:
+      image: CryoEngines/Assets/MethaloxEngine/cryoengine-methalox-1875-3.dds
+      channels: a
+
+  - fill:
+      image: stripe_removal_gloss
+
+  - curves:
+      points:
+        - [18, 64]
+        - [128, 192]
+      masks:
+        - gloss_dark
+
+  - curves:
+      points:
+        - [64, 120]
+
+  - curves:
+      points:
+        - [255, 242]
+      masks:
+        - engine_dark
+
+  - curves:
+      points:
+        - [255, 248]
+      masks:
+        - metal_top
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

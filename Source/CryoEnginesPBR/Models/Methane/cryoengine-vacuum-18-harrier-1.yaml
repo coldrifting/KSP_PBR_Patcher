@@ -1,0 +1,23 @@
+# 1.875m Methalox Cryogenic Vacuum Engine
+part: cryoengine-harrier-1
+model: CryoEngines/Assets/MethaloxEngine/cryoengine-harrier-1
+
+after: CryoEngines
+needs:
+  - CryoEngines
+
+color_zones:
+  main:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-125-3
+      - cryoengine-methalox-1875-1
+  shrouds:
+    tc1: metalBasic
+    tc2: methaneGreen
+    materials:
+      - cryoengine-methalox-125-3
+    transforms:
+      - Shroud_1875_TQ11
+      - Shroud_1875_TQ11Compact

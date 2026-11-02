@@ -19,10 +19,11 @@ Contains a patcher that adds almost all of the stock parts that ReStockPBR v0.0.
    - Adds technicolor PBR support for all parts from [CryoTanks](https://forum.kerbalspaceprogram.com/topic/195042-112x-cryotanks-liquid-hydrogen-storage-and-management-july-21/)
    - Todo list:
      - Add 1.875m tanks
+ - CryoEngines
+   - Adds technicolor PBR support for all parts from [CryoEngines](https://forum.kerbalspaceprogram.com/topic/106089-112x-cryogenic-engines-liquid-hydrogen-and-methane-rockets-august-13-2024/)
+   - Adds auto-shrouds for some boattail engine variants
 
 ### Planned supported mods
- - CryoEngines
-   - WIP: Reference textures in progress
  - NFLaunchVehicles
    - WIP: Reference textures in progress
 
