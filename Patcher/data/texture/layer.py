@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Tuple
 from xml.etree.ElementTree import Element
 
-from PIL import Image, ImageOps
+from PIL import Image
 
 from data.texture.mask import Mask
 from utils.exceptions import ArgumentException

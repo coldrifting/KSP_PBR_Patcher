@@ -1,5 +1,4 @@
 import base64
-import copy
 import io
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -85,10 +84,6 @@ def split_svg(svg_path: Path):
         root = tree.getroot()
     except ET.ParseError:
         root = ET.fromstring(str(svg_path))
-
-    width = root.attrib.get('width', '100%')
-    height = root.attrib.get('height', '100%')
-    viewbox = root.attrib.get('viewBox', f'0 0 {width} {height}')
 
     masks_output: dict[str, Element] = {}
     images_output: dict[str, Image.Image] = {}
