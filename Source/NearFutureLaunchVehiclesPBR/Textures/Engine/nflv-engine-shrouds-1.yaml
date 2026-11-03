@@ -1,0 +1,77 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-shrouds-1.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - curves:
+      points:
+        - [64, 84]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [255, 180]
+      masks:
+        - color_primary
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-shrouds-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - metal_1
+
+  - curves:
+      points:
+        - [22, 128]
+        - [46, 192]
+        - [104, 240]
+      masks:
+        - color_primary
+        - metal_dark
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

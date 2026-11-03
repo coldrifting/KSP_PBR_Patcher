@@ -1,0 +1,97 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-rd704-1.dds
+      channels: rgb
+
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-rd704-1.dds
+      channels: a
+      masks:
+        - spec_transfer
+        - spec_transfer_ring
+
+  - curves:
+      points:
+        - [33, 111]
+        - [100, 170]
+        - [255, 100]
+      masks:
+        - spec_transfer
+
+  - curves:
+      points:
+        - [255, 225]
+      masks:
+        - spec_transfer_ring
+
+  - curves:
+      points:
+        - [64, 84]
+      masks:
+        - bg!
+        - spec_transfer!
+        - spec_transfer_ring!
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-rd704-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [64, 85]
+      masks:
+        - bg!
+        - spec_transfer!
+        - spec_transfer_ring!
+
+  - curves:
+      points:
+        - [16, 128]
+        - [45, 203]
+      masks:
+        - spec_transfer
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - spec_transfer_ring
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

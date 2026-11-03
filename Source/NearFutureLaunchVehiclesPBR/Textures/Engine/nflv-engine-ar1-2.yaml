@@ -1,0 +1,96 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-ar1-2.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [128, 72]
+        - [255, 210]
+      masks:
+        - diffuse_light
+
+  - curves:
+      points:
+        - [64, 74]
+      masks:
+        - bg!
+        - diffuse_light!
+        - diffuse_dark!
+
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-ar1-2.dds
+      channels: a
+      masks:
+        - diffuse_dark
+
+  - curves:
+      points:
+        - [16, 74]
+        - [43, 128]
+        - [74, 138]
+      masks:
+        - diffuse_dark
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-ar1-2.dds
+      channels: a
+
+  - curves:
+      points:
+        - [16, 128]
+        - [45, 200]
+      masks:
+        - gloss_dark
+
+  - curves:
+      points:
+        - [64, 105]
+      masks:
+        - bg!
+        - gloss_dark!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

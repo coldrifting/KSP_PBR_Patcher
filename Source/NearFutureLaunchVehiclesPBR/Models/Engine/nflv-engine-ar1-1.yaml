@@ -1,0 +1,14 @@
+part: nflv-engine-ar1-1
+model: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-ar1-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-ar1-1
+      - nflv-engine-ar1-2
