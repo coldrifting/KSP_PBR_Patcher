@@ -1,0 +1,19 @@
+part: nflv-engine-stbe-kero-1
+model: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-stbe-kero-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-stbe-kerolox-1
+      - nflv-engine-stbe-kerolox-2
+  shrouds:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-shrouds-1

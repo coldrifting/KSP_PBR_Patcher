@@ -1,0 +1,95 @@
+size: [512, 512]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-stbe-kerolox-2.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [40, 128]
+        - [100, 200]
+      masks:
+        - diffuse_dark
+
+  - curves:
+      points:
+        - [128, 80]
+        - [255, 200]
+      masks:
+        - diffuse_light
+
+  - curves:
+      points:
+        - [64, 90]
+      masks:
+        - bg!
+        - diffuse_light!
+        - diffuse_dark!
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - diffuse_light_2
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-stbe-kerolox-2.dds
+      channels: a
+
+  - curves:
+      points:
+        - [17, 128]
+        - [46, 200]
+      masks:
+        - gloss_dark
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - bg!
+        - gloss_dark!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

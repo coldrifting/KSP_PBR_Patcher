@@ -1,0 +1,134 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-m1d-1.dds
+      channels: rgb
+
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-m1d-1-s.dds
+      channels: rgb
+      masks:
+        - mli
+
+  - saturation:
+      percent: 0
+      masks:
+        - mli
+
+  - curves:
+      points:
+        - [45, 128]
+        - [113, 200]
+      masks:
+        - diffuse_dark_1
+
+  - curves:
+      points:
+        - [40, 128]
+        - [104, 210]
+      masks:
+        - diffuse_dark_2
+
+  - curves:
+      points:
+        - [94, 25]
+        - [164, 66]
+      masks:
+        - diffuse_light
+
+  - curves:
+      points:
+        - [64, 72]
+      masks:
+        - bg!
+        - mli!
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-m1d-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [8, 64]
+        - [47, 192]
+        - [108, 231]
+      masks:
+        - engine_1
+
+  - curves:
+      points:
+        - [14, 127]
+        - [36, 204]
+        - [74, 234]
+      masks:
+        - engine_2
+
+  - curves:
+      points:
+        - [17, 128]
+        - [46, 200]
+      masks:
+        - gloss_dark
+
+  - curves:
+      points:
+        - [64, 95]
+      masks:
+        - bg!
+        - gloss_dark!
+        - engine_1!
+        - engine_2!
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-m1d-1-s.dds
+      channels: rgb
+      masks:
+        - mli
+
+  - saturation:
+      percent: 0
+      masks:
+        - mli
+
+  - curves:
+      points:
+        - [64, 115]
+      masks:
+        - mli
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

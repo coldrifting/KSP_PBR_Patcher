@@ -1,0 +1,23 @@
+part: nflv-engine-m1d-vac-1
+model: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-m1d-vac-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-m1d-1
+      - nflv-engine-m1d-2
+  shrouds:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-shrouds-1
+
+operations:
+  - remove_texture:
+      texture: nflv-engine-m1d-1-s

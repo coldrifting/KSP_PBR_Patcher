@@ -1,0 +1,18 @@
+part: nflv-engine-rs84-1
+model: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-rs84-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-rs84-1
+  shrouds:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-shrouds-1

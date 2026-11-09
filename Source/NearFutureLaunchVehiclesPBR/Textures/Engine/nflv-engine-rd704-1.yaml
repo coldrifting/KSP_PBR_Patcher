@@ -53,7 +53,7 @@ gloss:
 
   - curves:
       points:
-        - [64, 85]
+        - [64, 75]
       masks:
         - bg!
         - spec_transfer!
@@ -71,6 +71,12 @@ gloss:
         - [64, 110]
       masks:
         - spec_transfer_ring
+
+  - curves:
+      points:
+        - [255, 220]
+      masks:
+        - engine
 
 gloss_alt:
   - copy:

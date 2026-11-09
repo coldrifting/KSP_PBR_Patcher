@@ -1,0 +1,18 @@
+part: nflv-engine-tr107-1
+model: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-tr107-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-tr107-1
+  shrouds:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-engine-shrouds-1
