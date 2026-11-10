@@ -1,0 +1,57 @@
+size: [512, 512]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/RCS/nflv-rcs-aero-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [255, 180]
+      masks:
+        - diff_light
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/RCS/nflv-rcs-aero-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [28, 128]
+        - [92, 220]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

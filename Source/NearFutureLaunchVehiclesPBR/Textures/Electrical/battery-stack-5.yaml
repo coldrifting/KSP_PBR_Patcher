@@ -1,0 +1,104 @@
+size: [512, 512]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      image: color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Electrical/battery-stack-5.dds
+      channels: rgb
+
+  - saturation:
+      percent: 120
+      masks:
+        - wires
+        - lights
+        - paint_yellow
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - wires!
+        - lights!
+        - paint_yellow!
+
+  - curves:
+      points:
+        - [44, 128]
+        - [105, 200]
+      masks:
+        - diff_mid
+
+  - curves:
+      points:
+        - [64, 85]
+      masks:
+        - bg!
+        - diff_mid!
+
+  - fill:
+      image: stripe_removal
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Electrical/battery-stack-5.dds
+      channels: a
+
+  - curves:
+      points:
+        - [5, 127]
+        - [13, 196]
+        - [26, 225]
+        - [63, 241]
+      masks:
+        - gloss_dark
+
+  - curves:
+      points:
+        - [0, 200]
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [44, 128]
+        - [104, 205]
+      masks:
+        - bg!
+        - gloss_dark!
+        - wires!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - wires!
+        - lights!
+        - paint_yellow!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary

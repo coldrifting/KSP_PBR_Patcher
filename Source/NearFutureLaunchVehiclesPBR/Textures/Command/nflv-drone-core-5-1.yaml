@@ -1,0 +1,113 @@
+size: [512, 512]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Command/nflv-drone-core-5-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 120
+      masks:
+        - wires
+        - light
+        - circuitboard
+        - paint_stripe
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - wires!
+        - light!
+        - circuitboard!
+        - paint_stripe!
+
+  - curves:
+      points:
+        - [255, 180]
+      masks:
+        - diff_light
+
+  - curves:
+      points:
+        - [50, 128]
+        - [128, 212]
+      masks:
+        - diff_dark
+
+  - curves:
+      points:
+        - [64, 80]
+      masks:
+        - bg!
+        - diff_light!
+        - diff_dark!
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Command/nflv-drone-core-5-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [20, 128]
+        - [48, 200]
+        - [100, 225]
+      masks:
+        - gloss_dark
+
+  - curves:
+      points:
+        - [0, 200]
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - bg!
+        - gloss_dark!
+        - wires!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - wires!
+        - light!
+        - circuitboard!
+        - paint_stripe!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary
