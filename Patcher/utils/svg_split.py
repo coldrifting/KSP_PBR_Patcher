@@ -12,6 +12,18 @@ from utils.exceptions import ArgumentException
 from utils.printing import warn
 
 
+def unhide_element(element: Element):
+    style = element.get('style', None)
+    if style is not None:
+        pairs = [p.split(":") for p in style.split(";") if ":" in p]
+        styles = {k.strip(): v.strip() for k, v in pairs}
+
+        if "display" in styles.keys():
+            del styles["display"]
+
+        new_style_str = ";".join([f"{k}:{v}" for k, v in styles.items()])
+        element.set("style", new_style_str)
+
 def recolor_element(element: Element, color: str = "#FFFFFF"):
     style = element.get('style', None)
     if style is not None:
@@ -114,6 +126,7 @@ def split_svg(svg_path: Path):
             images_output[path_id] = img
 
         else:
+            unhide_element(path_el)
             masks_output[path_id] = path_el
 
     if len(masks_output) == 0 and len(images_output) == 0:
