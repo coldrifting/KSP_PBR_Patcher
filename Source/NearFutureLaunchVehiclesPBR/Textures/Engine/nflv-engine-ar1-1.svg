@@ -4,11 +4,11 @@
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
     <path id="engine"
-          style="display:inline;fill:#00ff00"
+          style="fill:#00ff00"
           d="m 0,707 h 84 v 298 H 0 Z M 0,155 H 214 V 356 H 0 Z M 0,0 H 213 V 118 H 0 Z"
     />
     <path id="gloss_dark"
-          style="display:inline;fill:#0012ff"
+          style="fill:#0012ff"
           d="m 545,911 h 303 v 17 H 545 Z m -17,-51 h 311 v 51 H 528 Z"
     />
     <rect id="paint_1"

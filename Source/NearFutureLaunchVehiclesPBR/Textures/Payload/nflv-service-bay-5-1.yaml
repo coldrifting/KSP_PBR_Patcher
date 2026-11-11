@@ -1,0 +1,116 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Payload/nflv-service-bay-5-1.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 160
+      masks:
+        - paint
+        - lights
+        - handle
+        - misc
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - paint!
+        - lights!
+        - handle!
+        - misc!
+
+  - curves:
+      points:
+        - [64, 80]
+      masks:
+        - bg!
+        - diff_light!
+        - diff_light_2!
+        - diff_dark!
+
+  - curves:
+      points:
+        - [255, 180]
+      masks:
+        - diff_light
+
+  - curves:
+      points:
+        - [255, 200]
+      masks:
+        - diff_light_2
+
+  - curves:
+      points:
+        - [118, 63]
+        - [172, 122]
+        - [255, 145]
+      masks:
+        - text_correction
+
+gloss:
+  - copy:
+      group: diffuse
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [14, 64]
+        - [91, 210]
+      masks:
+        - diff_dark
+
+  - curves:
+      points:
+        - [52, 120]
+        - [115, 185]
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - paint!
+        - lights!
+        - handle!
+        - misc!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

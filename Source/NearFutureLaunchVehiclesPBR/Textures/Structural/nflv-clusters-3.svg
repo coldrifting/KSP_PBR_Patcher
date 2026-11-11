@@ -1,86 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="2048"
-   height="2048"
-   viewBox="0 0 2048 2048"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-   xml:space="preserve"
-   sodipodi:docname="nflv-clusters-3.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview1"
-     pagecolor="#727272"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="true"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="true"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="px"
-     showgrid="true"
-     inkscape:zoom="0.26480605"
-     inkscape:cx="583.44588"
-     inkscape:cy="1157.4509"
-     inkscape:window-width="2560"
-     inkscape:window-height="1369"
-     inkscape:window-x="2552"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1"><inkscape:grid
-       id="grid1"
-       units="px"
-       originx="0"
-       originy="0"
-       spacingx="1"
-       spacingy="1"
-       empcolor="#000000"
-       empopacity="0.15294118"
-       color="#000000"
-       opacity="0.14901961"
-       empspacing="16"
-       enabled="true"
-       visible="true"
-       dotted="false"
-       snapvisiblegridlinesonly="true" /></sodipodi:namedview><defs
-     id="defs1" /><image
-     width="2048"
+<svg width="2048"
      height="2048"
-     preserveAspectRatio="none"
-     style="display:none;image-rendering:optimizeSpeed"
-     xlink:href="nflv-clusters-3_RGB.png"
-     id="diff"
-     x="0"
-     y="0"
-     inkscape:svg-dpi="96" /><image
-     width="2048"
-     height="2048"
-     preserveAspectRatio="none"
-     style="display:none;image-rendering:optimizeSpeed"
-     xlink:href="nflv-clusters-3_A.png"
-     id="gloss"
-     x="0"
-     y="0"
-     inkscape:svg-dpi="96" /><path
-     id="gloss_dark"
-     style="display:inline;fill:#ff0000;stroke-linecap:square"
-     d="m 0,30 v 198 h 43 v 53 H 0 V 435 H 743 V 282 h -24 v -54 h 24 V 49 h -3 V 31 h 4 V 30 Z M 1031,293 V 448 H 887 v 51 h 144 v 5 h 64 V 293 Z M 274,649 v 122 h -93 v 22 H 98 v 75 h 83 v 2 h 93 v 86 h 58 v -86 h 39 V 858 H 340 V 666 h -8 V 649 Z M 0,1423 v 625 h 1491 v -296 h -196 v -10 h 98 v -201 h -98 v -9 h -14 v -17 h -34 v -38 h -7 v -54 z" /><path
-     id="diff_dark"
-     style="display:inline;fill:#3800ff;fill-opacity:1;stroke-linecap:square"
-     d="m 0,30 v 196 l 43,1 1,1 v 30 h 675 v -31 h 21 V 30 Z m 0,1393 v 118 h 1128 v -44 h 112 v -74 z" /><path
-     id="diff_light"
-     style="display:inline;fill:#9a00ff;fill-opacity:1;stroke-linecap:square"
-     d="m 0,283 h 44 v -23 h 674 v 23 h 25 V 436 H 0 Z m 887,216 v -52 h 144 V 292 h 64 v 212 h -64 v -5 z M 274,956 h 58 v -86 h 39 v -1 h 1 V 858 H 340 V 666 h -8 v -17 h -58 v 122 h -94 v 22 H 98 v 76 h 83 v 1 h 93 z M 0,1541 h 1128 v -44 h 112 v -21 h 8 v 39 h 34 v 17 h 14 v 8 h 97 v 202 h -97 v 9 h 195 v 297 H 0 Z" /><path
-     id="color_primary"
-     style="fill:#ff0000;fill-opacity:1;stroke-linecap:square"
-     d="m 0,30 v 196 l 43,1 1,1 v 55 H 0 V 436 H 743 V 283 h -24 v -56 h 21 V 30 Z M 1031,292 V 447 H 887 v 52 h 144 v 5 h 64 V 292 Z M 274,649 v 122 h -94 v 22 H 98 v 76 h 83 v 1 h 93 v 86 h 58 v -86 h 39 v -1 h 1 V 858 H 340 V 666 h -8 V 649 Z M 0,1423 v 118 507 h 1491 v -297 h -195 v -9 h 97 v -202 h -97 v -8 h -14 v -17 h -34 v -39 h -8 v -53 z"
-     sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" /><path
-     id="color_secondary"
-     style="display:inline;fill:#00ff11;fill-opacity:1;stroke-linecap:square"
-     d="m 0,30 v 196 l 43,1 1,1 v 30 h 675 v -31 h 21 V 30 Z m 0,1393 v 118 h 1128 v -44 h 112 v -74 z" /></svg>
+     viewBox="0 0 2048 2048"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path id="gloss_dark"
+          style="fill:#ff0000"
+          d="m 0,30 v 198 h 43 v 53 H 0 V 435 H 743 V 282 h -24 v -54 h 24 V 49 h -3 V 31 h 4 V 30 Z M 1031,293 V 448 H 887 v 51 h 144 v 5 h 64 V 293 Z M 274,649 v 122 h -93 v 22 H 98 v 75 h 83 v 2 h 93 v 86 h 58 v -86 h 39 V 858 H 340 V 666 h -8 V 649 Z M 0,1423 v 625 h 1491 v -296 h -196 v -10 h 98 v -201 h -98 v -9 h -14 v -17 h -34 v -38 h -7 v -54 z"
+    />
+    <path id="diff_dark"
+          style="fill:#3800ff"
+          d="m 0,30 v 196 l 43,1 1,1 v 30 h 675 v -31 h 21 V 30 Z m 0,1393 v 118 h 1128 v -44 h 112 v -74 z"
+    />
+    <path id="diff_light"
+          style="fill:#9a00ff"
+          d="m 0,283 h 44 v -23 h 674 v 23 h 25 V 436 H 0 Z m 887,216 v -52 h 144 V 292 h 64 v 212 h -64 v -5 z M 274,956 h 58 v -86 h 39 v -1 h 1 V 858 H 340 V 666 h -8 v -17 h -58 v 122 h -94 v 22 H 98 v 76 h 83 v 1 h 93 z M 0,1541 h 1128 v -44 h 112 v -21 h 8 v 39 h 34 v 17 h 14 v 8 h 97 v 202 h -97 v 9 h 195 v 297 H 0 Z"
+    />
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="m 0,30 v 196 l 43,1 1,1 v 55 H 0 V 436 H 743 V 283 h -24 v -56 h 21 V 30 Z M 1031,292 V 447 H 887 v 52 h 144 v 5 h 64 V 292 Z M 274,649 v 122 h -94 v 22 H 98 v 76 h 83 v 1 h 93 v 86 h 58 v -86 h 39 v -1 h 1 V 858 H 340 V 666 h -8 V 649 Z M 0,1423 v 118 507 h 1491 v -297 h -195 v -9 h 97 v -202 h -97 v -8 h -14 v -17 h -34 v -39 h -8 v -53 z"
+    />
+    <path id="color_secondary"
+          style="fill:#00ff11"
+          d="m 0,30 v 196 l 43,1 1,1 v 30 h 675 v -31 h 21 V 30 Z m 0,1393 v 118 h 1128 v -44 h 112 v -74 z"
+    />
+</svg>

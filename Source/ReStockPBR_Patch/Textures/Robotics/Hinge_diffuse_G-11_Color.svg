@@ -11,12 +11,12 @@
           d="M 156,126 186,96 V 0 h -30 z m 107,225 29,-29 v -98 h -29 z m 66.319,-133.237 29.483,10.978 24.889,20.203 16.655,27.502 5.981,31.713 -6.005,31.737 -16.677,27.479 -24.856,20.166 -29.366,10.96 L 330,432 l 44.35965,-23.339 31.326,-25.141 21.341,-34.697 7.989,-40.605 -7.9,-40.649 -21.319,-34.807 -31.414,-25.257 L 329,186 Z"
     />
     <text id="color_secondary_text"
-          style="font-weight:bold;font-size:40.8086px;line-height:55.4997px;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#0bff00;fill-opacity:1;stroke-width:2.99999;stroke-linejoin:bevel"
+          style="font-weight:bold;font-size:40.8086px;line-height:55.4997px;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#0bff00;;stroke-width:2.99999;stroke-linejoin:bevel"
           x="283.81165"
           y="220.20757"
           transform="matrix(0,0.98191345,1.0184197,0,0,0)">
         <tspan id="tspan1"
-               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#0bff00;fill-opacity:1;stroke-width:2.99999"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#0bff00;;stroke-width:2.99999"
                x="283.81165"
                y="220.20757">
             G-11

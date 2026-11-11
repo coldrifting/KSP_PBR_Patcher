@@ -1,0 +1,88 @@
+size: [1024, 1024]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/FuelTank/nflv-skeletal-adapters-2.dds
+      channels: rgb
+
+  - saturation:
+      percent: 160
+      masks:
+        - paint_red
+        - bulkhead
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - paint_red!
+        - bulkhead!
+
+  - curves:
+      points:
+        - [64, 90]
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/FuelTank/nflv-skeletal-adapters-2.dds
+      channels: a
+
+  - curves:
+      points:
+        - [32, 64]
+      masks:
+        - bg!
+        - paint_red!
+        - bulkhead!
+
+  - curves:
+      points:
+        - [64, 128]
+      masks:
+        - paint_red
+
+  - curves:
+      points:
+        - [22, 64]
+      masks:
+        - bulkhead
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - bulkhead!
+        - paint_red!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

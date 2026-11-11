@@ -1,0 +1,92 @@
+size: [4096, 4096]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - fill:
+      image: paint_removal
+
+  - curves:
+      points:
+        - [64, 84]
+      masks:
+        - metal_1
+        - metal_2
+
+  - curves:
+      points:
+        - [192, 128]
+      masks:
+        - bg!
+        - diff_sofi!
+        - diff_dark!
+
+  - curves:
+      points:
+        - [64, 85]
+      masks:
+        - diff_sofi
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [64, 110]
+      masks:
+        - gloss_light
+
+  - curves:
+      points:
+        - [40, 170]
+        - [85, 230]
+      masks:
+        - bg!
+        - diff_sofi!
+        - gloss_light!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - diff_sofi!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

@@ -1,0 +1,65 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: black
+
+color_secondary:
+  - fill:
+      color: black
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-endcap-1.dds
+      channels: rgb
+
+  - saturation:
+      percent: 160
+      masks:
+        - wires
+        - bulkhead
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - wires!
+        - bulkhead!
+
+  - curves:
+      points:
+        - [64, 80]
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-endcap-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [0, 180]
+      masks:
+        - wires
+
+  - curves:
+      points:
+        - [22, 64]
+      masks:
+        - gloss_dark
+        - bulkhead
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - wires!
+        - bulkhead!
+
+metal_alt:
+  - copy:
+      group: metal

@@ -1,94 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="512"
-   height="512"
-   viewBox="0 0 512 512"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-   xml:space="preserve"
-   sodipodi:docname="nflv-engine-rutherford-1.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview1"
-     pagecolor="#727272"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="true"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="true"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="px"
-     showgrid="true"
-     inkscape:zoom="1.0592242"
-     inkscape:cx="-34.459183"
-     inkscape:cy="29.738747"
-     inkscape:window-width="2560"
-     inkscape:window-height="1369"
-     inkscape:window-x="2552"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1"><inkscape:grid
-       id="grid1"
-       units="px"
-       originx="0"
-       originy="0"
-       spacingx="1"
-       spacingy="1"
-       empcolor="#000000"
-       empopacity="0.15294118"
-       color="#000000"
-       opacity="0.14901961"
-       empspacing="16"
-       enabled="true"
-       visible="true"
-       dotted="false"
-       snapvisiblegridlinesonly="true" /></sodipodi:namedview><defs
-     id="defs1" /><image
-     width="512"
+<svg width="512"
      height="512"
-     preserveAspectRatio="none"
-     style="display:none;image-rendering:optimizeSpeed"
-     xlink:href="../../../../../../../../../Desktop/nflv-engine-rutherford-1_RGB.png"
-     id="image1"
-     x="0"
-     y="0" /><image
-     width="512"
-     height="512"
-     preserveAspectRatio="none"
-     style="display:none;image-rendering:optimizeSpeed"
-     xlink:href="../../../../../../../../../Desktop/nflv-engine-rutherford-1_A.png"
-     id="image1-4"
-     x="0"
-     y="0" /><path
-     id="gloss_dark"
-     style="display:inline;fill:#7d00ff;fill-opacity:1;stroke-linecap:square"
-     d="m 46,212 v -11 h 2 v -27 h 88 v 38 z M 0,143 H 96 V 78 H 3 v 1 H 0 Z M 371.41952,20 373,13 h 12 l 21,7 15,15 -4,4 -15,-11 -14,-5 z" /><path
-     id="diffuse_dark"
-     style="display:inline;fill:#ff00dc;fill-opacity:1;stroke-linecap:square"
-     d="m 48,201 v 11 h 85 V 201 Z M 6,127 h 88 v 15 H 6 Z" /><path
-     style="display:inline;fill:#7d00ff;fill-opacity:1;stroke-linecap:square"
-     d="m 6,77 v -8 h 89 v 8 z"
-     id="diffuse_medium" /><path
-     id="diffuse_light"
-     style="display:inline;fill:#c200ff;fill-opacity:1;stroke-linecap:square"
-     d="m 48,201 v -24 h 85 v 24 z M 6,77 v 50 h 88 v 13 h 1 V 77 Z" /><path
-     id="diffuse_light_2"
-     style="display:inline;fill:#ff00fd;fill-opacity:1;stroke-linecap:square"
-     d="m 373,13 v 6 l 14,2 16,7 14,10 h 1 l 3,-3 v -1 l -9,-9 -13,-7.505553 -17,-4.555137 z"
-     sodipodi:nodetypes="cccccccccccc" /><path
-     id="engine"
-     style="display:inline;fill:#ff9a00;fill-opacity:1;stroke-linecap:square"
-     d="M 0,174 H 45 V 297 H 0 Z M 469,0 h 43 v 126 h -43 z" /><path
-     id="color_primary"
-     style="display:inline;fill:#ff0000;fill-opacity:1;stroke-linecap:square"
-     d="m 372,13 v 11 l 43,18 h 3 l 5,-5 -1,-1 V 35 L 412,25 399,17.494447 382.2265,13 Z M 48,177 h 85 v 35 H 48 Z M 6,69 h 89 v 73 H 6 Z" /><path
-     id="color_secondary"
-     style="display:inline;fill:#05ff00;fill-opacity:1;stroke-linecap:square"
-     d="m 373,13 v 6 l 14,2 16,7 14,10 h 1 l 3,-3 V 34 L 412,25 399,17.494447 382,12.93931 Z M 48,201 h 85 V 177 H 48 Z M 6,127 h 88 v 13 h 1 V 69 H 6 Z"
-     sodipodi:nodetypes="cccccccccccccccccccccccc" /></svg>
+     viewBox="0 0 512 512"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path id="gloss_dark"
+          style="fill:#7d00ff"
+          d="m 46,212 v -11 h 2 v -27 h 88 v 38 z M 0,143 H 96 V 78 H 3 v 1 H 0 Z M 371.41952,20 373,13 h 12 l 21,7 15,15 -4,4 -15,-11 -14,-5 z"
+    />
+    <path id="diffuse_dark"
+          style="fill:#ff00dc"
+          d="m 48,201 v 11 h 85 V 201 Z M 6,127 h 88 v 15 H 6 Z"
+    />
+    <path id="diffuse_medium"
+          style="fill:#7d00ff"
+          d="m 6,77 v -8 h 89 v 8 z"
+    />
+    <path id="diffuse_light"
+          style="fill:#c200ff"
+          d="m 48,201 v -24 h 85 v 24 z M 6,77 v 50 h 88 v 13 h 1 V 77 Z"
+    />
+    <path id="diffuse_light_2"
+          style="fill:#ff00fd"
+          d="m 373,13 v 6 l 14,2 16,7 14,10 h 1 l 3,-3 v -1 l -9,-9 -13,-7.505553 -17,-4.555137 z"
+    />
+    <path id="engine"
+          style="fill:#ff9a00"
+          d="M 0,174 H 45 V 297 H 0 Z M 469,0 h 43 v 126 h -43 z"
+    />
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="m 372,13 v 11 l 43,18 h 3 l 5,-5 -1,-1 V 35 L 412,25 399,17.494447 382.2265,13 Z M 48,177 h 85 v 35 H 48 Z M 6,69 h 89 v 73 H 6 Z"
+    />
+    <path id="color_secondary"
+          style="fill:#00ff00"
+          d="m 373,13 v 6 l 14,2 16,7 14,10 h 1 l 3,-3 V 34 L 412,25 399,17.494447 382,12.93931 Z M 48,201 h 85 V 177 H 48 Z M 6,127 h 88 v 13 h 1 V 69 H 6 Z"
+    />
+</svg>

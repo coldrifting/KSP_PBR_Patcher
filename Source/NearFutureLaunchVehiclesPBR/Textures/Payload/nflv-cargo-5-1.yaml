@@ -1,0 +1,99 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Payload/nflv-cargo-5-1.dds
+      channels: rgb
+
+  - fill:
+      image: stripe_removal
+
+  - saturation:
+      percent: 160
+      masks:
+        - paint
+
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - paint!
+
+  - curves:
+      points:
+        - [255, 180]
+      masks:
+        - diff_light
+
+  - curves:
+      points:
+        - [255, 215]
+      masks:
+        - diff_grey
+
+  - curves:
+      points:
+        - [64, 85]
+      masks:
+        - bg!
+        - diff_light!
+        - diff_grey!
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Payload/nflv-cargo-5-1.dds
+      channels: a
+
+  - curves:
+      points:
+        - [14, 96]
+        - [34, 177]
+        - [78, 224]
+      masks:
+        - gloss_dark
+
+  - curves:
+      points:
+        - [64, 105]
+      masks:
+        - bg!
+        - gloss_dark!
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+      masks:
+        - bg!
+        - paint!
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary

@@ -1,83 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="1024"
-   height="1024"
-   viewBox="0 0 1024 1024"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-   xml:space="preserve"
-   sodipodi:docname="nflv-structural-tubes-1.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview1"
-     pagecolor="#727272"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="true"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="true"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="px"
-     showgrid="true"
-     inkscape:zoom="0.5296121"
-     inkscape:cx="544.73831"
-     inkscape:cy="295.49929"
-     inkscape:window-width="2560"
-     inkscape:window-height="1369"
-     inkscape:window-x="2552"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1"><inkscape:grid
-       id="grid1"
-       units="px"
-       originx="0"
-       originy="0"
-       spacingx="1"
-       spacingy="1"
-       empcolor="#000000"
-       empopacity="0.15294118"
-       color="#000000"
-       opacity="0.14901961"
-       empspacing="16"
-       enabled="true"
-       visible="true"
-       dotted="false"
-       snapvisiblegridlinesonly="true" /></sodipodi:namedview><defs
-     id="defs1" /><image
-     width="1024"
+<svg width="1024"
      height="1024"
-     preserveAspectRatio="none"
-     style="display:none;image-rendering:optimizeSpeed"
-     xlink:href="nflv-structural-tubes-1_A.png"
-     id="gloss"
-     x="0"
-     y="0"
-     inkscape:svg-dpi="96" /><image
-     width="1024"
-     height="1024"
-     preserveAspectRatio="none"
-     style="display:none;image-rendering:optimizeSpeed"
-     xlink:href="nflv-structural-tubes-1_RGB.png"
-     id="diffuse"
-     x="0"
-     y="0"
-     inkscape:svg-dpi="96" /><path
-     id="diff_light"
-     style="fill:#00ff00;stroke-linecap:square"
-     d="m 544,613 h 480 v 411 H 544 Z M 0,678 h 437 v 346 H 0 Z" /><path
-     id="diff_metal"
-     style="fill:#c5ff00;fill-opacity:1;stroke-linecap:square"
-     d="m 0,0 v 333 h 437 v 691 H 544 V 201 h 480 V 0 Z"
-     sodipodi:nodetypes="ccccccccc" /><path
-     id="diff_dark"
-     style="fill:#001aff;fill-opacity:1;stroke-linecap:square"
-     d="M 544 201 L 544 613 L 1024 613 L 1024 201 L 544 201 z M 0 333 L 0 678.5 L 437 678.5 L 437 333 L 0 333 z " /><path
-     id="color_primary"
-     style="fill:#ff0000;stroke-linecap:square;fill-opacity:1"
-     d="m 544,613 h 480 v 411 H 544 Z M 0,678 h 437 v 346 H 0 Z" /></svg>
+     viewBox="0 0 1024 1024"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path id="gloss_dark"
+          style="fill:#ff00d1"
+          d="m 544,201 v 823 h 480 V 201 Z M 0,333 v 691 H 437 V 333 Z"
+    />
+    <path id="diff_light"
+          style="fill:#00ff00"
+          d="m 544,613 h 480 v 411 H 544 Z M 0,678 h 437 v 346 H 0 Z"
+    />
+    <path id="diff_metal"
+          style="fill:#c5ff00"
+          d="m 0,0 v 333 h 437 v 691 H 544 V 201 h 480 V 0 Z"
+    />
+    <path id="diff_dark"
+          style="fill:#001aff"
+          d="m 544,201 v 412 h 480 V 201 Z M 0,333 V 678.5 H 437 V 333 Z"
+    />
+    <path id="color_primary"
+          style="fill:#ff0000"
+          d="m 544,613 h 480 v 411 H 544 Z M 0,678 h 437 v 346 H 0 Z"
+    />
+</svg>
