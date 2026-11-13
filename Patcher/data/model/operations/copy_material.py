@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -12,7 +13,7 @@ class OperationCopyMaterial(Operation):
         self.new_name = new_name
         self.transforms = transforms
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         mu_data.copy_material(self.material, self.new_name)
         for transform in self.transforms:
             mu_data.assign_material(transform, self.new_name)

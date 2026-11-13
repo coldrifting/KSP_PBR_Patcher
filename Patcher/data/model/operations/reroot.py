@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -10,7 +11,7 @@ class OperationReroot(Operation):
     def __init__(self, name: str):
         self.name = name
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         subroot: Transform = Transform(self.name)
 
         root_children: list[Transform] = []

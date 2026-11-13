@@ -46,6 +46,15 @@ class Vec3:
         else:
             raise NotImplementedError
 
+    def __mul__(self, other):
+        if isinstance(other, Vec3):
+            return Vec3(self.x * other.x, self.y * other.y, self.z * other.z)
+        elif isinstance(other, int | float):
+            return Vec3(self.x * other, self.y * other, self.z * other)
+        else:
+            raise NotImplementedError
+
+
     @staticmethod
     def from_yaml(yaml: dict[str, int]) -> 'Vec3':
         x = yaml.get('x', None)

@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -12,7 +13,7 @@ class OperationRenameTransform(Operation):
         self.transform = transform
         self.new_name = new_name
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         transforms: list[Transform] = mu_data.get_transforms(self.transform, None)
         if len(transforms) == 0:
             raise ArgumentException(f"No transforms found with the name {self.transform}")

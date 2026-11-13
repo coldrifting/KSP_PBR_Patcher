@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -14,7 +15,7 @@ class OperationSetParent(Operation):
         self.transforms = transforms
         self.reset_rot_and_scale = reset_rot_and_scale
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         mu_data.set_parent(self.parent, self.transforms)
         if self.reset_rot_and_scale:
             for transform in self.transforms:

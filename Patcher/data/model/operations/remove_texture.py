@@ -11,7 +11,7 @@ class OperationRemoveTexture(Operation):
     def __init__(self, texture: str):
         self.texture = texture
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         for texture in mu_data.textures:
             if str(Path(texture.name).with_suffix("")) == str(Path(self.texture).with_suffix("")):
                 mu_data.remove_texture(texture.name)
