@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -9,7 +10,7 @@ class OperationRemoveTransform(Operation):
     def __init__(self, transform: str):
         self.transform = transform
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         mu_data.remove_transform(self.transform)
 
     @staticmethod

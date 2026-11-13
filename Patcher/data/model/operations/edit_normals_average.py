@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -11,7 +12,7 @@ class OperationEditNormalsAverage(Operation):
         self.transform = transform
         self.vertex_groups = vertex_groups
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         mu_data.edit_normals_average(self.transform, self.vertex_groups)
 
     @staticmethod

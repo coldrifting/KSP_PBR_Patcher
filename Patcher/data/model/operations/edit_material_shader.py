@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -10,7 +11,7 @@ class OperationEditMaterialShader(Operation):
         self.material = material
         self.shader = shader
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         mu_data.edit_material_shader(self.material, self.shader)
 
     @staticmethod

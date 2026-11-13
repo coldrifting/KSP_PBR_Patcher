@@ -1,4 +1,5 @@
 from pathlib import Path
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -21,7 +22,7 @@ class OperationEditMaterialTextures(Operation):
         self.metal_map: Path | None = Path(metal_map) if metal_map is not None else None
         self.team_color_map: Path | None = Path(team_color_map) if team_color_map is not None else None
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         if self.main_tex is not None:
             mu_data.split_texture(self.material, "_MainTex", self.main_tex.name)
 

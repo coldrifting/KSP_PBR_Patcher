@@ -51,7 +51,7 @@ class ConfigModel:
 
         mu_data = MuData.from_file(source_file)
         for operation in self.operations:
-            operation.apply(mu_data)
+            operation.apply(mu_data, game_data_dir)
 
         if self.color_zones is not None:
             self.color_zones.apply_model_changes(mu_data)

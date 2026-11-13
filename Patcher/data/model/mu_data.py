@@ -389,6 +389,22 @@ class MuData:
         self.textures.append(Texture(name=new_texture_name, is_normal_map=self.textures[texture_prop.index].is_normal_map))
         texture_prop.index = len(self.textures) - 1
 
+    def assign_resurfaced_standard_shader(self, material_name: str):
+        material = self.materials[material_name]
+        if material.shader_name != "Resurfaced/Standard":
+            material.shader_name = "Resurfaced/Standard"
+
+            main_tex_prop = material.get_main_tex_prop()
+            main_tex_file_name = str(Path(self.textures[main_tex_prop.index].name).with_suffix(""))
+
+            if not main_tex_file_name.endswith("-a"):
+                self.textures[main_tex_prop.index].name = main_tex_file_name + "-a"
+
+            if "_BumpMap" not in [x.name for x in material.properties]:
+                self.add_texture_map(material.name, "_BumpMap", "n")
+
+            self.add_texture_map(material.name, "_MetalMap", "m")
+
     def assign_team_colors(self, material_name: str, tc1: TeamColor, tc2: TeamColor):
         material = self.materials[material_name]
         if material.shader_name != "Resurfaced/Standard (TC)":

@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.types.core.vec2 import Vec2
@@ -12,7 +13,7 @@ class OperationEditUvs(Operation):
         self.transform = transform
         self.uvs = uvs
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         mu_data.edit_uvs(self.transform, self.uvs, is_uv2=False)
 
     @staticmethod

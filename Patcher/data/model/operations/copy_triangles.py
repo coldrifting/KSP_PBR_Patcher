@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -11,7 +12,7 @@ class OperationCopyTriangles(Operation):
         self.transform = transform
         self.triangles = triangles
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         mu_data.copy_triangles(self.transform, None, self.triangles)
 
     @staticmethod

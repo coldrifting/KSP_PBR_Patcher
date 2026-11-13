@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -12,7 +13,7 @@ class OperationEditTeamColors(Operation):
         self.tc1 = tc1
         self.tc2 = tc2
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         tc1, tc2 = TeamColor.get_colors(self.tc1, self.tc2)
         mu_data.assign_team_colors(self.material, tc1, tc2)
 

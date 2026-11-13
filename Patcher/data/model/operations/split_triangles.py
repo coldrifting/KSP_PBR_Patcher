@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.mu_data import MuData
@@ -13,7 +14,7 @@ class OperationSplitTriangles(Operation):
         self.destination = destination
         self.triangles = triangles
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         if self.destination is None:
             mu_data.copy_triangles(self.transform, self.destination, self.triangles)
             mu_data.remove_triangles(self.transform, self.triangles)

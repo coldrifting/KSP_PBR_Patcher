@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Any
 
 from data.model.types.core.vec3 import Vec3
@@ -12,7 +13,7 @@ class OperationEditVertices(Operation):
         self.transform = transform
         self.vertices = vertices
 
-    def apply(self, mu_data: MuData):
+    def apply(self, mu_data: MuData, game_data_dir: Path):
         mu_data.edit_vertices(self.transform, self.vertices)
 
     @staticmethod

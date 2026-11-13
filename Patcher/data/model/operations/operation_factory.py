@@ -1,5 +1,6 @@
 from typing import Any
 
+from data.model.operations.add_standard_shader import OperationAddStandardShader
 from data.model.operations.add_team_colors import OperationAddTeamColors
 from data.model.operations.assign_material import OperationAssignMaterial
 from data.model.operations.copy_material import OperationCopyMaterial
@@ -35,6 +36,8 @@ class OperationFactory:
         data = yaml[operation]
 
         match operation:
+            case "add_standard_shader":
+                return OperationAddStandardShader.from_yaml(data)
             case "add_team_colors":
                 return OperationAddTeamColors.from_yaml(data)
             case "assign_material":
