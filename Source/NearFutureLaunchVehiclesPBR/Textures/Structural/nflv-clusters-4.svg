@@ -3,6 +3,10 @@
      viewBox="0 0 2048 2048"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path id="gloss_dark"
+          style="fill:#00ffff"
+          d="M 793 13 L 793 447 L 1139 447 L 1139 13 L 793 13 z M 1526 15 L 1526 457 L 2048 457 L 2048 15 L 1526 15 z M 792 453 L 792 934 L 1139 934 L 1139 453 L 792 453 z"
+    />
     <rect id="diff_light"
           style="fill:#ff00b0"
           width="375"

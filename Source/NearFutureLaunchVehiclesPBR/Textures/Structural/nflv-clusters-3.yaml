@@ -1,0 +1,85 @@
+size: [2048, 2048]
+
+color_primary:
+  - fill:
+      color: white
+      masks:
+        - color_primary
+
+color_secondary:
+  - fill:
+      color: white
+      masks:
+        - color_secondary
+
+diffuse:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Structural/Mounting/nflv-clusters-3.dds
+      channels: rgb
+
+  - saturation:
+      percent: 0
+
+  - curves:
+      points:
+        - [255, 180]
+      masks:
+        - diff_light
+
+  - curves:
+      points:
+        - [24, 84]
+        - [115, 215]
+      masks:
+        - diff_dark
+
+  - curves:
+      points:
+        - [64, 84]
+      masks:
+        - bg!
+        - diff_light!
+        - diff_dark!
+
+gloss:
+  - fill:
+      image: NearFutureLaunchVehicles/Parts/Structural/Mounting/nflv-clusters-3.dds
+      channels: a
+
+  - curves:
+      points:
+        - [64, 98]
+      masks:
+        - bg!
+        - gloss_dark!
+
+  - curves:
+      points:
+        - [21, 128]
+        - [63, 213]
+      masks:
+        - gloss_dark
+
+gloss_alt:
+  - copy:
+      group: gloss
+
+  - brightness:
+      percent: 50
+      masks:
+        - color_primary
+        - color_secondary
+
+metal:
+  - fill:
+      color: white
+
+metal_alt:
+  - copy:
+      group: metal
+
+  - fill:
+      color: black
+      masks:
+        - color_primary
+        - color_secondary
