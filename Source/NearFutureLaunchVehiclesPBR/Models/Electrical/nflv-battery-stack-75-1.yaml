@@ -1,0 +1,13 @@
+part: nflv-battery-stack-75-1
+model: NearFutureLaunchVehicles/Parts/Electrical/nflv-battery-stack-75-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetBlack
+    tc2: electricalYellow
+    materials:
+      - nflv-battery-75-1

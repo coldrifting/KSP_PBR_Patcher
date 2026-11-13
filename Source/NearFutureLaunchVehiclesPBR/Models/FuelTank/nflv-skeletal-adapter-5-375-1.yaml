@@ -1,0 +1,12 @@
+part: nflv-skeletal-adapter-5-375-1
+model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-skeletal-adapter-5-375-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - nflv-skeletal-adapters-1

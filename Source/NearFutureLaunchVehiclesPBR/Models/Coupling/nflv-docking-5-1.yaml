@@ -1,0 +1,24 @@
+part: nflv-docking-5-1
+model: NearFutureLaunchVehicles/Parts/Coupling/nflv-docking-5-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: metalBasic
+    materials:
+      - docking-5m-1
+
+operations:
+  - add_team_colors:
+      material: restock-crewed-hatch-1-grey
+      tc1: porkjetWhite
+
+  - edit_material_textures:
+      material: restock-crewed-hatch-1-grey
+      main_tex: ReStockPBR/Assets/Command/restock-pbr-crewed-hatch-1-a
+      bump_map: ReStockPBR/Assets/Command/restock-crewed-hatch-1-n
+      metal_map: ReStockPBR/Assets/Command/restock-pbr-crewed-hatch-1-m
+      team_color_map: ReStockPBR/Assets/Command/restock-pbr-crewed-hatch-1-tc

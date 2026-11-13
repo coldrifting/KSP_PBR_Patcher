@@ -1,0 +1,13 @@
+part: nflv-service-bay-75-1
+model: NearFutureLaunchVehicles/Parts/Payload/nflv-service-bay-75-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: payloadGrey
+    materials:
+      - nflv-cargo-75-1

@@ -1,0 +1,49 @@
+part: nflv-fueltank-5-1
+model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-5-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-fueltank-1
+      - restock-fueltank-5-1
+  insulation:
+    tc1: sofiOrange
+    tc2: sofiYellow
+    materials:
+      - restock-fueltank-5-1-sofi
+
+operations:
+  - add_team_colors:
+      material: nflv-fueltank-1
+      tc1: porkjetWhite
+      tc2: porkjetBlack
+
+  - add_team_colors:
+      material: restock-fueltank-5-1
+      tc1: porkjetWhite
+      tc2: porkjetBlack
+
+  - add_team_colors:
+      material: restock-fueltank-5-1-sofi
+      tc1: sofiOrange
+      tc2: sofiYellow
+
+  - edit_material_textures:
+      material: restock-fueltank-5-1
+      main_tex: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-1-a
+      bump_map: ReStockPBR/Assets/FuelTank/restock-fueltank-5-1-n
+      metal_map: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-1-m
+      team_color_map: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-1-tc
+
+  - edit_material_textures:
+      material: restock-fueltank-5-1-sofi
+      main_tex: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-1-a
+      bump_map: ReStockPBR/Assets/FuelTank/restock-fueltank-5-1-n
+      metal_map: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-1-m
+      team_color_map: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-1-tc

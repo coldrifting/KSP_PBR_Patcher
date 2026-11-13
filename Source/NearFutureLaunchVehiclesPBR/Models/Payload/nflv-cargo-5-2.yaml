@@ -1,0 +1,13 @@
+part: nflv-cargo-5-2
+model: NearFutureLaunchVehicles/Parts/Payload/nflv-cargo-5-2
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: payloadGrey
+    materials:
+      - nflv-cargo-5-1

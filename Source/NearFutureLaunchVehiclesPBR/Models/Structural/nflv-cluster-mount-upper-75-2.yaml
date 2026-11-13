@@ -1,0 +1,14 @@
+part: nflv-cluster-mount-upper-75-2
+model: NearFutureLaunchVehicles/Parts/Structural/Mounting/nflv-cluster-mount-upper-75-2
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-clusters-3
+      - nflv-clusters-4

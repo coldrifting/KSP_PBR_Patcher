@@ -1,0 +1,68 @@
+part: nflv-fairing-5-1
+model: NearFutureLaunchVehicles/Parts/Payload/nflv-fairing-5-1
+
+remove_part_variants: True
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: payloadGrey
+    materials:
+      - restock-fairing-base-3
+      - restock-fairing-icon-dummy-5
+
+operations:
+  - remove_transform:
+      transform: FairingBase5Gold
+
+  - remove_transform:
+      transform: FairingBase5Metal
+
+  - remove_transform:
+      transform: FairingBase5Orange
+
+  - remove_transform:
+      transform: FairingBase5Silver
+
+  - remove_transform:
+      transform: FairingBase5White
+
+  - add_team_colors:
+      material: restock-fairing-base-3
+      tc1: porkjetWhite
+      tc2: payloadGrey
+
+  - edit_material_textures:
+      material: restock-fairing-base-3
+      main_tex: ReStockPBR/Assets/Payload/restock-pbr-fairing-base-3-a
+      bump_map: ReStockPBR/Assets/Payload/restock-fairing-base-3-n
+      metal_map: ReStockPBR/Assets/Payload/restock-pbr-fairing-base-3-m
+      team_color_map: ReStockPBR/Assets/Payload/restock-pbr-fairing-base-3-tc
+
+  - remove_material:
+      material: restock-fairing-base-4
+
+  - remove_material:
+      material: restock-fairing-base-5
+
+  - remove_material:
+      material: restock-fairing-base-6
+
+  - remove_texture:
+      texture: restock-fairing-base-4
+
+  - remove_texture:
+      texture: restock-fairing-base-4-n
+
+  - remove_texture:
+      texture: restock-fairing-base-5
+
+  - remove_texture:
+      texture: restock-fairing-base-5-s
+
+  - remove_texture:
+      texture: restock-fairing-base-6

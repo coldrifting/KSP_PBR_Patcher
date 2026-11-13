@@ -1,0 +1,13 @@
+part: nflv-rcs-integrated-1
+model: NearFutureLaunchVehicles/Parts/RCS/nflv-rcs-integrated-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-rcs-integrated-1

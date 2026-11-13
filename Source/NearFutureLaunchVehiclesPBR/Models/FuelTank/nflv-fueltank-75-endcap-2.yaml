@@ -1,0 +1,10 @@
+part: nflv-fueltank-75-endcap-2-placeholder # TODO - Replace with better system
+model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-75-endcap-2
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+operations:
+  - add_standard_shader:
+      material: nflv-fueltank-endcap-1

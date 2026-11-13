@@ -1,0 +1,31 @@
+part: nflv-separator-5-1
+model: NearFutureLaunchVehicles/Parts/Coupling/nflv-separator-5-1
+
+remove_part_variants: True
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - restock-decouplers-4
+
+operations:
+  - remove_transform:
+      transform: 5mSeparatorOrange
+
+  - add_team_colors:
+      material: restock-decouplers-4
+      tc1: porkjetWhite
+      tc2: porkjetBlack
+
+  - edit_material_textures:
+      material: restock-decouplers-4
+      main_tex: ReStockPBR/Assets/Coupling/restock-pbr-decouplers-4-a
+      bump_map: ReStockPBR/Assets/Coupling/restock-pbr-decouplers-4-n
+      metal_map: ReStockPBR/Assets/Coupling/restock-pbr-decouplers-4-m
+      team_color_map: ReStockPBR/Assets/Coupling/restock-pbr-decouplers-4-tc

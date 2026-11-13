@@ -1,0 +1,13 @@
+part: nflv-drone-core-5-1
+model: NearFutureLaunchVehicles/Parts/Command/nflv-drone-core-5-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - drone-core-5-1

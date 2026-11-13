@@ -1,0 +1,20 @@
+part: nflv-cargo-tube-75-1
+model: NearFutureLaunchVehicles/Parts/Structural/nflv-cargo-tube-75-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-structural-tubes-1
+
+operations:
+  - remove_transform:
+      transform: 75mInterstageBlack
+
+  - remove_transform:
+      transform: 75mInterstageBlackFlat

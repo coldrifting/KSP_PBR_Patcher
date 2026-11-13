@@ -1,0 +1,13 @@
+part: nflv-fueltank-75-4
+model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-75-4
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetGrey
+    materials:
+      - nflv-fueltank-2

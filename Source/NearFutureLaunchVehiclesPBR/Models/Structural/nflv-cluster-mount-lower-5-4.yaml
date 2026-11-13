@@ -1,0 +1,14 @@
+part: nflv-cluster-mount-lower-5-4
+model: NearFutureLaunchVehicles/Parts/Structural/Mounting/nflv-cluster-mount-lower-5-4
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-clusters-1
+      - nflv-clusters-2

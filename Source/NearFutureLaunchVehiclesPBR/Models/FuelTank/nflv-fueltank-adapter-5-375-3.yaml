@@ -1,0 +1,28 @@
+part: nflv-fueltank-adapter-5-375-3
+model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-adapter-5-375-3
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-fueltank-1
+  insulation:
+    tc1: sofiOrange
+    tc2: sofiYellow
+    materials:
+      - nflv-fueltank-1-sofi
+
+operations:
+  - add_standard_shader:
+      material: restock-fueltank-5-endcap-1
+
+  - edit_material_textures:
+      material: restock-fueltank-5-endcap-1
+      main_tex: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-endcap-1-a
+      bump_map: ReStockPBR/Assets/FuelTank/restock-fueltank-5-endcap-1-n
+      metal_map: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-endcap-1-m

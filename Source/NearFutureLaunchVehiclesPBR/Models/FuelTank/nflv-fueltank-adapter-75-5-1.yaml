@@ -1,0 +1,17 @@
+part: nflv-fueltank-adapter-75-5-1
+model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-adapter-75-5-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetGrey
+    materials:
+      - nflv-fueltank-2
+
+operations:
+  - add_standard_shader:
+      material: nflv-fueltank-endcap-1

@@ -1,0 +1,13 @@
+part: nflv-separator-75-1
+model: NearFutureLaunchVehicles/Parts/Coupling/nflv-separator-75-1
+
+after: NearFutureLaunchVehicles
+needs:
+  - NearFutureLaunchVehicles
+
+color_zones:
+  main:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    materials:
+      - nflv-decoupler-75-1
