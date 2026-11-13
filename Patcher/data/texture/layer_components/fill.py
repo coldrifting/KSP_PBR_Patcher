@@ -15,12 +15,14 @@ class Fill(Layer):
                  image: str | None,
                  channels: str,
                  masks: list[Mask],
-                 group_type: str):
+                 group_type: str,
+                 scale: int | float):
         super().__init__(masks, group_type)
 
         self.color = color.lower() if isinstance(color, str) else color
         self.image = image
         self.channels = channels.lower() if isinstance(channels, str) else "rgba"
+        self.scale = scale
 
     def apply(self,
               size: Tuple[int, int],
@@ -58,10 +60,15 @@ class Fill(Layer):
                     raise ArgumentException(f"Image file not found: \n{image_path}")
 
                 layer_image = Image.open(image_path)
+                if (layer_image.width, layer_image.height) != size:
+                    layer_image = layer_image.resize(size, Image.Resampling.LANCZOS)
             else:
                 layer_image = fills.get(self.image, None)
                 if layer_image is None:
                     raise ArgumentException(f"Image not found in svg file: \n{self.image}")
+
+                if (layer_image.width, layer_image.height) != size:
+                    layer_image = layer_image.resize(size, Image.Resampling.LANCZOS)
 
             if layer_image.mode != "RGBA":
                 layer_image = layer_image.convert("RGBA")
@@ -97,10 +104,13 @@ class Fill(Layer):
             raise ArgumentException("A fill layer_components can have either a color or an image set, not both\r\n" +
                   "Did you forget to wrap a hex color in quotes?")
 
+        scale = yaml.get("scale", 1.0)
+
         return Fill(
             color=color,
             image=image,
             channels=channels,
             masks=masks,
-            group_type=group_type
+            group_type=group_type,
+            scale=scale
         )
