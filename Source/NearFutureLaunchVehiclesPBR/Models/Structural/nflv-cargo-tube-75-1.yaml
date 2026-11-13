@@ -14,7 +14,7 @@ color_zones:
 
 operations:
   - remove_transform:
-      transform: 75mInterstageBlack
+      transform: 75mInterstageWhite
 
   - remove_transform:
       transform: 75mInterstageBlackFlat

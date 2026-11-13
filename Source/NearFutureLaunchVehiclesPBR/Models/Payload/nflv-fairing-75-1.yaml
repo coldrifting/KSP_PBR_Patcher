@@ -8,7 +8,7 @@ needs:
 color_zones:
   main:
     tc1: porkjetWhite
-    tc2: payloadGrey
+    tc2: porkjetGrey
     materials:
       - nflv-fairing-75-1
       - restock-fairing-icon-dummy-5
