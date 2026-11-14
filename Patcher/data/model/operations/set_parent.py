@@ -22,8 +22,8 @@ class OperationSetParent(Operation):
                 scale_operation = OperationScaleTransform(transform, 1.0, True)
                 rotate_operation = OperationRotateTransform(transform, Vec3(0, 0, 0), True)
 
-                scale_operation.apply(mu_data)
-                rotate_operation.apply(mu_data)
+                scale_operation.apply(mu_data, game_data_dir)
+                rotate_operation.apply(mu_data, game_data_dir)
 
     @staticmethod
     def from_yaml(yaml: dict[str, Any]) -> 'OperationSetParent':
