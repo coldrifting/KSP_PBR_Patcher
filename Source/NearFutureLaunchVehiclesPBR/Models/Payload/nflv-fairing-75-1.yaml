@@ -1,6 +1,8 @@
 part: nflv-fairing-75-1
 model: NearFutureLaunchVehicles/Parts/Payload/nflv-fairing-75-1
 
+remove_part_variants: True
+
 after: NearFutureLaunchVehicles
 needs:
   - NearFutureLaunchVehicles
@@ -11,6 +13,10 @@ color_zones:
     tc2: porkjetGrey
     materials:
       - nflv-fairing-75-1
+  shrouds:
+    tc1: porkjetWhite
+    tc2: porkjetGrey
+    materials:
       - restock-fairing-icon-dummy-5
 
 operations:

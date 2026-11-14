@@ -13,6 +13,10 @@ color_zones:
     tc2: porkjetGrey
     materials:
       - restock-fairing-base-3
+  shrouds:
+    tc1: porkjetWhite
+    tc2: porkjetGrey
+    materials:
       - restock-fairing-icon-dummy-5
 
 operations:
@@ -42,6 +46,11 @@ operations:
       bump_map: ReStockPBR/Assets/Payload/restock-fairing-base-3-n
       metal_map: ReStockPBR/Assets/Payload/restock-pbr-fairing-base-3-m
       team_color_map: ReStockPBR/Assets/Payload/restock-pbr-fairing-base-3-tc
+
+  - add_team_colors:
+      material: restock-fairing-icon-dummy-5
+      tc1: porkjetWhite
+      tc2: payloadGrey
 
   - edit_material_textures:
       material: restock-fairing-icon-dummy-5

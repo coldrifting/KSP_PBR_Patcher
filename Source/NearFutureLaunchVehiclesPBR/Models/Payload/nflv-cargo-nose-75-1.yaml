@@ -11,3 +11,4 @@ color_zones:
     tc2: payloadGrey
     materials:
       - nflv-cargo-75-1
+      - nflv-cargo-75-2

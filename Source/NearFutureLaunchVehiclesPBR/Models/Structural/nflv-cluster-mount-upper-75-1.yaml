@@ -12,3 +12,15 @@ color_zones:
     materials:
       - nflv-clusters-3
       - nflv-clusters-4
+  shrouds:
+    tc1: porkjetWhite
+    tc2: porkjetBlack
+    transforms:
+      - 75mInterstageMedShort
+      - 75mInterstageMed
+      - 75mInterstageMedLong
+      - 75mInterstageLong
+
+operations:
+  - remove_transform:
+      transform: 75mBlackInterstage

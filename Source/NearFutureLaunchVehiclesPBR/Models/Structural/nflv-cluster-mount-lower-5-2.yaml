@@ -11,3 +11,70 @@ color_zones:
     tc2: porkjetBlack
     materials:
       - nflv-clusters-1
+  tiles:
+    tc1: tileBlack
+    materials:
+      - nflv-clusters-1-tiles
+
+operations:
+  - split_triangles:
+      transform:   5mClusterSLS2x
+      destination: 5mClusterSLS2x_Tiles
+      triangles: 1736-1747, 1760-1845, 1872-1889, 1899-1906, 2076-2083, 2110-2180, 2182-2193, 2206-2259, 2272-2357, 2384-2454, 2624-2631, 2658-2692, 2694-2705, 2718-2759
+
+  - set_parent:
+      parent: 5mClusterSLS2x
+      transforms:
+        - 5mClusterSLS2x_Tiles
+
+  - move_transform:
+      transform: 5mClusterSLS2x_Tiles
+      absolute: True
+      amount:
+        x: 0
+        y: 0
+        z: 0
+
+  - split_triangles:
+      transform:   5mClusterSLS3x
+      destination: 5mClusterSLS3x_Tiles
+      triangles: 1736-1743, 1770-1841, 2010-2017, 2044-2123, 2128-2143, 2148-2167, 2194-2265, 2434-2441, 2468-2543, 2548-2563, 2568-2587, 2614-2685, 2854-2861, 2888-2967, 2972-3005, 3010-3111
+
+  - set_parent:
+      parent: 5mClusterSLS3x
+      transforms:
+        - 5mClusterSLS3x_Tiles
+
+  - move_transform:
+      transform: 5mClusterSLS3x_Tiles
+      absolute: True
+      amount:
+        x: 0
+        y: 0
+        z: 0
+
+  - split_triangles:
+      transform:   5mClusterSLS4x
+      destination: 5mClusterSLS4x_Tiles
+      triangles: 1736-1743, 1770-1841, 2010-2017, 2044-2123, 2150-2221, 2390-2397, 2424-2495, 2664-2671, 2698-2769, 2938-2945, 2972-3051, 3078-3157, 3184-3255
+
+  - set_parent:
+      parent: 5mClusterSLS4x
+      transforms:
+        - 5mClusterSLS4x_Tiles
+
+  - move_transform:
+      transform: 5mClusterSLS4x_Tiles
+      absolute: True
+      amount:
+        x: 0
+        y: 0
+        z: 0
+
+  - copy_material:
+      material: nflv-clusters-1
+      suffix:   tiles
+      transforms:
+        - 5mClusterSLS2x_Tiles
+        - 5mClusterSLS3x_Tiles
+        - 5mClusterSLS4x_Tiles
