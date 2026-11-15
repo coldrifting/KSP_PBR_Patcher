@@ -1,9 +1,4 @@
-part: nflv-cluster-mount-upper-75-2
 model: NearFutureLaunchVehicles/Parts/Structural/Mounting/nflv-cluster-mount-upper-75-2
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:
@@ -22,5 +17,6 @@ color_zones:
       - 75mInterstageLong
 
 operations:
-  - remove_transform:
-      transform: 75mBlackInterstage
+  - remove_transforms:
+      transforms:
+        - 75mBlackInterstage

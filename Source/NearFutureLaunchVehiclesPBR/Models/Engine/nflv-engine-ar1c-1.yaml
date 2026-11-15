@@ -1,9 +1,4 @@
-part: nflv-engine-ar1c-1
 model: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-ar1c-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

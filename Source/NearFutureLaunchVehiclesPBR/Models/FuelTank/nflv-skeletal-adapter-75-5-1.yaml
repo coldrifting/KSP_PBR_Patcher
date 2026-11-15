@@ -1,9 +1,4 @@
-part: nflv-skeletal-adapter-75-5-1
 model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-skeletal-adapter-75-5-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

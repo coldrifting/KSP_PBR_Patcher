@@ -1,9 +1,4 @@
-part: nflv-service-bay-75-1
 model: NearFutureLaunchVehicles/Parts/Payload/nflv-service-bay-75-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

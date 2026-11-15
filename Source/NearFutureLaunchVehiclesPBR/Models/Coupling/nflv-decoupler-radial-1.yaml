@@ -1,9 +1,4 @@
-part: nflv-decoupler-radial-1
 model: NearFutureLaunchVehicles/Parts/Coupling/nflv-decoupler-radial-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

@@ -1,9 +1,4 @@
-part: nflv-rcs-aero-heavy-2
 model: NearFutureLaunchVehicles/Parts/RCS/nflv-rcs-aero-heavy-2
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

@@ -1,9 +1,4 @@
-part: nflv-cargo-tube-5-1
 model: NearFutureLaunchVehicles/Parts/Structural/nflv-cargo-tube-5-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:
@@ -13,8 +8,7 @@ color_zones:
       - nflv-structural-tubes-1
 
 operations:
-  - remove_transform:
-      transform: 5mInterstageDecouplerBlack
-
-  - remove_transform:
-      transform: 5mInterstageDecouplerBlackFlat
+  - remove_transforms:
+      transforms:
+        - 5mInterstageDecouplerBlack
+        - 5mInterstageDecouplerBlackFlat

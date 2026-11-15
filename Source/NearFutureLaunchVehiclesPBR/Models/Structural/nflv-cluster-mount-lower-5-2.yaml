@@ -1,9 +1,4 @@
-part: nflv-cluster-mount-lower-5-2
 model: NearFutureLaunchVehicles/Parts/Structural/Mounting/nflv-cluster-mount-lower-5-2
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:
@@ -13,8 +8,10 @@ color_zones:
       - nflv-clusters-1
   tiles:
     tc1: tileBlack
-    materials:
-      - nflv-clusters-1-tiles
+    transforms:
+      - 5mClusterSLS2x_Tiles
+      - 5mClusterSLS3x_Tiles
+      - 5mClusterSLS4x_Tiles
 
 operations:
   - split_triangles:
@@ -27,10 +24,10 @@ operations:
       transforms:
         - 5mClusterSLS2x_Tiles
 
-  - move_transform:
+  - edit_transform_position:
       transform: 5mClusterSLS2x_Tiles
       absolute: True
-      amount:
+      position:
         x: 0
         y: 0
         z: 0
@@ -45,10 +42,10 @@ operations:
       transforms:
         - 5mClusterSLS3x_Tiles
 
-  - move_transform:
+  - edit_transform_position:
       transform: 5mClusterSLS3x_Tiles
       absolute: True
-      amount:
+      position:
         x: 0
         y: 0
         z: 0
@@ -63,18 +60,10 @@ operations:
       transforms:
         - 5mClusterSLS4x_Tiles
 
-  - move_transform:
+  - edit_transform_position:
       transform: 5mClusterSLS4x_Tiles
       absolute: True
-      amount:
+      position:
         x: 0
         y: 0
         z: 0
-
-  - copy_material:
-      material: nflv-clusters-1
-      suffix:   tiles
-      transforms:
-        - 5mClusterSLS2x_Tiles
-        - 5mClusterSLS3x_Tiles
-        - 5mClusterSLS4x_Tiles

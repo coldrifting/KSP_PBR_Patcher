@@ -1,10 +1,14 @@
-part: nflv-fueltank-75-endcap-4-placeholder # TODO - Replace with better system
 model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-75-endcap-4
 
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
-
 operations:
-  - add_standard_shader:
+  - edit_material_shader:
       material: nflv-fueltank-endcap-1
+      shader: Resurfaced/Standard
+
+  - edit_material_textures:
+      material: nflv-fueltank-endcap-1
+      main_tex: nflv-fueltank-endcap-1-a
+
+  - remove_textures:
+      textures:
+        - nflv-fueltank-endcap-1

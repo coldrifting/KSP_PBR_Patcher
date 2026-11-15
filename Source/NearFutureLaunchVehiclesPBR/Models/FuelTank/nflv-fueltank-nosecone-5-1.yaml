@@ -1,9 +1,4 @@
-part: nflv-fueltank-nosecone-5-1
 model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-nosecone-5-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

@@ -1,9 +1,4 @@
-part: nflv-fueltank-75-3
 model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-75-3
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

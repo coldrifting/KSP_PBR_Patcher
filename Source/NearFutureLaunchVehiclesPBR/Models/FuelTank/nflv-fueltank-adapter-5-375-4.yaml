@@ -1,9 +1,4 @@
-part: nflv-nflv-fueltank-adapter-5-375-4
 model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-adapter-5-375-4
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

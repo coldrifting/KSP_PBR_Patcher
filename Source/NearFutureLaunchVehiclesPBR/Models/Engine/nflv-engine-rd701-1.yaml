@@ -1,9 +1,4 @@
-part: nflv-engine-rd701-1
 model: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-rd701-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:
@@ -27,7 +22,7 @@ operations:
       transform: 701Boattail
       triangles: 33-36, 39-40, 42-43, 210-213, 216-217, 220-221, 600-603, 606-607, 610-611, 779-782, 785-786, 788-789
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: 701Boattail
       vertices:
         20:   {x: -1.368714, y:  0.843513, z: -0.476572}
@@ -111,7 +106,7 @@ operations:
         5622: {x: -0.002235, y: -1.539477, z: -0.809572}
         5623: {x:  1.133607, y: -0.957710, z: -0.950426}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: 701Boattail
       uvs:
         20:   {x:  0.208229, y:  0.777982}
@@ -200,7 +195,7 @@ operations:
       destination: 701Boattail_Tiles
       triangles: 85-129, 263-307, 425-494, 653-697, 831-875, 993-1062, 4892-4923
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: 701Boattail
       vertices:
         294: {x: -0.001365, y: -0.006505, z: -0.814561}
@@ -218,7 +213,7 @@ operations:
         774: {x: -0.001365, y:  1.442479, z: -0.814561}
         801: {x: -0.001365, y: -0.006505, z: -0.814561}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: 701Boattail
       uvs:
         359: {x:  0.166420, y:  0.591435}
@@ -237,7 +232,7 @@ operations:
       destination: 701Boattail_Tiles
       triangles: 4572-4643
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: 701Boattail
       vertices:
         63:  {x: -0.718110, y:  1.243801, z: -0.814330}
@@ -325,7 +320,7 @@ operations:
         775: {x:  0.715380, y:  1.243801, z: -0.814330}
         776: {x:  1.012830, y:  1.015559, z: -0.814330}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: 701Boattail
       uvs:
         59:  {x:  0.411683, y:  0.805923}
@@ -533,7 +528,7 @@ operations:
       transform: 701Boattail
       triangles: 113, 119, 244, 252, 519, 527, 654, 660
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: 701Boattail
       vertices:
         109: {x: -1.072809, y:  0.873187, z: -0.814800}
@@ -553,7 +548,7 @@ operations:
         698: {x:  1.070079, y: -0.887172, z: -0.814799}
         719: {x:  1.070079, y: -0.887172, z: -0.814799}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: 701Boattail
       uvs:
         108: {x:  0.410944, y:  0.740612}
@@ -609,7 +604,7 @@ operations:
         717: {x:  0.411835, y:  0.763928}
         719: {x:  0.390277, y:  0.760969}
 
-  - edit_normals_average:
+  - edit_mesh_normals_average:
       transform: 701Boattail
       vertex_groups:
         - [114, 120]
@@ -719,7 +714,7 @@ operations:
         - [679, 685]
         - [682, 689]
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: 701Boattail_Tiles
       vertices:
         377: {x: -0.708960, y:  1.227953, z: -0.885687}
@@ -791,7 +786,7 @@ operations:
         509: {x:  1.070079, y: -0.887172, z: -0.885687}
         511: {x:  0.999890, y: -1.016604, z: -0.885687}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: 701Boattail_Tiles
       uvs:
         377: {x:  0.110272, y:  0.730394}

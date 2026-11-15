@@ -1,9 +1,4 @@
-part: nflv-fueltank-5-2
 model: NearFutureLaunchVehicles/Parts/FuelTank/nflv-fueltank-5-2
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:
@@ -19,21 +14,6 @@ color_zones:
       - restock-fueltank-5-1-sofi
 
 operations:
-  - add_team_colors:
-      material: nflv-fueltank-1
-      tc1: porkjetWhite
-      tc2: porkjetBlack
-
-  - add_team_colors:
-      material: restock-fueltank-5-1
-      tc1: porkjetWhite
-      tc2: porkjetBlack
-
-  - add_team_colors:
-      material: restock-fueltank-5-1-sofi
-      tc1: sofiOrange
-      tc2: sofiYellow
-
   - edit_material_textures:
       material: restock-fueltank-5-1
       main_tex: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-5-1-a

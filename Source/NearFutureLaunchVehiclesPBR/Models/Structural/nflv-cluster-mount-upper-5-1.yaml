@@ -1,9 +1,4 @@
-part: nflv-cluster-mount-upper-5-1
 model: NearFutureLaunchVehicles/Parts/Structural/Mounting/nflv-cluster-mount-upper-5-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:
@@ -23,10 +18,11 @@ color_zones:
       - InterstageLong
 
 operations:
-  - remove_transform:
-      transform: BlackInterstages
+  - remove_transforms:
+      transforms:
+        - BlackInterstages
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: 5mStrucutralButt
       vertices:
         0:   {x: -2.478909, y:  0.326498, z: -0.000463}

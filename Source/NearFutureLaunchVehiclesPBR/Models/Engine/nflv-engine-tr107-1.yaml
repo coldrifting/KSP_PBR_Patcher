@@ -1,9 +1,4 @@
-part: nflv-engine-tr107-1
 model: NearFutureLaunchVehicles/Parts/Engine/nflv-engine-tr107-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

@@ -1,9 +1,5 @@
-part: nflv-rcs-heavy-4x-1
 model: NearFutureLaunchVehicles/Parts/RCS/nflv-rcs-heavy-4x-1
 
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

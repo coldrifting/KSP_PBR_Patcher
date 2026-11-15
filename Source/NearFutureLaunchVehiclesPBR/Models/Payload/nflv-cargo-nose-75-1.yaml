@@ -1,9 +1,4 @@
-part: nflv-cargo-nose-75-1
 model: NearFutureLaunchVehicles/Parts/Payload/nflv-cargo-nose-75-1
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:
@@ -12,3 +7,8 @@ color_zones:
     materials:
       - nflv-cargo-75-1
       - nflv-cargo-75-2
+
+operations:
+  - remove_textures:
+      textures:
+        - restock-engine-boar-1

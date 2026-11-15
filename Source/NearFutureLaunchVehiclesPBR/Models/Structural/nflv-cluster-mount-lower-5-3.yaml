@@ -1,9 +1,4 @@
-part: nflv-cluster-mount-lower-5-3
 model: NearFutureLaunchVehicles/Parts/Structural/Mounting/nflv-cluster-mount-lower-5-3
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:

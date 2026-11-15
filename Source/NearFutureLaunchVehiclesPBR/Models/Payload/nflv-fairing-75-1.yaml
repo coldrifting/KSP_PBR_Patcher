@@ -1,11 +1,4 @@
-part: nflv-fairing-75-1
 model: NearFutureLaunchVehicles/Parts/Payload/nflv-fairing-75-1
-
-remove_part_variants: True
-
-after: NearFutureLaunchVehicles
-needs:
-  - NearFutureLaunchVehicles
 
 color_zones:
   main:
@@ -25,22 +18,20 @@ operations:
       new_name: FairingIconDummy
       model: NearFutureLaunchVehicles/Parts/Payload/nflv-fairing-5-1
 
-  - move_transform:
+  - edit_transform_position:
       transform: FairingIconDummy
       absolute: True
-      amount:
+      position:
         x: 0
         y: 0
         z: 0
 
-  - scale_transform:
+  - edit_transform_scale:
       transform: FairingIconDummy
-      amount: 1.49
-
-  - add_team_colors:
-      material: restock-fairing-icon-dummy-5
-      tc1: porkjetWhite
-      tc2: payloadGrey
+      scale:
+        x: 1.49
+        y: 1.49
+        z: 1.49
 
   - edit_material_textures:
       material: restock-fairing-icon-dummy-5
@@ -49,5 +40,6 @@ operations:
       metal_map: ReStockPBR/Assets/Payload/restock-pbr-fairing-5-1-m
       team_color_map: ReStockPBR/Assets/Payload/restock-pbr-fairing-5-1-tc
 
-  - remove_texture:
-      texture: restock-fairing-5-1-n
+  - remove_textures:
+      textures:
+        - restock-fairing-5-1-n
