@@ -1,11 +1,5 @@
 # Helicopter Propeller - Large
-part: largeHeliBlade
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/largeHeliBlade
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:

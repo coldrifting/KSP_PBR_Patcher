@@ -1,10 +1,5 @@
 # 2.5m Methalox Cryogenic Vacuum Engine
-part: cryoengine-eagle-1
 model: CryoEngines/Assets/MethaloxEngine/cryoengine-eagle-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:

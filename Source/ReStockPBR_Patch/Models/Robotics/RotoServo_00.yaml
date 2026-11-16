@@ -1,13 +1,5 @@
 # Servo Small
-part: rotoServo_00
 model: SquadExpansion/Serenity/Parts/Robotics/Assets/RotoServo_00
-
-remove_part_variants: True
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:
@@ -15,7 +7,7 @@ color_zones:
     tc2: argonBlue
 
 operations:
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Rotor
       uvs:
         756: { x: 0.686727, y: 0.897144}

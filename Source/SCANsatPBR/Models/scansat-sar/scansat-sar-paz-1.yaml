@@ -1,10 +1,5 @@
 # Low Tech SAR
-part: scansat-sar-paz-1
 model: SCANsat/Parts/scansat-sar/scansat-sar-paz-1
-
-after: SCANsat
-needs:
-  - SCANsat
 
 color_zones:
   main:

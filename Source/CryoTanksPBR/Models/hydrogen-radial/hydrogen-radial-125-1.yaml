@@ -1,10 +1,5 @@
 # 1.25m Radial Cryogenic Tank
-part: hydrogen-radial-125-1
 model: CryoTanks/Parts/HydrogenTanks/hydrogen-radial/hydrogen-radial-125-1
-
-after: CryoTanks
-needs:
-  - CryoTanks
 
 color_zones:
   main:
@@ -19,5 +14,6 @@ color_zones:
       - hydrogen-radial-1-foil
 
 operations:
-  - remove_texture:
-      texture: hydrogen-radial-1-s
+  - remove_textures:
+      textures:
+        - hydrogen-radial-1-s

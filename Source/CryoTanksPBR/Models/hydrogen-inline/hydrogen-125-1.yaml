@@ -1,10 +1,5 @@
 # 1.25m Cryogenic Tank (Large)
-part: hydrogen-125-1
 model: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-125-1
-
-after: CryoTanks
-needs:
-  - CryoTanks
 
 color_zones:
   main:
@@ -18,3 +13,8 @@ color_zones:
     tc1: mliGold
     materials:
       - hydrogen-125-foil
+
+operations:
+  - remove_textures:
+      textures:
+        - hydrogen-125-s

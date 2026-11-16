@@ -1,10 +1,5 @@
 # Mk1 Inline Cockpit - Fix thumbnails 
-part: Mark2Cockpit
 model: ReStockPBR/Assets/Command/restock-pbr-cockpit-mk1-2
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

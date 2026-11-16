@@ -1,10 +1,5 @@
 # Make part thumbnail more consistent and tweak default colors
-part: cupola
 model: ReStockPBR/Assets/Command/restock-pbr-cupola-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

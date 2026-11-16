@@ -1,9 +1,4 @@
-part: scansat-radar-seasat-1
 model: SCANsat/Parts/scansat-radar/scansat-radar-seasat-1
-
-after: SCANsat
-needs:
-  - SCANsat
 
 color_zones:
   main:

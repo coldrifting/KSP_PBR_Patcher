@@ -1,10 +1,5 @@
 # 1.25m Methalox Cryogenic Vacuum Engine
-part: cryoengine-buzzard-1
 model: CryoEngines/Assets/MethaloxEngine/cryoengine-buzzard-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:

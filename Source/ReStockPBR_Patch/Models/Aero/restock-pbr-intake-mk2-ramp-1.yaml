@@ -1,10 +1,5 @@
 # Mk2 Ramp Intake - Add heat tile variants
-part: restock-pbr-intake-mk2-ramp-1
 model: ReStockPlusPBR/Assets/Aero/restock-pbr-intake-mk2-ramp-1
-
-after: ReStockPlusPBR
-needs:
-  - ReStockPlusPBR
 
 color_zones:
   main:
@@ -27,7 +22,7 @@ operations:
       transform: Mk2IntakeRamp
       triangles: 480-535
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: Mk2IntakeRamp
       vertices:
         452: {x: -0.743554, y:  0.879289, z: -0.403516}
@@ -99,7 +94,7 @@ operations:
         583: {x:  1.057625, y:  0.283799, z:  0.152722}
         584: {x:  1.072570, y:  0.309759, z:  0.128436}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Mk2IntakeRamp
       uvs:  
         452: {x:  0.338602, y:  0.476009}
@@ -171,7 +166,7 @@ operations:
         583: {x:  0.892705, y:  0.631315}
         584: {x:  0.900375, y:  0.624414}
 
-  - edit_normals_average:
+  - edit_mesh_normals_average:
       transform: Mk2IntakeRamp
       vertex_groups:
         - [557, 523]
@@ -234,7 +229,7 @@ operations:
         - [512, 556, 579, 487]
         - [249, 449]
 
-  - edit_normals:
+  - edit_mesh_normals:
       transform: Mk2IntakeRamp
       normals:
         281: {x:  0.503564, y:  0.000000, z:  0.863958}
@@ -263,7 +258,7 @@ operations:
       destination: Mk2IntakeRampTiledATiles
       triangles: 8-19, 54-70, 221, 231-239, 248-259, 294-310, 461, 471-479, 546-563, 574-591
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Mk2IntakeRampTiledATiles
       uvs:
         14:  {x:  0.004767, y:  0.333738}
@@ -374,7 +369,7 @@ operations:
       destination: Mk2IntakeRampTiledBTiles
       triangles: 0-11, 20-33, 36-38, 221, 231-251, 260-273, 276-278, 461, 471-479, 536-545, 556-573, 584-591
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Mk2IntakeRampTiledBTiles
       uvs:
         14:  {x:  0.112324, y:  0.141702}
@@ -478,7 +473,7 @@ operations:
 
   - copy_material:
       material: restock-pbr-intakes-3
-      suffix: tiles
+      new_name: restock-pbr-intakes-3-tiles
       transforms:
       - Mk2IntakeRampTiledATiles
       - Mk2IntakeRampTiledBTiles

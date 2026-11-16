@@ -1,10 +1,5 @@
 # Fix heat tile colors in part thumbnails
-part: mk3FuselageMONO
 model: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-mk3-mono-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

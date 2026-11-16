@@ -1,13 +1,5 @@
 # Mk2 pod
-part: Mk2Pod
 model: ReStock/Assets/Command/restock-mk2-pod
-
-dlc: MakingHistory
-
-after: ReStock
-needs:
-  - ReStock
-  - SquadExpansion/MakingHistory
 
 color_zones:
   main:

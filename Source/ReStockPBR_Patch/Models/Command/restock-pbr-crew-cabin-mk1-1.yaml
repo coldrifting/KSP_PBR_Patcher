@@ -1,10 +1,5 @@
 # Mk1 Crew Cabin - Fix thumbnails 
-part: MK1CrewCabin
 model: ReStockPBR/Assets/Command/restock-pbr-crew-cabin-mk1-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

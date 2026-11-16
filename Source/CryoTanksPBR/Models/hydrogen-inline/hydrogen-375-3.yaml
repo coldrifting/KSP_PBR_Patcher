@@ -1,10 +1,5 @@
 # 3.75m Cryogenic Tank (Small)
-part: hydrogen-375-3
 model: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-375-3
-
-after: CryoTanks
-needs:
-  - CryoTanks
 
 color_zones:
   main:
@@ -20,7 +15,7 @@ color_zones:
       - hydrogen-flat-1-foil
 
 operations:
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Short375TankIso
       uvs:
         260:  {x:  0.394626, y:  0.093980}
@@ -62,7 +57,7 @@ operations:
         1952: {x:  0.778342, y:  0.159371}
         1953: {x:  0.778342, y:  0.132140}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Short375TankIsoStructured
       uvs:
         260:  {x:  0.828024, y:  0.724838}
@@ -104,7 +99,7 @@ operations:
         1952: {x:  0.777909, y:  0.449508}
         1953: {x:  0.777909, y:  0.421850}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Short375TankIsoCompact
       uvs:
         0:    {x:  0.564118, y:  0.220677}
@@ -426,5 +421,6 @@ operations:
         1956: {x:  0.124001, y:  0.143486}
         1957: {x:  0.096751, y:  0.143486}
 
-  - remove_texture:
-      texture: hydrogen-flat-1-s
+  - remove_textures:
+      textures:
+        - hydrogen-flat-1-s

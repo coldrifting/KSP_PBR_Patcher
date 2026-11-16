@@ -1,10 +1,5 @@
 # 3.75m Hydrolox Cryogenic Lifter Engine
-part: cryoengine-etna-1
 model: CryoEngines/Assets/Engine/cryoengine-etna-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:

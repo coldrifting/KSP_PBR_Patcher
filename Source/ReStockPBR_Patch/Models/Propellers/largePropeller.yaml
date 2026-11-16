@@ -1,11 +1,5 @@
 # Plane Propeller - Large
-part: largePropeller
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/largePropeller
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:

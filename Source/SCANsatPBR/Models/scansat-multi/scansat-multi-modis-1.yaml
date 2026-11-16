@@ -1,10 +1,5 @@
 # Low-tech multispectral scanner
-part: scansat-multi-modis-1
 model: SCANsat/Parts/scansat-multi/scansat-multi-modis-1
-
-after: SCANsat
-needs:
-  - SCANsat
 
 color_zones:
   main:
@@ -19,11 +14,13 @@ color_zones:
       - scansat-multi-foil-1
 
 operations:
-  - remove_transform:
-      transform: MODIS_Foil_Silver
+  - remove_transforms:
+      transforms: 
+        - MODIS_Foil_Silver
 
-  - remove_material:
-      material: scansat-multi-foil-1-silver
+  - remove_materials:
+      materials: 
+        - scansat-multi-foil-1-silver
 
   - rename_material:
       material: scansat-multi-foil-1-alt
@@ -37,26 +34,9 @@ operations:
       material: scansat-multi-metal-1
       new_name: scansat-multi-2
 
-  - add_team_colors:
-      material: scansat-multi-1
-      tc1: metalBasic
-
-  - add_team_colors:
-      material: scansat-multi-2
-      tc1: metalBasic
-
-  - add_team_colors:
-      material: scansat-multi-foil-1
-      tc1: mliGold
-
-  - remove_texture:
-      texture: scansat-multi-foil-1-s
-
-  - remove_texture:
-      texture: scansat-multi-foil-1-silver
-
-  - remove_texture:
-      texture: scansat-multi-foil-1-silver-s
-
-  - remove_texture:
-      texture: scansat-multi-foil-1-alt-n
+  - remove_textures:
+      textures:
+        - scansat-multi-foil-1-s
+        - scansat-multi-foil-1-silver
+        - scansat-multi-foil-1-silver-s
+        - scansat-multi-foil-1-alt-n

@@ -1,10 +1,5 @@
 # Mk1 Cockpit - Fix thumbnails 
-part: Mark1Cockpit
 model: ReStockPBR/Assets/Command/restock-pbr-cockpit-mk1-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

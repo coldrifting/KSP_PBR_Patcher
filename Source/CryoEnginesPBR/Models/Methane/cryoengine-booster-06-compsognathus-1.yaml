@@ -1,10 +1,5 @@
 # 0.625m Methalox Cryogenic Booster Engine
-part: cryoengine-compsognathus-1
 model: CryoEngines/Assets/MethaloxEngine/cryoengine-compsognathus-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:
@@ -28,7 +23,7 @@ operations:
       transform: Shroud_0625_Prometheus
       new_name: Shroud_0625_PrometheusBoattail
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: Shroud_0625_PrometheusBoattail
       vertices:
         5:   {x: -0.270630, y:  0.156248, z: -0.920465}
@@ -441,7 +436,7 @@ operations:
         659: {x: -0.262500, y: -0.000001, z: -0.595246}
 
 
-  - edit_normals_average:
+  - edit_mesh_normals_average:
       transform: Shroud_0625_PrometheusBoattail
       vertex_groups:
         - [575, 556]
@@ -489,7 +484,7 @@ operations:
       transform: Shroud_0625_PrometheusBoattail
       triangles: 3-5, 9-20, 22-24, 39-41, 45-56, 58-60, 75-77, 81-92, 94-96, 111-113, 117-128, 130-132, 147-149, 153-164, 166-168, 183-185, 189-200, 202-204, 219-221, 225-236, 238-240, 255-257, 261-272, 274-276
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: Shroud_0625_PrometheusBoattail
       vertices:
         1:   {x: -0.220969, y:  0.220968, z: -0.855873}
@@ -557,7 +552,7 @@ operations:
         151: {x: -0.270630, y: -0.156250, z: -0.855872}
         152: {x: -0.220968, y: -0.220970, z: -0.855872}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Shroud_0625_PrometheusBoattail
       uvs:
         0:   {x:  0.394175, y:  0.805086}

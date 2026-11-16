@@ -1,10 +1,4 @@
-part: mGripPad
 model: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/mGripPad
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:

@@ -1,10 +1,5 @@
 # SCAN Been There Done That®
-part: scansat-exomars-1
 model: SCANsat/Parts/scansat-btdt/scansat-exomars-1
-
-after: SCANsat
-needs:
-  - SCANsat
 
 color_zones:
   main:

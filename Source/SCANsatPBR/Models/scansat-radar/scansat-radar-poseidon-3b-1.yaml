@@ -1,9 +1,4 @@
-part: scansat-radar-poseidon-3b-1
 model: SCANsat/Parts/scansat-radar/scansat-radar-poseidon-3b-1
-
-after: SCANsat
-needs:
-  - SCANsat
 
 color_zones:
   main:
@@ -17,5 +12,6 @@ color_zones:
       - scansat-radar-foil-1
 
 operations:
-  - remove_texture:
-      texture: scansat-radar-foil-1-s
+  - remove_textures:
+      textures: 
+        - scansat-radar-foil-1-s

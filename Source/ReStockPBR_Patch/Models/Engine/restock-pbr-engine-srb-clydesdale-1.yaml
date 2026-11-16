@@ -1,9 +1,4 @@
-part: Clydesdale
 model: ReStockPBR/Assets/Engine/restock-pbr-engine-srb-clydesdale-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

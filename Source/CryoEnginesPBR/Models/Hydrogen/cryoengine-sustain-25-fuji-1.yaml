@@ -1,10 +1,5 @@
 # 2.5m Hydrolox Cryogenic Lifter Engine
-part: cryoengine-fuji-1
 model: CryoEngines/Assets/Engine/cryoengine-fuji-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:
@@ -28,7 +23,7 @@ operations:
       transform: Shroud25Mesh
       new_name: Shroud25BoattailMesh
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: Shroud25BoattailMesh
       vertices:
         8:   {x: -0.595841, y:  0.159655, z: -0.373487}
@@ -312,7 +307,7 @@ operations:
         402: {x: -0.563766, y:  0.000000, z: -0.470858}
         403: {x: -0.616952, y:  0.000000, z: -0.420878}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Shroud25BoattailMesh
       uvs:
         0:   {x:  0.655305, y:  0.947304}

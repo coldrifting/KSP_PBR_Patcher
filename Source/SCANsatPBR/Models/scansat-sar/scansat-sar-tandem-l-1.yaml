@@ -1,10 +1,5 @@
 # High Tech SAR
-part: scansat-sar-tandem-l-1
 model: SCANsat/Parts/scansat-sar/scansat-sar-tandem-l-1
-
-after: SCANsat
-needs:
-  - SCANsat
 
 color_zones:
   main:

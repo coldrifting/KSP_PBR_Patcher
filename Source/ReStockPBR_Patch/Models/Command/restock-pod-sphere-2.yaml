@@ -1,13 +1,5 @@
 # Sphere Capsule (2 Kerbals)
-part: kv2Pod
 model: ReStock/Assets/Command/restock-pod-sphere-2
-
-dlc: MakingHistory
-
-after: ReStock
-needs:
-  - ReStock
-  - SquadExpansion/MakingHistory
 
 color_zones:
   main:

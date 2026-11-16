@@ -1,10 +1,5 @@
 # Mk2 Shock Intake - Add heat tile variant
-part: restock-pbr-intake-mk2-shock-1
 model: ReStockPlusPBR/Assets/Aero/restock-pbr-intake-mk2-shock-1
-
-after: ReStockPlusPBR
-needs:
-  - ReStockPlusPBR
 
 color_zones:
   main:
@@ -27,7 +22,7 @@ operations:
       transform: Mk2IntakeShock
       triangles: 532-571
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: Mk2IntakeShock
       vertices:
         542: {x: -0.923042, y: -0.037527, z: -0.145811}
@@ -87,7 +82,7 @@ operations:
         650: {x:  0.922737, y: -0.037527, z:  0.146489}
         651: {x:  0.945624, y: -0.037527, z:  0.000339}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Mk2IntakeShock
       uvs:
         542: {x:  0.720367, y:  0.308874}
@@ -147,7 +142,7 @@ operations:
         650: {x:  0.603589, y:  0.634894}
         651: {x:  0.652948, y:  0.633807}
 
-  - edit_normals_average:
+  - edit_mesh_normals_average:
       transform: Mk2IntakeShock
       vertex_groups:
         - [619, 605]
@@ -183,7 +178,7 @@ operations:
         - [623, 651, 569, 597]
         - [650, 596]
 
-  - edit_normals:
+  - edit_mesh_normals:
       transform: Mk2IntakeShock
       normals:
         394: {x: -0.957717, y:  0.287136, z:  0.018204}
@@ -233,7 +228,7 @@ operations:
         601: {x: -0.626931, y: 0.258733, z:  -0.734857}
         629: {x: -0.626931, y: 0.258733, z:   0.734857}
 
-  - edit_normals_average:
+  - edit_mesh_normals_average:
       transform: Mk2IntakeShock
       vertex_groups:
         - [554, 601, 542, 608]
@@ -250,7 +245,7 @@ operations:
       destination: Mk2IntakeShockTilesLower
       triangles: 10-17, 20, 25-31, 36-39, 90-97, 100, 105-111, 116-119, 408-411, 488-491, 572-591, 600-601, 610-611
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Mk2IntakeShockTilesLower
       uvs:
         0:  {x:  0.158955, y:  0.894299}
@@ -346,7 +341,7 @@ operations:
 
   - copy_material:
       material: restock-pbr-intakes-3
-      suffix: tiles
+      new_name: restock-pbr-intakes-3-tiles
       transforms:
         - Mk2IntakeShockTilesLower
 

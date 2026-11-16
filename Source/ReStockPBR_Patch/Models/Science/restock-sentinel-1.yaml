@@ -1,10 +1,5 @@
 # InfraredTelescope - Make mirrors shiny and keep insides dark
-part: InfraredTelescope
 model: ReStock/Assets/Science/restock-sentinel-1
-
-after: ReStock
-needs:
-  - ReStock
 
 color_zones:
   main:
@@ -14,7 +9,7 @@ color_zones:
       - restock-sentinel-1
 
 operations:
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Mirrors
       uvs:
         0:   { x: 0.686684, y: 0.903326}

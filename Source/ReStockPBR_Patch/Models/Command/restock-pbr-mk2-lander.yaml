@@ -1,10 +1,5 @@
 # Make part thumbnail more consistent
-part: mk2LanderCabin_v2
 model: ReStockPBR/Assets/Command/restock-pbr-mk2-lander
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

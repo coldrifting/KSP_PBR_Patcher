@@ -1,10 +1,5 @@
 # Fix heat tile colors in part thumbnails
-part: mk2FuselageShortLiquid
 model: ReStockPBR/Assets/FuelTank/restock-pbr-fueltank-mk2-short-lf-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

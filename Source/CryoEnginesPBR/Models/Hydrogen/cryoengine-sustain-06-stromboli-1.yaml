@@ -1,10 +1,5 @@
 # 0.625m Hydrolox Cryogenic Sustainer Engine
-part: cryoengine-stromboli-1
 model: CryoEngines/Assets/Engine/cryoengine-stromboli-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:
@@ -19,12 +14,15 @@ color_zones:
       - cryoengine-shrouds-1
 
 operations:
-  - move_transform:
+  - edit_transform_position:
       transform: StromboliBoattail
-      amount: {x: 0, y: 0, z: -0.323857}
       absolute: True
+      position: 
+        x: 0
+        y: 0
+        z: -0.323857
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: StromboliBoattail
       vertices:
         0:   {x: -3.018513, y:  0.808809, z: -4.975479}
@@ -256,7 +254,7 @@ operations:
       transform: Shroud0625BoattailMesh
       triangles: 12-23, 36-40, 43-45, 47, 49-51, 53, 55-57, 59, 61-64, 66-67, 69, 72-83, 96-107, 120-124, 127-129, 131, 133-135, 137, 139-141, 143, 145-148, 150-151, 153, 156-167, 180-191, 204-208, 211-213, 215, 217-219, 221, 223-225, 227, 229-232, 234-235, 237, 240-251, 264-275, 288-292, 295-297, 299, 301-303, 305, 307-309, 311, 313-316, 318-319, 321, 324-335, 384-431
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: Shroud0625BoattailMesh
       vertices:
         8:   {x: -2.383364, y:  0.638624, z: -3.962174}
@@ -444,7 +442,7 @@ operations:
         246: {x: -2.255054, y:  0.000004, z: -4.725280}
         247: {x: -2.467440, y:  0.000004, z: -3.962175}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Shroud0625BoattailMesh
       uvs:
         32:  {x:  0.460782, y:  0.776367}

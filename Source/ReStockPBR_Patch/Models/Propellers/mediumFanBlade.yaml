@@ -1,11 +1,5 @@
 # Ducted Fan Propeller - Medium
-part: mediumFanBlade
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/mediumFanBlade
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:

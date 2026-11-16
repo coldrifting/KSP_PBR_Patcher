@@ -1,10 +1,4 @@
-part: RobotArmScanner_S3
 model: SquadExpansion/Serenity/Parts/Science/RobotArmScanner/Assets/ROCArm_03
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:

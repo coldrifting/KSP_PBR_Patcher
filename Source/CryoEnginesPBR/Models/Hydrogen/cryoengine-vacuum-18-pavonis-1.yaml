@@ -1,10 +1,5 @@
 # 1.875m Hydrolox Cryogenic Vacuum Engine
-part: cryoengine-pavonis-1
 model: CryoEngines/Assets/Engine/cryoengine-pavonis-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:

@@ -1,7 +1,5 @@
 # Airbrake
-part: airbrake1
 model: Squad/Parts/Aero/airbrake/Airbrake
-override: True
 
 color_zones:
   main:

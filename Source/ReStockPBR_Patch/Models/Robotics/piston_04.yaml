@@ -1,12 +1,4 @@
-part: piston_04
 model: SquadExpansion/Serenity/Parts/Robotics/Assets/piston_04
-
-remove_part_variants: True
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:

@@ -1,10 +1,5 @@
 # Fix heat tile colors in part thumbnails
-part: noseConeAdapter
 model: ReStockPBR/Assets/Aero/restock-pbr-adapter-125-0625-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

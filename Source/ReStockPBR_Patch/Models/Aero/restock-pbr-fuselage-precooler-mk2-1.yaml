@@ -1,10 +1,5 @@
 # Fix heat tile colors in part thumbnails
-part: restock-pbr-fuselage-precooler-mk2-1
 model: ReStockPlusPBR/Assets/Aero/restock-pbr-fuselage-precooler-mk2-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

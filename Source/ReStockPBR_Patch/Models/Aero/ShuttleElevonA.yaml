@@ -1,5 +1,3 @@
-# Airbrake
-part: wingShuttleElevon1
 model: Squad/Parts/Aero/shuttleWings/ShuttleElevonA
 
 color_zones:
@@ -35,42 +33,45 @@ operations:
       transforms:
         - COL_SHUTTLEELEVA
 
-  - rotate_transform:
+  - edit_transform_rotation:
       transform: ShuttleElevonA
-      amount:
+      absolute: True
+      rotation:
         x: 0
         y: -180
         z: 0
-      absolute: True
 
-  - rotate_transform:
+  - edit_transform_rotation:
       transform: COL_SHUTTLEELEVA
-      amount:
+      absolute: True
+      rotation:
         x: 0
         y: -180
         z: 0
-      absolute: True
 
-  - scale_transform:
+  - edit_transform_scale:
       transform: COL_SHUTTLEELEVA
-      amount: 0.8
       absolute: True
+      scale: 
+        x: 0.8
+        y: 0.8
+        z: 0.8
 
-  - move_transform:
+  - edit_transform_position:
       transform: COL_SHUTTLEELEVA
-      amount:
+      absolute: True
+      position:
         x: -0.3
         y: 0
         z: 0
-      absolute: True
 
-  - rotate_transform:
+  - edit_transform_rotation:
       transform: root
-      amount:
+      absolute: True
+      rotation:
         x: -90
         y: 0
         z: 0
-      absolute: True
 
   - copy_transform:
       transform: ShuttleElevonA
@@ -90,13 +91,13 @@ operations:
       transforms:
         - ShuttleElevonATiledUpperTiles
 
-  - move_transform:
+  - edit_transform_position:
       transform: ShuttleElevonATiledUpperTiles
-      amount:
+      absolute: True
+      position:
         x: 0
         y: 0
         z: 0
-      absolute: True
 
   - copy_transform:
       transform: ShuttleElevonA
@@ -112,18 +113,13 @@ operations:
       transforms:
         - ShuttleElevonATiledLowerTiles
 
-  - move_transform:
+  - edit_transform_position:
       transform: ShuttleElevonATiledLowerTiles
-      amount:
+      absolute: True
+      position:
         x: 0
         y: 0
         z: 0
-      absolute: True
-
-  - add_team_colors:
-      material: WingsShuttle
-      tc1: porkjetWhite
-      tc2: porkjetBlack
 
   - copy_material:
       material: WingsShuttle
@@ -132,10 +128,6 @@ operations:
         - ShuttleElevonATiled
         - ShuttleElevonATiledUpperTiles
         - ShuttleElevonATiledLowerTiles
-
-  - edit_team_colors:
-      material: WingsShuttle-tiled
-      tc1: tileBlack
 
   - edit_material_textures:
       material: WingsShuttle

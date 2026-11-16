@@ -1,10 +1,5 @@
 # Mk2 Cockpit - Fix vertex normals and heat tile mesh_components split
-part: mk2Cockpit_Standard
 model: ReStockPBR/Assets/Command/restock-pbr-cockpit-mk2-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:
@@ -25,7 +20,7 @@ operations:
       destination: Mk2CockpitPointyTilesLower
       triangles: 303-376
 
-  - edit_normals_average:
+  - edit_mesh_normals_average:
       transform: Mk2CockpitPointyTiles
       vertex_groups:
         - [456, 428, 190, 194]

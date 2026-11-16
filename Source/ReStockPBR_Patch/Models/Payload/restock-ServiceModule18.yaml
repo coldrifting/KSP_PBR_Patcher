@@ -1,13 +1,5 @@
 # 1.875m Service Module - Remove duplicated foil
-part: ServiceModule18
 model: ReStock/Assets/Payload/restock-ServiceModule18
-
-dlc: MakingHistory
-
-after: ReStock
-needs:
-  - ReStock
-  - SquadExpansion/MakingHistory
 
 color_zones:
   main:
@@ -29,3 +21,7 @@ operations:
   - remove_triangles:
       transform: Core_Without_Platform
       triangles: 72-95,240-287
+
+  - remove_textures:
+      textures:
+        - restock-ServiceModule18-s

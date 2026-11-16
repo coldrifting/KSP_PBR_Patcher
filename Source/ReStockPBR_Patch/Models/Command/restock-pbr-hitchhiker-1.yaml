@@ -1,10 +1,5 @@
 # Make part thumbnail more consistent
-part: crewCabin
 model: ReStockPBR/Assets/Command/restock-pbr-hitchhiker-1
-
-after: ReStockPBR
-needs:
-  - ReStockPBR
 
 color_zones:
   main:

@@ -1,12 +1,4 @@
-part: rotor_02s
 model: SquadExpansion/Serenity/Parts/Robotics/Assets/rotor_02s
-
-remove_part_variants: True
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:

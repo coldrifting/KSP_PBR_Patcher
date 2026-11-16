@@ -1,10 +1,5 @@
 # 1.25m Methalox Cryogenic Booster Engine
-part: cryoengine-deinonychus-1
 model: CryoEngines/Assets/MethaloxEngine/cryoengine-deinonychus-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:
@@ -28,7 +23,7 @@ operations:
       transform: Shroud_125_Raptor
       new_name: Shroud_125_RaptorBoattail
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: Shroud_125_RaptorBoattail
       vertices:
         18:  {x: -0.441938, y:  0.441936, z: -0.043283}
@@ -374,7 +369,7 @@ operations:
         658: {x: -0.593750, y: -0.000001, z:  0.189610}
         659: {x: -0.525000, y: -0.000001, z:  0.074611}
 
-  - edit_normals:
+  - edit_mesh_normals:
       transform: Shroud_125_RaptorBoattail
       normals:
         442: {x:  0.858707, y:  0.230095, z:  0.457907}
@@ -506,7 +501,7 @@ operations:
         658: {x:  0.852884, y: -0.112283, z:  0.509883}
         659: {x:  0.852885, y: -0.112285, z:  0.509882}
 
-  - edit_normals_average:
+  - edit_mesh_normals_average:
       transform: Shroud_125_RaptorBoattail
       vertex_groups:
         - [556, 575]
@@ -550,7 +545,7 @@ operations:
         - [656, 578]
         - [651, 653]
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Shroud_125_RaptorBoattail
       uvs:
         0:   {x:  0.406382, y:  0.607486}

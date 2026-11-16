@@ -1,10 +1,5 @@
 # 3.75m Methalox Cryogenic Vacuum Engine
-part: cryoengine-vulture-1
 model: CryoEngines/Assets/MethaloxEngine/cryoengine-vulture-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:

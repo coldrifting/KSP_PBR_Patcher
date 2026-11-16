@@ -1,10 +1,4 @@
-part: sGripStrip
 model: SquadExpansion/Serenity/Parts/Structural/gripPads/Assets/sGripStrip
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:

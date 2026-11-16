@@ -1,13 +1,5 @@
 # 0.625m to 1.25m Service Module
-part: Size1to0ServiceModule
 model: ReStock/Assets/Payload/restock-Size1to0ServiceModule
-
-dlc: MakingHistory
-
-after: ReStock
-needs:
-  - ReStock
-  - SquadExpansion/MakingHistory
 
 color_zones:
   main:
@@ -34,11 +26,6 @@ operations:
       parent: Shell2
       transforms:
         - Shell2_Alt
-
-  - add_team_colors:
-      material: restock-Size1to0ServiceModule
-      tc1: porkjetWhite
-      tc2: payloadGrey
 
   - copy_material:
       material: restock-Size1to0ServiceModule

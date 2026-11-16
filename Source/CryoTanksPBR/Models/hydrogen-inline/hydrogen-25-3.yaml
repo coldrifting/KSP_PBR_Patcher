@@ -1,10 +1,5 @@
 # 2.5m Cryogenic Tank (Small)
-part: hydrogen-25-3
 model: CryoTanks/Parts/HydrogenTanks/hydrogen-inline/hydrogen-25-3
-
-after: CryoTanks
-needs:
-  - CryoTanks
 
 color_zones:
   main:
@@ -20,7 +15,7 @@ color_zones:
       - hydrogen-flat-1-foil
 
 operations:
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Short25TankIso
       uvs:
         260:  {x:  0.084366, y:  0.330560}
@@ -48,7 +43,7 @@ operations:
         1110: {x:  0.131037, y:  0.351959}
         1111: {x:  0.131037, y:  0.330560}
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Short25TankIsoStructured
       uvs:
         0:    {x:  0.196784, y:  0.846366}
@@ -1180,6 +1175,6 @@ operations:
         1126: {x:  0.128090, y:  0.814267}
         1127: {x:  0.128090, y:  0.792868}
 
-
-  - remove_texture:
-      texture: hydrogen-flat-1-s
+  - remove_textures:
+      textures: 
+        - hydrogen-flat-1-s

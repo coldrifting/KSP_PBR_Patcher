@@ -1,10 +1,5 @@
 # 1.875m Hydrolox Cryogenic Lifter Engine
-part: cryoengine-erebus-1
 model: CryoEngines/Assets/Engine/cryoengine-erebus-1
-
-after: CryoEngines
-needs:
-  - CryoEngines
 
 color_zones:
   main:
@@ -23,7 +18,7 @@ operations:
       transform: Shroud1875Mesh
       new_name: Shroud1875BoattailMesh
 
-  - edit_vertices:
+  - edit_mesh_vertices:
       transform: Shroud1875BoattailMesh
       vertices:
         8:   {x: -0.595841, y:  0.159655, z: -0.660126}
@@ -276,7 +271,7 @@ operations:
         371: {x: -0.404362, y: -0.404362, z: -0.757498}
 
 
-  - edit_uvs:
+  - edit_mesh_uvs:
       transform: Shroud1875BoattailMesh
       uvs:
         48:  {x:  0.120477, y:  0.157956}

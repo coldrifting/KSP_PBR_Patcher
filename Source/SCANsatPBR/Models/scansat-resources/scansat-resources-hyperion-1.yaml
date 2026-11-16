@@ -1,10 +1,5 @@
 # High Tech Resource Scanner
-part: scansat-resources-hyperion-1
 model: SCANsat/Parts/scansat-resources/scansat-resources-hyperion-1
-
-after: SCANsat
-needs:
-  - SCANsat
 
 color_zones:
   main:

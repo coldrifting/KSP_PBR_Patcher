@@ -1,11 +1,5 @@
 # Ducted Fan Propeller - Large
-part: largeFanBlade
 model: SquadExpansion/Serenity/Parts/Propellers/Assets/largeFanBlade
-
-dlc: BreakingGround
-
-needs:
-  - SquadExpansion/Serenity
 
 color_zones:
   main:
