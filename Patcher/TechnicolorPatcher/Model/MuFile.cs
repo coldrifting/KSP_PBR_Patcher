@@ -10,7 +10,7 @@ public class MuFile
     public required string Name { get; set; }
     public required MuTransform RootTransform { get; set; }
     public List<Material> Materials { get; set; } = [];
-    public List<Texture> Textures { get; set; } = [];
+    public List<MuTexture> Textures { get; set; } = [];
 
     public static MuFile ReadFile(string path)
     {
@@ -46,7 +46,7 @@ public class MuFile
             materials = [];
         }
 
-        Texture[] textures;
+        MuTexture[] textures;
         try
         {
             MuTag texTag = reader.ReadTag();
@@ -56,10 +56,10 @@ public class MuFile
             }
 
             int numTextures = reader.ReadInt32();
-            textures = new Texture[numTextures];
+            textures = new MuTexture[numTextures];
             for (int i = 0; i < textures.Length; i++)
             {
-                Texture texture = Texture.Read(reader);
+                MuTexture texture = MuTexture.Read(reader);
                 textures[i] = texture;
             }
         }
@@ -104,7 +104,7 @@ public class MuFile
         if (Textures.Count > 0) {
             writer.Write(MuTag.Textures);
             writer.Write(Textures.Count);
-            foreach (Texture texture in Textures)
+            foreach (MuTexture texture in Textures)
             {
                 texture.Write(writer);
             }

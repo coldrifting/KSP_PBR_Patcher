@@ -6,10 +6,15 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="BCnEncoder.Net" Version="2.3.0" />
       <PackageReference Include="JetBrains.Annotations" Version="2026.2.0" />
+      <PackageReference Include="Pfim" Version="0.11.4" />
+      <PackageReference Include="SkiaSharp" Version="4.156.1" />
+      <PackageReference Include="Svg.Skia" Version="5.2.3" />
       <PackageReference Include="System.CommandLine" Version="3.0.0" />
       <PackageReference Include="Vecc.YamlDotNet.Analyzers.StaticGenerator" Version="18.1.0" />
       <PackageReference Include="YamlDotNet" Version="18.1.0" />

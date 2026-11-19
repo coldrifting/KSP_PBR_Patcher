@@ -86,7 +86,7 @@ public static class MuFileExt
                 {
                     if (materialProperty is PropertyTexture textureProperty)
                     {
-                        Texture texture = inputFile.Textures[textureProperty.TextureIndex];
+                        MuTexture texture = inputFile.Textures[textureProperty.TextureIndex];
                         muFile.Textures.Add(texture);
                         textureProperty.TextureIndex = muFile.Textures.Count - 1;
                     }
@@ -166,7 +166,7 @@ public static class MuFileExt
             }
         }
 
-        public Texture GetTexture(string texture)
+        public MuTexture GetTexture(string texture)
         {
             string textureWithoutExt = Path.GetFileNameWithoutExtension(texture);
             return muFile.Textures.First(t => Path.GetFileNameWithoutExtension(t.Name) == textureWithoutExt);
@@ -185,7 +185,7 @@ public static class MuFileExt
 
         public void AddTextureMap(Material material, string propName, string textureName, Vector2 scale, Vector2 offset)
         {
-            muFile.Textures.Add(new Texture
+            muFile.Textures.Add(new MuTexture
             {
                 Name = textureName,
                 IsNormalMap = propName == "_BumpMap"
@@ -207,7 +207,7 @@ public static class MuFileExt
             int index = muFile.Textures.Select(t => t.Name).ToList().IndexOf(textureName);
             if (index == -1)
             {
-                muFile.Textures.Add(new Texture
+                muFile.Textures.Add(new MuTexture
                 {
                     Name = textureName,
                     IsNormalMap = propName == "_BumpMap"

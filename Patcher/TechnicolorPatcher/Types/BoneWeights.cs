@@ -1,5 +1,3 @@
-using System.Numerics;
-
 namespace TechnicolorPatcher.Types;
 
 public struct BoneWeight(Int4 indices, Vector4 weights)

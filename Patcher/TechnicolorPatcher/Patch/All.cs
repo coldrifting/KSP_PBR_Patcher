@@ -4,7 +4,7 @@ namespace TechnicolorPatcher.Patch;
 
 public static class All
 {
-    public static void Patch(DirectoryInfo patcherInput, DirectoryInfo patcherOutput, DirectoryInfo gameData, FileInfo? texconv)
+    public static void Patch(DirectoryInfo patcherInput, DirectoryInfo patcherOutput)
     {
         string patcherName = patcherInput.Name;
         
@@ -23,8 +23,8 @@ public static class All
         
         Version.Patch(patcherInput, patcherOutput);
         Config.Patch(patcherInput, patcherOutput);
-        Models.Patch(patcherInput, patcherOutput, gameData);
-        Textures.Patch(patcherInput, patcherOutput, gameData, texconv);
+        Models.Patch(patcherInput, patcherOutput);
+        Textures.Patch(patcherInput, patcherOutput);
         Assets.Patch(patcherInput, patcherOutput);
 
         Cache.Save(cacheFilePath);

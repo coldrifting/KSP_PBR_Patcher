@@ -25,7 +25,7 @@ public class Cache
         Log.Header("Loading Cache...");
         Log.Info(new FileInfo(cacheFilePath).Name);
         
-        IDeserializer serializer = new StaticDeserializerBuilder(new YamlStaticContext())
+        IDeserializer serializer = new StaticDeserializerBuilder(new YamlStaticContextCustom())
             .WithNamingConvention(UnderscoredNamingConvention.Instance)
             .Build();
         
@@ -41,7 +41,7 @@ public class Cache
         Log.Header("Saving Cache...");
         Log.Info(new FileInfo(cacheFilePath).Name);
 
-        ISerializer serializer = new StaticSerializerBuilder(new YamlStaticContext())
+        ISerializer serializer = new StaticSerializerBuilder(new YamlStaticContextCustom())
             .WithNamingConvention(UnderscoredNamingConvention.Instance)
             .Build();
         

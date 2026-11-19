@@ -9,8 +9,12 @@ using YamlDotNet.Core;
 
 namespace TechnicolorPatcher;
 
-internal static partial class Program
+internal static partial class Patcher
 {
+    public static DirectoryInfo? GameDataPath { get; private set; }
+    public static DirectoryInfo? PatcherRootPath { get; private set; }
+    public static FileInfo? TexConvPath { get; private set; }
+
     private static void Main(string[] args)
     {
         Option<DirectoryInfo?> kspPathOption = new("--ksp-path", "-k")
@@ -52,19 +56,19 @@ internal static partial class Program
                 throw new DataException("Invalid arguments");
             }
 
-            DirectoryInfo gameData = GameData.GetPath(result.GetValue(kspPathOption));
-            DirectoryInfo patcherRoot = Root.GetPath(result.GetValue(patcherRootPathOption));
-            FileInfo? texconv = Texconv.GetPath(result.GetValue(texconvPathOption));
+            GameDataPath = GameData.GetPath(result.GetValue(kspPathOption));
+            PatcherRootPath = Root.GetPath(result.GetValue(patcherRootPathOption));
+            TexConvPath = Texconv.GetPath(result.GetValue(texconvPathOption));
             string? patcherSelection = result.GetValue(patcherSelectionOption);
 
-            DirectoryInfo patcherInputRoot = new(Path.Combine(patcherRoot.FullName, "Source"));
+            DirectoryInfo patcherInputRoot = new(Path.Combine(PatcherRootPath.FullName, "Source"));
             if (!patcherInputRoot.Exists)
             {
                 Log.Warn("No patchers detected in Source folder. Exiting...");
                 throw new DataException("Invalid Source folder");
             }
         
-            DirectoryInfo patcherOutputRoot = new(Path.Combine(patcherRoot.FullName, "Output"));
+            DirectoryInfo patcherOutputRoot = new(Path.Combine(PatcherRootPath.FullName, "Output"));
             
             foreach (DirectoryInfo patcherInput in patcherInputRoot.GetDirectories())
             {
@@ -80,13 +84,13 @@ internal static partial class Program
                     ? "ReStockPBR" 
                     : r.Replace(patcherInput.Name, "");
                 
-                string[] matchingMods = gameData.EnumerateDirectories(modSourceName)
+                string[] matchingMods = GameDataPath.EnumerateDirectories(modSourceName)
                     .Select(s => s.Name)
                     .ToArray();
                 
                 if (matchingMods.Contains(modSourceName))
                 {
-                    All.Patch(patcherInput, patcherOutput, gameData, texconv);
+                    All.Patch(patcherInput, patcherOutput);
                 }
                 else
                 {

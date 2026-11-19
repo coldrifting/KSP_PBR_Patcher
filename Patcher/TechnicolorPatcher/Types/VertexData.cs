@@ -1,5 +1,3 @@
-using System.Numerics;
-
 namespace TechnicolorPatcher.Types;
 
 public class VertexData

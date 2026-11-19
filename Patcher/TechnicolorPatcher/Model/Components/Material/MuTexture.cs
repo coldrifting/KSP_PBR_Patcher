@@ -2,17 +2,17 @@ using TechnicolorPatcher.Model.IO;
 
 namespace TechnicolorPatcher.Model.Components.Material;
 
-public class Texture
+public class MuTexture
 {
     public required string Name { get; set; }
     public bool IsNormalMap { get; set; }
 
-    public static Texture Read(MuReader reader)
+    public static MuTexture Read(MuReader reader)
     {
         string name = reader.ReadString();
         int isNormalMap = reader.ReadInt32();
 
-        return new Texture
+        return new MuTexture
         {
             Name = name,
             IsNormalMap = isNormalMap != 0,

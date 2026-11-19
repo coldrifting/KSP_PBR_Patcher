@@ -13,8 +13,10 @@ public class ConfigModel
     public required OperationBase[]? Operations { get; set; } = [];
     public required Dictionary<string, ColorZone>? ColorZones { get; set; } = [];
 
-    public void Apply(DirectoryInfo gameData, FileInfo outputFile) 
+    public void Apply(FileInfo outputFile)
     {
+        DirectoryInfo gameData = Patcher.GameDataPath;
+        
         if (Operations is { Length: 0 } && ColorZones is { Count: 0 })
         {
             Console.Error.WriteLine($"Model File {Model} has no operations or color zones defined");
@@ -52,7 +54,7 @@ public class ConfigModel
         muFile.WriteFile(outputFile.FullName);
         
         // Copy Textures
-        foreach (Texture texture in muFile.Textures)
+        foreach (MuTexture texture in muFile.Textures)
         {
             string? sourceFolder = Path.GetDirectoryName(sourceFile);
             if (sourceFolder is null)
@@ -112,7 +114,7 @@ public class ConfigModel
 
     public static ConfigModel FromYaml(string yaml)
     {
-        IDeserializer deserializer = new StaticDeserializerBuilder(new YamlStaticContext())
+        IDeserializer deserializer = new StaticDeserializerBuilder(new YamlStaticContextCustom())
             .WithNamingConvention(UnderscoredNamingConvention.Instance)
             .WithNodeDeserializer(new OperationBaseDeserializer())
             .Build();

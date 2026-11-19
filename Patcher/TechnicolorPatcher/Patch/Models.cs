@@ -5,7 +5,7 @@ namespace TechnicolorPatcher.Patch;
 
 public static class Models
 {
-    public static void Patch(DirectoryInfo patcherInput, DirectoryInfo patcherOutput, DirectoryInfo gameData)
+    public static void Patch(DirectoryInfo patcherInput, DirectoryInfo patcherOutput)
     {
         Log.Header("Processing Models...");
         
@@ -36,7 +36,7 @@ public static class Models
                 string yaml = modelConfigFile.OpenText().ReadToEnd();
 
                 ConfigModel configModel = ConfigModel.FromYaml(yaml);
-                configModel.Apply(gameData, destination);
+                configModel.Apply(destination);
 
                 // Save to Cache
                 Cache.Instance.ModelEntries[identifier] = new ModelCacheEntry
