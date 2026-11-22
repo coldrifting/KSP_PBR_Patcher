@@ -13,6 +13,7 @@ public class LayerBaseDeserializer() : INodeDeserializer
         [LayerCopy.LayerName] = typeof(LayerCopy),
         [LayerCurves.LayerName] = typeof(LayerCurves),
         [LayerFill.LayerName] = typeof(LayerFill),
+        [LayerSaturation.LayerName] = typeof(LayerSaturation),
     };
 
     public bool Deserialize(

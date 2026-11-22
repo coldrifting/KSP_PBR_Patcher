@@ -22,6 +22,130 @@ public static class SkiaUtils
         return result;
     }
 
+    public static SKBitmap AlphaToGrayscale(SKBitmap bitmap)
+    {
+        if (bitmap.ColorType != SKColorType.Rgba8888)
+        {
+            throw new ArgumentException($"Invalid color type for image. Expected Rgba8888, got {bitmap.ColorType}");
+        }
+        
+        SKBitmap result = new(bitmap.Width, bitmap.Height, SKColorType.Rgba8888, SKAlphaType.Unpremul);
+        
+        ReadOnlySpan<byte> cSpan = bitmap.GetPixelSpan();
+
+        Span<byte> resultSpan = result.GetPixelSpan();
+        
+        for (int i = 0; i < cSpan.Length; i += 4)
+        {
+            resultSpan[i + 0] = cSpan[i + 3];
+            resultSpan[i + 1] = cSpan[i + 3];
+            resultSpan[i + 2] = cSpan[i + 3];
+            resultSpan[i + 3] = 255;
+        }
+
+        return result;
+    }
+
+    public static float[] ToHSV(byte[] rgb)
+    {
+        float r = rgb[0] / 255.0f;
+        float g = rgb[1] / 255.0f;
+        float b = rgb[2] / 255.0f;
+        
+        float max = Math.Max(r, Math.Max(g, b));
+        float min = Math.Min(r, Math.Min(g, b));
+        float range = max - min;
+
+        const float tolerance = 0.001f;
+        
+        float h;
+        if (range == 0)
+        {
+            h = 0;
+        }
+        else if (Math.Abs(max - r) < tolerance)
+        {
+            h = (60f * ((g - b) / range) + 360f) % 360f;
+        }
+        else if (Math.Abs(max - g) < tolerance)
+        {
+            h = (60f * ((b - r) / range) + 120f) % 360f;
+        }
+        else if (Math.Abs(max - b) < tolerance)
+        {
+            h = (60f * ((r - g) / range) + 240f) % 360f;
+        }
+        else
+        {
+            h = 0;
+        }
+
+        float s;
+        if (max == 0.0f)
+        {
+            s = 0;
+        }
+        else
+        {
+            s = (range / max) * 100.0f;
+        }
+
+        float v = max * 100.0f;
+
+        return [h, s, v];
+    }
+
+    public static byte[] ToRGB(float[] hsv)
+    {
+        float h = hsv[0];
+        float s = hsv[1] / 100f;
+        float v = hsv[2] / 100f;
+            
+        float r, g, b;
+
+        float c = v * s;
+        
+        float x = c * ( 1 - Math.Abs((h / 60f) % 2 - 1 ));
+
+        float m = v - c;
+
+        switch (h)
+        {
+            case < 60f:
+                r = c;
+                g = x;
+                b = 0;
+                break;
+            case < 120f:
+                r = x;
+                g = c;
+                b = 0;
+                break;
+            case < 180f:
+                r = 0;
+                g = c;
+                b = x;
+                break;
+            case < 240f:
+                r = 0;
+                g = x;
+                b = c;
+                break;
+            case < 300f:
+                r = x;
+                g = 0;
+                b = c;
+                break;
+            default:
+                r = c;
+                g = 0;
+                b = x;
+                break;
+        }
+
+        return [(byte)((r + m) * 255), (byte)((g + m) * 255), (byte)((b + m) * 255)];
+    }
+
     public static SKBitmap MergeBitmaps(SKBitmap color, SKBitmap alpha)
     {
         if (color.ColorType != SKColorType.Rgba8888)

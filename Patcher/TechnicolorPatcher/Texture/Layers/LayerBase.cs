@@ -138,7 +138,16 @@ public class LayerBase
         Mask = mask;
     }
 
-    public virtual SKBitmap Apply(SKBitmap groupBitmap)
+    public SKBitmap Apply(SKBitmap groupBitmap)
+    {
+        SKBitmap layerOutput = GenerateLayer(groupBitmap);
+        
+        SKBitmap finalOutput = ApplyLayerMask(groupBitmap, layerOutput);
+        
+        return finalOutput;
+    }
+    
+    public virtual SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
         throw new NotSupportedException();
     }

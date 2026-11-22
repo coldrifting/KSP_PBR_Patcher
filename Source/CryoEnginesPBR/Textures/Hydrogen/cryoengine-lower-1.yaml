@@ -20,6 +20,17 @@ diffuse:
   - fill:
       image: stripe_removal
 
+  - saturation:
+      percent: 0
+      masks:
+        - bg!
+        - color!
+
+  - saturation:
+      percent: 160
+      masks:
+        - color
+
   - curves:
       points:
         - [128, 90]

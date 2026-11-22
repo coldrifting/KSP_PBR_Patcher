@@ -60,7 +60,7 @@ public class LayerFill : LayerBase
         Scale ??= 1;
     }
 
-    public override SKBitmap Apply(SKBitmap groupBitmap)
+    public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
         SKBitmap layerBitmap;
         if (Color is not null)
@@ -87,7 +87,7 @@ public class LayerFill : LayerBase
             else
             {
                 layerBitmap = FillImages[Image].Copy();
-                return ApplyLayerMask(groupBitmap, layerBitmap, true);
+                Mask = SkiaUtils.AlphaToGrayscale(layerBitmap);
             }
         }
         else
@@ -95,6 +95,6 @@ public class LayerFill : LayerBase
             throw new NotSupportedException("This should not happen");
         }
 
-        return ApplyLayerMask(groupBitmap, layerBitmap);
+        return layerBitmap;
     }
 }

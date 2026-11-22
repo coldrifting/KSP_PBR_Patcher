@@ -64,6 +64,9 @@ public class ConfigTexture
                 case LayerFill layerFill:
                     layerFill.Validate();
                     break;
+                case LayerSaturation layerSaturation:
+                    layerSaturation.Validate();
+                    break;
             }
 
             layer.GenerateMask(maskFile);

@@ -14,10 +14,10 @@ public class LayerCopy : LayerBase
     
     public required Dictionary<string, SKBitmap> Groups { get; set; } = new();
 
-    public override SKBitmap Apply(SKBitmap groupBitmap)
+    public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
         SKBitmap layerBitmap = Groups[GroupName].Copy();
-        
-        return ApplyLayerMask(groupBitmap, layerBitmap);
+
+        return layerBitmap;
     }
 }

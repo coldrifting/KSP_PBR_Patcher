@@ -40,13 +40,21 @@ internal static partial class Patcher
             Description = "Specify a single patcher to run",
             DefaultValueFactory = _ => null
         };
+        
+        Option<bool> waitOption = new("--wait", "-w")
+        {
+            Description = "Keep console open when errors occur",
+            DefaultValueFactory = _ => true
+        };
 
         RootCommand rootCommand = new("Patcher to add technicolor support to various mods");
         rootCommand.Options.Add(patcherRootPathOption);
         rootCommand.Options.Add(kspPathOption);
         rootCommand.Options.Add(texconvPathOption);
         rootCommand.Options.Add(patcherSelectionOption);
-        
+        rootCommand.Options.Add(waitOption);
+
+        bool wait = true;
         try
         {
             ParseResult result = rootCommand.Parse(args);
@@ -60,6 +68,7 @@ internal static partial class Patcher
             PatcherRootPath = Root.GetPath(result.GetValue(patcherRootPathOption));
             TexConvPath = Texconv.GetPath(result.GetValue(texconvPathOption));
             string? patcherSelection = result.GetValue(patcherSelectionOption);
+            wait = result.GetValue(waitOption);
 
             DirectoryInfo patcherInputRoot = new(Path.Combine(PatcherRootPath.FullName, "Source"));
             if (!patcherInputRoot.Exists)
@@ -121,8 +130,12 @@ internal static partial class Patcher
 
             Log.Error(e.GetType().Name + ": " + e.Message + "\n" + e.StackTrace);
         }
-        Console.WriteLine("Press any key to exit...");
-        Console.ReadKey();
+
+        if (wait)
+        {
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
     }
 
     [GeneratedRegex("PBR$")]
