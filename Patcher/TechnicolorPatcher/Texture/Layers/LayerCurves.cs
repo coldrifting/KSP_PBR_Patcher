@@ -1,6 +1,5 @@
 using SkiaSharp;
 using TechnicolorPatcher.Types;
-using TechnicolorPatcher.Util;
 using YamlDotNet.Serialization;
 
 namespace TechnicolorPatcher.Texture.Layers;
@@ -12,7 +11,7 @@ public class LayerCurves : LayerBase
 
     public List<Int2> Points { get; set; } = [];
 
-    public void Validate()
+    protected override void Validate()
     {
         int[] xVals = Points.Select(p => p.X).ToArray();
         if (!xVals.SequenceEqual(xVals.OrderBy(v => v)))
@@ -33,6 +32,7 @@ public class LayerCurves : LayerBase
 
     public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
+        SKBitmap layer = groupBitmap.Copy();
         // Build LUT - TODO
         // Conditions:
         // Contiguous, with first and second order derivative continuity, and curvature of zero at end points
@@ -43,7 +43,7 @@ public class LayerCurves : LayerBase
         const int clampMax = 255; // Control Point N-1 y value
         
         // Apply LUT
-        SKColor[]? pixels = groupBitmap.Pixels;
+        SKColor[]? pixels = layer.Pixels;
         for (int i = 0; i < pixels.Length; i++)
         {
             int lum = (7471 * pixels[i].Blue + 38470 * pixels[i].Green + 19595 * pixels[i].Red) >> 16;
@@ -58,12 +58,9 @@ public class LayerCurves : LayerBase
             pixels[i] = new SKColor(rFinal, gFinal, bFinal, pixels[i].Alpha );
         }
         
-        SKBitmap layer = new(groupBitmap.Info);
         layer.Pixels = pixels;
 
-        SKBitmap output = groupBitmap.Paste(layer);
-
-        return output;
+        return layer;
     }
 
     public static byte[] GenerateCurveLut(IList<Int2> controlPoints)

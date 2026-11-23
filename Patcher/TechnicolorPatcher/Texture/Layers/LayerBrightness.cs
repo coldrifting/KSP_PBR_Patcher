@@ -9,25 +9,21 @@ public class LayerBrightness : LayerBase
 {
     public static string LayerName => "brightness";
     
-    public required float Percent { get; set; }
+    [YamlMember(Alias = "percent")]
+    public required float PercentInput { get; set; }
 
+    private float Percent { get; set; } = 1.0f;
+
+    protected override void Validate()
+    {
+        Percent = PercentInput / 100.0f;
+    }
+    
     public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
-        SKColor[]? pixels = groupBitmap.Pixels;
+        SKBitmap layer = groupBitmap.Copy();
+        layer.AdjustBrightness(Percent);
 
-        for (int i = 0; i < pixels.Length; i++)
-        {
-            byte r = (byte)Math.Clamp(Math.Abs(pixels[i].Red * Percent), 0, 255);
-            byte g = (byte)Math.Clamp(Math.Abs(pixels[i].Green * Percent), 0, 255);
-            byte b = (byte)Math.Clamp(Math.Abs(pixels[i].Blue * Percent), 0, 255);
-            pixels[i] = new SKColor(r, g, b, pixels[i].Alpha);
-        }
-        
-        SKBitmap layer = new(groupBitmap.Info);
-        layer.Pixels = pixels;
-
-        SKBitmap output = groupBitmap.Paste(layer);
-        
-        return ApplyLayerMask(groupBitmap, output);
+        return layer;
     }
 }

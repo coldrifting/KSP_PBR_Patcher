@@ -1,5 +1,4 @@
 using SkiaSharp;
-using TechnicolorPatcher.Types;
 using YamlDotNet.Serialization;
 
 namespace TechnicolorPatcher.Texture.Layers;
@@ -11,12 +10,18 @@ public class LayerCopy : LayerBase
     
     [YamlMember(Alias = "group")]
     public required string GroupName { get; set; }
-    
-    public required Dictionary<string, SKBitmap> Groups { get; set; } = new();
 
+    protected override void Validate()
+    {
+        if (!Config.Groups.ContainsKey(GroupName))
+        {
+            throw new ArgumentException("Invalid group name: " + GroupName);
+        }
+    }
+    
     public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
-        SKBitmap layerBitmap = Groups[GroupName].Copy();
+        SKBitmap layerBitmap = Config.Groups[GroupName].Copy();
 
         return layerBitmap;
     }

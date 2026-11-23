@@ -1,7 +1,5 @@
 using SkiaSharp;
-using TechnicolorPatcher.Model;
 using TechnicolorPatcher.Util;
-using Xunit.Abstractions;
 
 namespace TechnicolorPatcherTests;
 
@@ -34,8 +32,8 @@ public class TextureTests
 
         overlay.Pixels = p;
         
-        var result = input.Paste(overlay);
+        input.Paste(overlay);
 
-        result.SavePng(@"C:\Users\coldrifting\desktop\test.png");
+        input.SavePng(@"C:\Users\coldrifting\desktop\test.png");
     }
 }

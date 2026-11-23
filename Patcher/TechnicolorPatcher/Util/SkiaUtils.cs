@@ -9,17 +9,75 @@ namespace TechnicolorPatcher.Util;
 
 public static class SkiaUtils
 {
-    public static SKBitmap Paste(this SKBitmap baseBitmap, SKBitmap overlayBitmap)
+    // Assumes BG is fully opaque
+    public static unsafe void Paste(this SKBitmap bitmap, SKBitmap overlay)
     {
-        SKBitmap result = new SKBitmap(baseBitmap.Width, baseBitmap.Height,  SKColorType.Rgba8888, SKAlphaType.Premul);
-        
-        using SKCanvas canvas = new(result);
-        canvas.Clear(SKColors.Transparent);
-        canvas.DrawBitmap(baseBitmap, 0, 0, SKSamplingOptions.Default);
-        canvas.DrawBitmap(overlayBitmap, 0, 0, SKSamplingOptions.Default);
-        canvas.Flush();
+        if (bitmap.AlphaType != SKAlphaType.Unpremul)
+        {
+            throw new ArgumentException($"Invalid alpha type for bitmap image: {bitmap.AlphaType}");
+        }
 
-        return result;
+        if (overlay.AlphaType != SKAlphaType.Unpremul)
+        {
+            throw new ArgumentException($"Invalid overlay type for alpha image: {overlay.AlphaType}");
+        }
+        
+        if (bitmap.ColorType != SKColorType.Rgba8888)
+        {
+            throw new ArgumentException($"Invalid color type for bitmap image. Expected Rgba8888, got {bitmap.ColorType}");
+        }
+        
+        if (overlay.ColorType != SKColorType.Rgba8888)
+        {
+            throw new ArgumentException($"Invalid color type for overlay image. Expected Rgba8888, got {overlay.ColorType}");
+        }
+        
+        IntPtr bitmapPixelsPtr = bitmap.GetPixels();
+        if (bitmapPixelsPtr == IntPtr.Zero)
+        {
+            throw new ArgumentException();
+        }
+        
+        IntPtr overlayPixelsPtr = overlay.GetPixels();
+        if (overlayPixelsPtr == IntPtr.Zero)
+        {
+            throw new ArgumentException();
+        }
+
+        int width = bitmap.Width;
+        int height = bitmap.Height;
+        int rowBytes = bitmap.RowBytes;
+        
+        byte* baseBitmapPtr = (byte*)bitmapPixelsPtr.ToPointer();
+        byte* baseOverlayPtr = (byte*)overlayPixelsPtr.ToPointer();
+
+        //Parallel.For(0L, height, y =>
+        //{
+        for (int y = 0; y < height; y++) 
+        {
+            // Calculate exact start of the row using RowBytes
+            uint* rowBase = (uint*)(baseBitmapPtr + y * rowBytes);
+            uint* rowOverlay = (uint*)(baseOverlayPtr + y * rowBytes);
+        
+            for (int x = 0; x < width; x++)
+            {
+                byte rBg = (byte)((rowBase[x] >> 0) & 0xFF);
+                byte gBg = (byte)((rowBase[x] >> 8) & 0xFF);
+                byte bBg = (byte)((rowBase[x] >> 16) & 0xFF);
+                
+                byte rFg = (byte)((rowOverlay[x] >> 0) & 0xFF);
+                byte gFg = (byte)((rowOverlay[x] >> 8) & 0xFF);
+                byte bFg = (byte)((rowOverlay[x] >> 16) & 0xFF);
+                byte aFg = (byte)((rowOverlay[x] >> 24) & 0xFF);
+
+                const byte aOut = 255;
+                byte rOut = (byte)Math.Clamp((aFg * rFg + (255 - aFg) * rBg) / 255, 0, 255);
+                byte gOut = (byte)Math.Clamp((aFg * gFg + (255 - aFg) * gBg) / 255, 0, 255);
+                byte bOut = (byte)Math.Clamp((aFg * bFg + (255 - aFg) * bBg) / 255, 0, 255);
+
+                rowBase[x] = (uint)(aOut << 24 | bOut << 16 | gOut << 8 | rOut);
+            }
+        }
     }
 
     public static SKBitmap AlphaToGrayscale(SKBitmap bitmap)
@@ -146,8 +204,117 @@ public static class SkiaUtils
         return [(byte)((r + m) * 255), (byte)((g + m) * 255), (byte)((b + m) * 255)];
     }
 
-    public static SKBitmap MergeBitmaps(SKBitmap color, SKBitmap alpha)
+    public static unsafe void AdjustBrightness(this SKBitmap bitmap, float percent)
     {
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(percent, 2.0f);
+
+        if (bitmap.ColorType != SKColorType.Rgba8888)
+        {
+            throw new ArgumentException($"Invalid color type: {bitmap.ColorType}");
+        }
+        
+        IntPtr pixelsPtr = bitmap.GetPixels();
+        if (pixelsPtr == IntPtr.Zero)
+        {
+            return;
+        }
+
+        byte[] lut = new byte[256];
+        for (int i = 0; i < 256; i++)
+        {
+            lut[i] = (byte)Math.Clamp(Math.Round(i * percent), 0, 255);
+        }
+
+        int width = bitmap.Width;
+        int height = bitmap.Height;
+        int rowBytes = bitmap.RowBytes;
+        byte* basePtr = (byte*)pixelsPtr.ToPointer();
+
+        Parallel.For(0, height, y =>
+        {
+            // Calculate exact start of the row using RowBytes
+            uint* row = (uint*)(basePtr + y * rowBytes);
+        
+            for (int x = 0; x < width; x++)
+            {
+                uint pixel = row[x];
+                byte r = (byte)((pixel >> 0) & 0xFF);
+                byte g = (byte)((pixel >> 8) & 0xFF);
+                byte b = (byte)((pixel >> 16) & 0xFF);
+                byte a = (byte)((pixel >> 24) & 0xFF);
+                
+                row[x] = (uint)((a << 24) | (lut[b] << 16) | (lut[g] << 8) | lut[r]);
+            }
+        });
+    }
+
+    public static unsafe void AdjustSaturation(this SKBitmap bitmap, float percent)
+    {
+        if (bitmap.ColorType != SKColorType.Rgba8888)
+        {
+            throw new ArgumentException($"Invalid color type: {bitmap.ColorType}");
+        }
+        
+        IntPtr pixelsPtr = bitmap.GetPixels();
+        if (pixelsPtr == IntPtr.Zero)
+        {
+            return;
+        }
+
+        uint[,,] lut = new uint[256,256,256];
+        for (int r = 0; r < 256; r++)
+        {
+            for (int g = 0; g < 256; g++)
+            {
+                for (int b = 0; b < 256; b++)
+                {
+                    byte[] rgb = [(byte)r,(byte)g,(byte)b];
+                    float[] hsv = ToHSV(rgb);
+                    hsv[1] = Math.Clamp(hsv[1] * percent, 0, 100.0f);
+                    byte[] rgb2 = ToRGB(hsv);
+                    lut[r, g, b] = (uint)(255 << 24 | rgb2[0] << 16 | rgb2[1] << 8 | rgb2[2]);
+                }
+            }
+        }
+
+        int width = bitmap.Width;
+        int height = bitmap.Height;
+        int rowBytes = bitmap.RowBytes;
+        byte* basePtr = (byte*)pixelsPtr.ToPointer();
+
+        Parallel.For(0L, height, y =>
+        {
+            // Calculate exact start of the row using RowBytes
+            uint* row = (uint*)(basePtr + y * rowBytes);
+        
+            for (int x = 0; x < width; x++)
+            {
+                uint pixel = row[x];
+                byte b = (byte)(pixel & 0xFF);
+                byte g = (byte)((pixel >> 8) & 0xFF);
+                byte r = (byte)((pixel >> 16) & 0xFF);
+                byte a = (byte)((pixel >> 24) & 0xFF);
+                // Direct pointer read/write with zero bounds checks
+                
+                uint rgbNew = lut[r, g, b];
+
+                row[x] = ((uint)a << 24) | rgbNew;
+            }
+        });
+    }
+
+    public static unsafe SKBitmap MergeBitmaps(SKBitmap color, SKBitmap alpha)
+    {
+        if (color.AlphaType != SKAlphaType.Unpremul)
+        {
+            throw new ArgumentException($"Invalid alpha type for color image: {color.AlphaType}");
+        }
+
+        if (alpha.AlphaType != SKAlphaType.Unpremul)
+        {
+            throw new ArgumentException($"Invalid alpha type for alpha image: {color.AlphaType}");
+        }
+        
         if (color.ColorType != SKColorType.Rgba8888)
         {
             throw new ArgumentException($"Invalid color type for color image. Expected Rgba8888, got {color.ColorType}");
@@ -160,44 +327,96 @@ public static class SkiaUtils
         
         SKBitmap result = new(color.Width, color.Height, SKColorType.Rgba8888, SKAlphaType.Unpremul);
         
-        ReadOnlySpan<byte> cSpan = color.GetPixelSpan();
-        ReadOnlySpan<byte> aSpan = alpha.GetPixelSpan();
-            
-        Span<byte> resultSpan = result.GetPixelSpan();
-        
-        for (int i = 0; i < cSpan.Length; i += 4)
+        IntPtr colorPixelsPtr = color.GetPixels();
+        if (colorPixelsPtr == IntPtr.Zero)
         {
-            resultSpan[i] = cSpan[i];
-            resultSpan[i + 1] = cSpan[i + 1];
-            resultSpan[i + 2] = cSpan[i + 2];
-            resultSpan[i + 3] = aSpan[i];
+            throw new ArgumentException();
         }
+        
+        IntPtr alphaPixelsPtr = alpha.GetPixels();
+        if (alphaPixelsPtr == IntPtr.Zero)
+        {
+            throw new ArgumentException();
+        }
+        
+        IntPtr resultPixelsPtr = result.GetPixels();
+        if (resultPixelsPtr == IntPtr.Zero)
+        {
+            throw new ArgumentException();
+        }
+
+        int width = result.Width;
+        int height = result.Height;
+        int rowBytes = result.RowBytes;
+        
+        byte* baseColorPtr = (byte*)colorPixelsPtr.ToPointer();
+        byte* baseAlphaPtr = (byte*)alphaPixelsPtr.ToPointer();
+        byte* baseResultPtr = (byte*)resultPixelsPtr.ToPointer();
+
+        //Parallel.For(0L, height, y =>
+        //{
+        for (int i = 0; i < height; i++) 
+        {
+            // Calculate exact start of the row using RowBytes
+            uint* rowColor = (uint*)(baseColorPtr + i * rowBytes);
+            uint* rowAlpha = (uint*)(baseAlphaPtr + i * rowBytes);
+            uint* rowResult = (uint*)(baseResultPtr + i * rowBytes);
+        
+            for (int x = 0; x < width; x++)
+            {
+                byte r = (byte)((rowColor[x] >> 0) & 0xFF);
+                byte g = (byte)((rowColor[x] >> 8) & 0xFF);
+                byte b = (byte)((rowColor[x] >> 16) & 0xFF);
+                byte a = (byte)((rowAlpha[x] >> 0) & 0xFF);
+                
+                rowResult[x] = (uint)(a << 24 | b << 16 | g << 8 | r);
+            }
+        };
 
         return result;
     }
 
-    public static SKBitmap ReplaceWithAlpha(SKBitmap bitmap)
+    public static void ClearAlpha(this SKBitmap bitmap)
     {
         if (bitmap.ColorType != SKColorType.Rgba8888)
         {
-            throw new ArgumentException($"Invalid color type for red image. Expected Rgba8888, got {bitmap.ColorType}");
+            throw new ArgumentException($"Invalid color type for image. Expected Rgba8888, got {bitmap.ColorType}");
         }
         
-        SKBitmap result = new(bitmap.Width, bitmap.Height, SKColorType.Rgba8888, SKAlphaType.Unpremul);
+        if (bitmap.AlphaType != SKAlphaType.Unpremul)
+        {
+            throw new ArgumentException($"Invalid alpha type for image. Expected Unpremul, got {bitmap.AlphaType}");
+        }
         
-        ReadOnlySpan<byte> bitmapSpan = bitmap.GetPixelSpan();
-            
-        Span<byte> resultSpan = result.GetPixelSpan();
+        Span<byte> bitmapSpan = bitmap.GetPixelSpan();
         
         for (int i = 0; i < bitmapSpan.Length; i += 4)
         {
-            resultSpan[i + 0] = bitmapSpan[i + 3];
-            resultSpan[i + 1] = bitmapSpan[i + 3];
-            resultSpan[i + 2] = bitmapSpan[i + 3];
-            resultSpan[i + 3] = bitmapSpan[i + 3];
+            bitmapSpan[i + 3] = 255;
         }
+    }
 
-        return result;
+    public static void ReplaceWithAlpha(this SKBitmap bitmap)
+    {
+        if (bitmap.ColorType != SKColorType.Rgba8888)
+        {
+            throw new ArgumentException($"Invalid color type for image. Expected Rgba8888, got {bitmap.ColorType}");
+        }
+        
+        if (bitmap.AlphaType != SKAlphaType.Unpremul)
+        {
+            throw new ArgumentException($"Invalid alpha type for image. Expected Unpremul, got {bitmap.AlphaType}");
+        }
+        
+        Span<byte> bitmapSpan = bitmap.GetPixelSpan();
+        
+        for (int i = 0; i < bitmapSpan.Length; i += 4)
+        {
+            bitmapSpan[i + 0] = bitmapSpan[i + 3];
+            bitmapSpan[i + 1] = bitmapSpan[i + 3];
+            bitmapSpan[i + 2] = bitmapSpan[i + 3];
+            //bitmapSpan[i + 3] = bitmapSpan[i + 3];
+        }
     }
 
     public static SKBitmap MergeBitmaps(SKBitmap red, SKBitmap green, SKBitmap blue, SKBitmap alpha)
@@ -245,7 +464,7 @@ public static class SkiaUtils
         }
         for (int i = 3; i < rSpan.Length; i += 4)
         {
-            resultSpan[i] = aSpan[i];
+            resultSpan[i] = aSpan[i - 3]; // Use red channel
         }
 
         return result;
@@ -326,7 +545,7 @@ public static class SkiaUtils
 
     public static void SavePng(this SKBitmap bitmap, string filePath)
     {
-        bitmap.SavePng(new FileInfo(filePath));
+        bitmap.SavePng(new FileInfo(@"C:\Users\coldrifting\desktop\" + filePath));
     }
     
     public static void SavePng(this SKBitmap bitmap, FileInfo filePath)

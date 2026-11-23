@@ -21,21 +21,21 @@ public class ConfigTexture
     public required List<LayerBase> Metal { get; set; }
     public required List<LayerBase> MetalAlt { get; set; }
 
-    private Dictionary<string, SKBitmap> Groups { get; } = new();
+    public Dictionary<string, SKBitmap> Groups { get; } = new();
 
     public void Apply(FileInfo outputFile, FileInfo maskFile)
     {
-        Groups["color_primary"] = ApplyGroup(ColorPrimary, maskFile);
+        Groups["color_primary"]   = ApplyGroup(ColorPrimary, maskFile);
         Groups["color_secondary"] = ApplyGroup(ColorSecondary, maskFile);
-        Groups["diffuse"] = ApplyGroup(Diffuse, maskFile);
-        Groups["gloss"] = ApplyGroup(Gloss, maskFile);
-        Groups["gloss_alt"] = ApplyGroup(GlossAlt, maskFile);
-        Groups["metal"] = ApplyGroup(Metal, maskFile);
-        Groups["metal_alt"] = ApplyGroup(MetalAlt, maskFile);
+        Groups["diffuse"]         = ApplyGroup(Diffuse, maskFile);
+        Groups["gloss"]           = ApplyGroup(Gloss, maskFile);
+        Groups["gloss_alt"]       = ApplyGroup(GlossAlt, maskFile);
+        Groups["metal"]           = ApplyGroup(Metal, maskFile);
+        Groups["metal_alt"]       = ApplyGroup(MetalAlt, maskFile);
         
         FileInfo outputFileAlbedo = new(outputFile.FullName + "-a.png");
-        FileInfo outputFileMetal = new(outputFile.FullName + "-m.png");
-        FileInfo outputFileTc = new(outputFile.FullName + "-tc.png");
+        FileInfo outputFileMetal  = new(outputFile.FullName + "-m.png");
+        FileInfo outputFileTc     = new(outputFile.FullName + "-tc.png");
         
         Directory.CreateDirectory(outputFileAlbedo.DirectoryName!);
         SKBitmap albedoImage = SkiaUtils.MergeBitmaps(Groups["diffuse"], Groups["gloss"]);
@@ -51,29 +51,15 @@ public class ConfigTexture
     {
         SKBitmap bitmap = new(Size.X, Size.Y, SKColorType.Rgba8888, SKAlphaType.Unpremul);
 
-        foreach (LayerBase layer in layers)
+        for (int index = 0; index < layers.Count; index++)
         {
-            switch (layer)
-            {
-                case LayerCopy layerCopy:
-                    layerCopy.Groups = Groups;
-                    break;
-                case LayerCurves layerCurves:
-                    layerCurves.Validate();
-                    break;
-                case LayerFill layerFill:
-                    layerFill.Validate();
-                    break;
-                case LayerSaturation layerSaturation:
-                    layerSaturation.Validate();
-                    break;
-            }
-
-            layer.GenerateMask(maskFile);
+            LayerBase layer = layers[index];
             
+            layer.Validate(this, index);
+            layer.GenerateMask(maskFile);
             bitmap = layer.Apply(bitmap);
         }
-        
+
         return bitmap;
     }
 

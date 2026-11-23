@@ -19,7 +19,7 @@ public class LayerFill : LayerBase
     public string? Channels { get; set; }
     public float? Scale { get; set; }
 
-    public void Validate()
+    protected override void Validate()
     {
         if (Image is null && ColorInput is null)
         {
@@ -81,7 +81,11 @@ public class LayerFill : LayerBase
                 layerBitmap = SkiaUtils.LoadDds(imageSource.FullName);
                 if (Channels?.ToLower() == "a")
                 {
-                    layerBitmap = SkiaUtils.ReplaceWithAlpha(layerBitmap);
+                    layerBitmap.ReplaceWithAlpha();
+                }
+                else if (Channels?.ToLower() == "rgb")
+                {
+                    layerBitmap.ClearAlpha();
                 }
             }
             else
