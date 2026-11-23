@@ -1,5 +1,6 @@
 using SkiaSharp;
 using TechnicolorPatcher.Util;
+using TechnicolorPatcher.Util.Image;
 using YamlDotNet.Serialization;
 
 namespace TechnicolorPatcher.Texture.Layers;
@@ -19,11 +20,9 @@ public class LayerSaturation : LayerBase
         Percent = PercentInput / 100.0f;
     }
 
-    public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
+    protected override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
-        SKBitmap layer = groupBitmap.Copy();
-        layer.AdjustSaturation(Percent);
-
+        SKBitmap layer = groupBitmap.Copy().AdjustSaturation(Percent);
         return layer;
     }
 }

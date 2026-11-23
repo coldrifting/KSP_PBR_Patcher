@@ -1,5 +1,6 @@
 using SkiaSharp;
 using TechnicolorPatcher.Util;
+using TechnicolorPatcher.Util.Image;
 using YamlDotNet.Serialization;
 
 namespace TechnicolorPatcher.Texture.Layers;
@@ -60,7 +61,7 @@ public class LayerFill : LayerBase
         Scale ??= 1;
     }
 
-    public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
+    protected override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
         SKBitmap layerBitmap;
         if (Color is not null)
@@ -78,20 +79,18 @@ public class LayerFill : LayerBase
                     throw new ArgumentException($"The file does not exist: \n{imageSource.FullName}");
                 }
 
-                layerBitmap = SkiaUtils.LoadDds(imageSource.FullName);
-                if (Channels?.ToLower() == "a")
+                layerBitmap = SaveLoad.LoadDds(imageSource.FullName);
+                layerBitmap = Channels?.ToLower() switch
                 {
-                    layerBitmap.ReplaceWithAlpha();
-                }
-                else if (Channels?.ToLower() == "rgb")
-                {
-                    layerBitmap.ClearAlpha();
-                }
+                    "a"   => layerBitmap.GetAlpha(),
+                    "rgb" => layerBitmap.ClearAlpha(),
+                    _     => layerBitmap
+                };
             }
             else
             {
                 layerBitmap = FillImages[Image].Copy();
-                Mask = SkiaUtils.AlphaToGrayscale(layerBitmap);
+                Mask = layerBitmap.GetAlpha();
             }
         }
         else

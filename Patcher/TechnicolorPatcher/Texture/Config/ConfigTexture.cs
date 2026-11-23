@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using SkiaSharp;
 using TechnicolorPatcher.Texture.Layers;
 using TechnicolorPatcher.Types;
 using TechnicolorPatcher.Util;
+using TechnicolorPatcher.Util.Image;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
@@ -37,14 +39,16 @@ public class ConfigTexture
         FileInfo outputFileMetal  = new(outputFile.FullName + "-m.png");
         FileInfo outputFileTc     = new(outputFile.FullName + "-tc.png");
         
-        Directory.CreateDirectory(outputFileAlbedo.DirectoryName!);
-        SKBitmap albedoImage = SkiaUtils.MergeBitmaps(Groups["diffuse"], Groups["gloss"]);
+        SKBitmap albedoImage = Groups["diffuse"].PasteAlpha(Groups["gloss"]);
         SKBitmap metalImage = Groups["metal"];
-        SKBitmap tcImage = SkiaUtils.MergeBitmaps(Groups["color_primary"], Groups["color_secondary"], Groups["gloss_alt"], Groups["metal_alt"]);
+        SKBitmap tcImage = Channels.MergeChannels(Groups["color_primary"], Groups["color_secondary"], Groups["gloss_alt"], Groups["metal_alt"]);
 
+        Directory.CreateDirectory(outputFileAlbedo.DirectoryName!);
         albedoImage.SaveDds(outputFileAlbedo);
         metalImage.SaveDds(outputFileMetal);
         tcImage.SaveDds(outputFileTc);
+        
+        SaveLoad.ClearCache();
     }
 
     private SKBitmap ApplyGroup(List<LayerBase> layers, FileInfo maskFile)
@@ -59,7 +63,7 @@ public class ConfigTexture
             layer.GenerateMask(maskFile);
             bitmap = layer.Apply(bitmap);
         }
-
+        
         return bitmap;
     }
 

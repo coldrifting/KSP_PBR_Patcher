@@ -18,8 +18,8 @@ public class LayerCopy : LayerBase
             throw new ArgumentException("Invalid group name: " + GroupName);
         }
     }
-    
-    public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
+
+    protected override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
         SKBitmap layerBitmap = Config.Groups[GroupName].Copy();
 

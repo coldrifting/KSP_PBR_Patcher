@@ -30,7 +30,7 @@ public class LayerCurves : LayerBase
         }
     }
 
-    public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
+    protected override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
         SKBitmap layer = groupBitmap.Copy();
         // Build LUT - TODO

@@ -63,12 +63,4 @@ public class TextureCacheEntry
 {
     public required string ConfigHash { get; set; }
     public required string MaskHash { get; set; }
-    public required TextureCacheSubEntry[] ReferencedFiles { get; set; }
-}
-
-[YamlSerializable]
-public class TextureCacheSubEntry
-{
-    public required string Path { get; set; }
-    public required string Hash { get; set; }
 }

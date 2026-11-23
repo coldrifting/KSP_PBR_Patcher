@@ -2,7 +2,7 @@ using SkiaSharp;
 using Svg;
 using Svg.Skia;
 using TechnicolorPatcher.Texture.Config;
-using TechnicolorPatcher.Util;
+using TechnicolorPatcher.Util.Image;
 using YamlDotNet.Serialization;
 using Color = System.Drawing.Color;
 
@@ -15,11 +15,11 @@ public class LayerBase
 
     [YamlMember(Alias = "masks")] 
     public List<string> MaskNames { get; set; } = [];
+    
+    protected SKBitmap Mask { get; set; } = new(4,4, SKColorType.Rgba8888, SKAlphaType.Premul);
 
     protected Dictionary<string, SKBitmap> FillImages { get; set; } = [];
     
-    protected SKBitmap? Mask { get; set; }
-
     [YamlIgnore] 
     public int LayerIndex { get; set; }
 
@@ -144,12 +144,13 @@ public class LayerBase
 
     public SKBitmap Apply(SKBitmap groupBitmap)
     {
-        SKBitmap layerOutput = GenerateLayer(groupBitmap);
-        
-        return ApplyLayerMask(groupBitmap, layerOutput);
+        SKBitmap layerBitmap = GenerateLayer(groupBitmap);
+        SKBitmap layerClipped = layerBitmap.PasteAlpha(Mask);
+        SKBitmap result = groupBitmap.Overlay(layerClipped);
+        return result;
     }
 
-    protected virtual void Validate()
+    protected virtual SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
         throw new NotSupportedException();
     }
@@ -170,30 +171,9 @@ public class LayerBase
 
         Validate();
     }
-    
-    public virtual SKBitmap GenerateLayer(SKBitmap groupBitmap)
+
+    protected virtual void Validate()
     {
         throw new NotSupportedException();
-    }
-
-    public SKBitmap ApplyLayerMask(SKBitmap groupBitmap, SKBitmap layerBitmap, bool ignoreMask = false)
-    {
-        if (Mask is null)
-        {
-            throw new ArgumentException();
-        }
-
-        if (ignoreMask)
-        {
-            groupBitmap.Paste(layerBitmap);
-        }
-        else
-        {
-            SKBitmap layerClipped = SkiaUtils.MergeBitmaps(layerBitmap, Mask);
-            
-            // Paste over current group image
-            groupBitmap.Paste(layerClipped);
-        }
-        return groupBitmap;
     }
 }

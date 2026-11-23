@@ -1,5 +1,5 @@
 using SkiaSharp;
-using TechnicolorPatcher.Util;
+using TechnicolorPatcher.Util.Image;
 
 namespace TechnicolorPatcherTests;
 
@@ -8,15 +8,15 @@ public class TextureTests
     [Fact]
     public void TestComposite()
     {
-        var info = new SKImageInfo(4, 4);
+        SKImageInfo info = new(4, 4);
         
-        var input =  new SKBitmap(info);
+        SKBitmap input =  new(info);
         input.Erase(SKColors.Red);
         
-        var overlay = new SKBitmap(info);
+        SKBitmap overlay = new(info);
         overlay.Erase(SKColors.Transparent);
 
-        var p = overlay.Pixels;
+        SKColor[]? p = overlay.Pixels;
         
         for (int i = 0; i < p.Length; i++)
         {
@@ -32,8 +32,8 @@ public class TextureTests
 
         overlay.Pixels = p;
         
-        input.Paste(overlay);
+        SKBitmap output = input.Overlay(overlay);
 
-        input.SavePng(@"C:\Users\coldrifting\desktop\test.png");
+        output.SavePng(new FileInfo(@"C:\Users\coldrifting\desktop\test.png"));
     }
 }

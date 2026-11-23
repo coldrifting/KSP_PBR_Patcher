@@ -1,5 +1,6 @@
 using SkiaSharp;
 using TechnicolorPatcher.Util;
+using TechnicolorPatcher.Util.Image;
 using YamlDotNet.Serialization;
 
 namespace TechnicolorPatcher.Texture.Layers;
@@ -18,12 +19,10 @@ public class LayerBrightness : LayerBase
     {
         Percent = PercentInput / 100.0f;
     }
-    
-    public override SKBitmap GenerateLayer(SKBitmap groupBitmap)
-    {
-        SKBitmap layer = groupBitmap.Copy();
-        layer.AdjustBrightness(Percent);
 
+    protected override SKBitmap GenerateLayer(SKBitmap groupBitmap)
+    {
+        SKBitmap layer = groupBitmap.Copy().AdjustBrightness(Percent);
         return layer;
     }
 }
