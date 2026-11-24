@@ -1,11 +1,12 @@
+using TechnicolorPatcher.Texture.Layers;
 using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
 
-namespace TechnicolorPatcher.Texture.Layers;
+namespace TechnicolorPatcher.Texture;
 
 [YamlSerializable]
-public class LayerBaseDeserializer() : INodeDeserializer
+public class LayerBaseDeserializer : INodeDeserializer
 {
     private readonly Dictionary<string, Type> _typeMap = new()
     {
@@ -23,14 +24,12 @@ public class LayerBaseDeserializer() : INodeDeserializer
         out object? value,
         ObjectDeserializer rootDeserializer)
     {
-        // Only intercept when deserializing an IShape
         if (expectedType != typeof(LayerBase))
         {
             value = null;
             return false;
         }
 
-        // Expect the start of a YAML mapping (e.g., "- shape_type_1:")
         reader.Consume<MappingStart>();
 
         // Read the wrapper key name

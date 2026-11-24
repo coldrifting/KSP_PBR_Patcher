@@ -1,5 +1,4 @@
 using SkiaSharp;
-using TechnicolorPatcher.Util;
 using TechnicolorPatcher.Util.Image;
 using YamlDotNet.Serialization;
 
@@ -89,8 +88,7 @@ public class LayerFill : LayerBase
             }
             else
             {
-                layerBitmap = FillImages[Image].Copy();
-                Mask = layerBitmap.GetAlpha();
+                layerBitmap = Config.FillImages[Image].Copy();
             }
         }
         else

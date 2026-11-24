@@ -13,15 +13,15 @@ public class LayerCopy : LayerBase
 
     protected override void Validate()
     {
-        if (!Config.Groups.ContainsKey(GroupName))
+        if (!Config.GroupOutput.ContainsKey(GroupName))
         {
-            throw new ArgumentException("Invalid group name: " + GroupName);
+            throw new ArgumentException("Group name is invalid, or has not run yet: " + GroupName);
         }
     }
 
     protected override SKBitmap GenerateLayer(SKBitmap groupBitmap)
     {
-        SKBitmap layerBitmap = Config.Groups[GroupName].Copy();
+        SKBitmap layerBitmap = Config.GroupOutput[GroupName].Copy();
 
         return layerBitmap;
     }

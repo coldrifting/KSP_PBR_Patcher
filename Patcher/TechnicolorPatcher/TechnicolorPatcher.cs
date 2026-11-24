@@ -11,7 +11,12 @@ namespace TechnicolorPatcher;
 
 internal static partial class Patcher
 {
-    public static DirectoryInfo? GameDataPath { get; private set; }
+    public static DirectoryInfo GameDataPath
+    {
+        get => field ?? throw new InvalidOperationException("GameDataPath not set");
+        private set;
+    }
+
     public static DirectoryInfo? PatcherRootPath { get; private set; }
     public static FileInfo? TexConvPath { get; private set; }
 

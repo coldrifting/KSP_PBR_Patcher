@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using TechnicolorPatcher.Texture.Config;
+using TechnicolorPatcher.Texture;
 using TechnicolorPatcher.Util;
 
 namespace TechnicolorPatcher.Patch;
@@ -26,7 +26,7 @@ public static class Textures
             {
                 string yaml = textureConfigFile.OpenText().ReadToEnd();
 
-                ConfigTexture configTexture = ConfigTexture.FromYaml(yaml);
+                ConfigTexture configTexture = ConfigTexture.FromYaml(yaml, identifier);
                 
                 if (Cache.IsTextureCached(identifier, textureConfigFile, masksFile, destination))
                 {
