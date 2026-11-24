@@ -20,16 +20,11 @@ public static class Models
             string identifier = Path.Combine("Models", modelConfigFileRelativePath);
             Log.Info(identifier);
 
-            // Skip if output would be identical to last run
-            string inputHash = Hash.Sha(modelConfigFile.FullName);
-            if (destination.Exists && 
-                Cache.Instance.ModelEntries.TryGetValue(identifier, out ModelCacheEntry? value) &&
-                value.InputHash == inputHash)
+            if (Cache.IsModelCached(identifier, modelConfigFile, destination))
             {
                 Log.Info(identifier + " (Cached)",  MessageStatus.Ok);
                 continue;
             }
-            
             
             try
             {
@@ -38,11 +33,7 @@ public static class Models
                 ConfigModel configModel = ConfigModel.FromYaml(yaml);
                 configModel.Apply(destination);
 
-                // Save to Cache
-                Cache.Instance.ModelEntries[identifier] = new ModelCacheEntry
-                {
-                    InputHash = inputHash
-                };
+                Cache.CacheModel(identifier, modelConfigFile);
                 
                 Log.Info(identifier, MessageStatus.Ok);
             }

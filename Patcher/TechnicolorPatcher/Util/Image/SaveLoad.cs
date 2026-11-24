@@ -20,11 +20,7 @@ public static class SaveLoad
     {
         public void SaveDds(FileInfo filePath)
         {
-            // Save PNG File
-            SKData? image = SKImage.FromBitmap(bitmap).Encode(SKEncodedImageFormat.Png, 100);
-            FileStream stream = new(filePath.FullName, FileMode.Create, FileAccess.Write);
-            image.SaveTo(stream);
-            stream.Close();
+            bitmap.SavePng(filePath);
 
             if (Patcher.TexConvPath != null)
             {
@@ -45,7 +41,7 @@ public static class SaveLoad
                     process.WaitForExit();
                     if (process.ExitCode != 0)
                     {
-                        var texconvOutput = ""; 
+                        string texconvOutput = ""; 
                         while (!process.StandardOutput.EndOfStream)
                         {
                             texconvOutput += process.StandardOutput.ReadLine();
@@ -53,10 +49,14 @@ public static class SaveLoad
                         }
                         throw new InvalidOperationException($"Texconv process failed with exit code {process.ExitCode}:\n{texconvOutput}");
                     }
-                }
             
-                // Delete PNG
-                filePath.Delete();
+                    // Delete PNG
+                    filePath.Delete();
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Texconv process failed to start");
+                }
             }
         }
 

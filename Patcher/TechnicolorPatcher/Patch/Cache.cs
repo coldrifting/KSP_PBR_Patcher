@@ -50,6 +50,47 @@ public class Cache
         
         Log.Info(new FileInfo(cacheFilePath).Name, MessageStatus.Ok);
     }
+
+    public static bool IsModelCached(string identifier, FileInfo configFile, FileInfo destination)
+    {
+        string inputHash = Hash.Sha(configFile.FullName);
+        return destination.Exists &&
+               Instance.ModelEntries.TryGetValue(identifier, out ModelCacheEntry? value) &&
+               value.InputHash == inputHash;
+    }
+
+    public static void CacheModel(string identifier, FileInfo configFile)
+    {
+        string inputHash = Hash.Sha(configFile.FullName);
+        Instance.ModelEntries[identifier] = new ModelCacheEntry
+        {
+            InputHash = inputHash
+        };
+    }
+
+    public static bool IsTextureCached(string identifier, FileInfo configFile, FileInfo maskFile, FileInfo destination)
+    { 
+        string configHash = Hash.Sha(configFile.FullName);
+        string maskHash = maskFile.Exists ? Hash.Sha(maskFile.FullName) : "(None)";
+        FileInfo destinationAlbedo = new(destination.FullName + "-a.dds");
+        FileInfo destinationMetal = new(destination.FullName + "-m.dds");
+        FileInfo destinationTeamColor = new(destination.FullName + "-tc.dds");
+        
+        return destinationAlbedo.Exists && destinationMetal.Exists && destinationTeamColor.Exists &&
+               Instance.TextureEntries.TryGetValue(identifier, out TextureCacheEntry? value) &&
+               value.ConfigHash == configHash && value.MaskHash == maskHash;
+    }
+
+    public static void CacheTexture(string identifier, FileInfo configFile, FileInfo maskFile)
+    {
+        string configHash = Hash.Sha(configFile.FullName);
+        string maskHash = maskFile.Exists ? Hash.Sha(maskFile.FullName) : "(None)";
+        Instance.TextureEntries[identifier] = new TextureCacheEntry
+        {
+            ConfigHash = configHash,
+            MaskHash = maskHash
+        };
+    }
 }
 
 [YamlSerializable]

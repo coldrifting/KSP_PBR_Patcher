@@ -1,7 +1,5 @@
 using System.Diagnostics;
-using SkiaSharp;
 using TechnicolorPatcher.Texture.Config;
-using TechnicolorPatcher.Texture.Layers;
 using TechnicolorPatcher.Util;
 
 namespace TechnicolorPatcher.Patch;
@@ -30,15 +28,7 @@ public static class Textures
 
                 ConfigTexture configTexture = ConfigTexture.FromYaml(yaml);
                 
-                // Skip if output would be identical to last run
-                string configHash = Hash.Sha(textureConfigFile.FullName);
-                string maskHash = masksFile.Exists ? Hash.Sha(masksFile.FullName) : "(None)";
-                FileInfo destinationAlbedo = new(Path.Combine(patcherModelOutput.FullName, textureConfigFileRelativePath) + "-a.dds");
-                FileInfo destinationMetal = new(Path.Combine(patcherModelOutput.FullName, textureConfigFileRelativePath) + "-m.dds");
-                FileInfo destinationTeamColor = new(Path.Combine(patcherModelOutput.FullName, textureConfigFileRelativePath) + "-tc.dds");
-                if (destinationAlbedo.Exists && destinationMetal.Exists && destinationTeamColor.Exists &&
-                    Cache.Instance.TextureEntries.TryGetValue(identifier, out TextureCacheEntry? value) &&
-                    value.ConfigHash == configHash && value.MaskHash == maskHash)
+                if (Cache.IsTextureCached(identifier, textureConfigFile, masksFile, destination))
                 {
                     Log.Info(identifier + " (Cached)",  MessageStatus.Ok);
                     continue;
@@ -47,12 +37,7 @@ public static class Textures
                 Stopwatch stopwatch = Stopwatch.StartNew();
                 configTexture.Apply(destination, masksFile);
 
-                // Save to Cache
-                Cache.Instance.TextureEntries[identifier] = new TextureCacheEntry
-                {
-                    ConfigHash = configHash,
-                    MaskHash = maskHash
-                };
+                Cache.CacheTexture(identifier, textureConfigFile, masksFile);
                 
                 stopwatch.Stop();
                 Log.Info(identifier + " (" + stopwatch.ElapsedMilliseconds + "ms)", MessageStatus.Ok);
